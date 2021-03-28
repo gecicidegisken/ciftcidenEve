@@ -11,11 +11,24 @@
         https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
     -->
 
+        <Shell.FlyoutBackdrop>
+            <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="1,1">
+            <GradientStop Color="#fc9c1b"
+                          Offset="0.1" />
+            <GradientStop Color="#04ac44"
+                          Offset="0.6" />
+            <GradientStop Color="#F27121"
+                          Offset="1.0" />
+        </LinearGradientBrush>
+            </Shell.FlyoutBackdrop>
+    
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
-                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
-                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.BackgroundColor" Value="White" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="Blue" />
+                <Setter Property="Shell.ForegroundColor" Value="{StaticResource Primary}" />
                 <Setter Property="Shell.TitleColor" Value="White" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
@@ -23,6 +36,7 @@
                 <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
                 <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
                 <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+               
             </Style>
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
@@ -78,23 +92,29 @@
         FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element    
         https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
     -->
-    <FlyoutItem Title="Ana Sayfa" Icon="homePage_icon.png">
-        <ShellContent Route="HomePage" ContentTemplate="{DataTemplate local:HomePage}" />
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="Ana Sayfa" Icon="homePage_icon.png">
+            <ShellContent Route="HomePage" ContentTemplate="{DataTemplate local:HomePage}" />
+        </Tab>
+        <Tab Title="Tüm Ürünler" Icon="tumUrunler_icon.png">
+            <ShellContent Route="ProductsPage" ContentTemplate="{DataTemplate local:ProductsPage}" />
+        </Tab>
+        <Tab Title="Ürün Sat" Icon="satici_icon.png">
+            <ShellContent Route="ProductsPage" ContentTemplate="{DataTemplate local:ProductsPage}" />
+        </Tab>
     </FlyoutItem>
-    <FlyoutItem Title="Tüm Ürünler" Icon="tumUrunler_icon.png">
-        <ShellContent Route="ProductsPage" ContentTemplate="{DataTemplate local:ProductsPage}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Ürün Sat" Icon="satici_icon.png">
-        <ShellContent Route="ProductsPage" ContentTemplate="{DataTemplate local:ProductsPage}" />
-    </FlyoutItem>
-    
-    <FlyoutItem Title="Bize Ulaşın">
-        <ShellContent Route="UrunSatisPage" ContentTemplate="{DataTemplate local:UrunSatisPage}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Gizlilik ve Kullanım Şartları">
-        <ShellContent Route="UrunSatisPage" ContentTemplate="{DataTemplate local:UrunSatisPage}" />
-    </FlyoutItem>
+   
 
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems"  >
+        <Tab Title="Bize Ulaşın">
+            <ShellContent  Route="UrunSatisPage" ContentTemplate="{DataTemplate local:UrunSatisPage}" />
+        </Tab>
+       
+    <Tab Title="Gizlilik ve Kullanım Şartları">
+        <ShellContent Route="UrunSatisPage" ContentTemplate="{DataTemplate local:UrunSatisPage}" />
+    </Tab>
+ </FlyoutItem>
+    
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
     <MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">
     </MenuItem>
@@ -109,6 +129,20 @@
     <TabBar>
         <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
     </TabBar>
+
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid>
+
+                <StackLayout Grid.Row="0" Background="white" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <ContentView Padding="0,0,0,0" VerticalOptions="Center">
+                        <Image Source="ciftcidenEve_logo.png" VerticalOptions="Center" HeightRequest="64" />
+                    </ContentView>
+                </StackLayout>
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+   
 
     <!-- Optional Templates 
     // These may be provided inline as below or as separate classes.

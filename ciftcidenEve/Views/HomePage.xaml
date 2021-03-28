@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ciftcidenEve.Views.HomePage"
+             xmlns:vm="clr-namespace:ciftcidenEve.ViewModels"
+             >
+    
+    <ContentPage.BindingContext>
+        <vm:HomePageViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Priority="0" IconImageSource="mainLogo.png"></ToolbarItem>
+        <ToolbarItem Text=" " Order="Primary" Priority="1"></ToolbarItem>
+        <ToolbarItem Text=" " Order="Primary" Priority="2"></ToolbarItem>
+        <ToolbarItem  Order="Primary"  Priority="3" Text="Giriş Yap" Command="{Binding LoginCommand}">
+        </ToolbarItem>
+       
+       
+    </ContentPage.ToolbarItems>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+       
+        
+        <SearchBar Grid.Row="0" Placeholder="Ürün Ara" />
+        
+       
+   
+     
+        <!-- buraya ürün kategorileri -->
+
+        <ScrollView Grid.Row="2">
+            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+                <Label Text="Ürünler burada listelenecek" FontSize="Title"/>
+                
+               
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

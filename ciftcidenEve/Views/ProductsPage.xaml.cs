@@ -12,11 +12,11 @@ using Xamarin.Forms.Xaml;
 
 namespace ciftcidenEve.Views
 {
-    public partial class ItemsPage : ContentPage
+    public partial class ProductsPage : ContentPage
     {
         ItemsViewModel _viewModel;
 
-        public ItemsPage()
+        public ProductsPage()
         {
             InitializeComponent();
 

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ciftcidenEve.Views.HomePage"
              xmlns:vm="clr-namespace:ciftcidenEve.ViewModels"
-             Title="{Binding Title}">
+             >
     
     <ContentPage.BindingContext>
         <vm:HomePageViewModel />
@@ -18,16 +18,25 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+        
+        <StackLayout Grid.Row="0" Background="White" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                <Image Source="ciftcidenEve_logo.png" VerticalOptions="Center" HeightRequest="64" />
+            </ContentView>
+        </StackLayout>
+        
+        <StackLayout Grid.Row="1" BackgroundColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
                 <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
                     <Image Source="ciftcidenEve_logo.png" VerticalOptions="Center" HeightRequest="64" />
                 </ContentView>
             </StackLayout>
+            
         </StackLayout>
-        <ScrollView Grid.Row="1">
+        <ScrollView Grid.Row="2">
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
                 <Label Text="Ürünler burada listelenecek" FontSize="Title"/>
                 

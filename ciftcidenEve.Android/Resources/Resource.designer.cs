@@ -11812,7 +11812,28 @@ namespace ciftcidenEve.Droid
 			public const int tumUrunler_icon = 2131165335;
 			
 			// aapt resource value: 0x7F070098
-			public const int xamarin_logo = 2131165336;
+			public const int urun_etBalik_icon = 2131165336;
+			
+			// aapt resource value: 0x7F070099
+			public const int urun_icecek_icon = 2131165337;
+			
+			// aapt resource value: 0x7F07009A
+			public const int urun_kahvaltilik_icon = 2131165338;
+			
+			// aapt resource value: 0x7F07009B
+			public const int urun_kisiselBakim_icon = 2131165339;
+			
+			// aapt resource value: 0x7F07009C
+			public const int urun_sossirke_icon = 2131165340;
+			
+			// aapt resource value: 0x7F07009D
+			public const int urun_tohumCicek_icon = 2131165341;
+			
+			// aapt resource value: 0x7F07009E
+			public const int urun_yag_icon = 2131165342;
+			
+			// aapt resource value: 0x7F07009F
+			public const int xamarin_logo = 2131165343;
 			
 			static Drawable()
 			{

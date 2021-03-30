@@ -25,21 +25,46 @@
        
     </ContentPage.ToolbarItems>
 
-    <Grid>
+    <Grid><!-- main grid -->
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" /> <!-- 0 ürün kategorileri -->
+            <RowDefinition Height="25" /> <!-- 1 search bar -->
+            <RowDefinition Height="Auto" /> <!-- 2  ürünler listesi -->
+       
         </Grid.RowDefinitions>
        
-        
-        <SearchBar Grid.Row="0" Placeholder="Ürün Ara" />
-        
        
-   
-     
-        <!-- buraya ürün kategorileri -->
+    
+        <Grid Grid.Row="0">  <!-- ürün iconları grid -->
+            <Grid.RowDefinitions >
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+          
 
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column=" 0" Source="urun_sossirke_icon.png" VerticalOptions="Center" HeightRequest="70" Margin="0,0,0,10" />
+            <Image Grid.Column=" 1" Source="urun_yag_icon.png" VerticalOptions="Center" HeightRequest="70" Margin="0,0,0,10" />
+            <Image Grid.Column=" 2" Source="urun_kahvaltilik_icon.png" VerticalOptions="Center" HeightRequest="70" Margin="0,0,0,10" />
+            <Image Grid.Column=" 3" Source="urun_icecek_icon.png" VerticalOptions="Center" HeightRequest="70" Margin="0,0,0,10" />
+            <Image Grid.Column=" 4" Source="urun_kisiselBakim_icon.png" VerticalOptions="Center" HeightRequest="70" Margin="0,0,0,10" />
+            <Image Grid.Column=" 5" Source="urun_tohumCicek_icon.png" VerticalOptions="Center" HeightRequest="70" Margin="0,0,0,10" />
+            <Image Grid.Column=" 6" Source="urun_etBalik_icon.png" VerticalOptions="Center" HeightRequest="70" Margin="0,0,0,10" />
+
+           
+
+        </Grid> <!-- ürün iconları grid -->
+       
+        
+        <SearchBar Grid.Row="1" Placeholder="Ürün Ara" Margin="0,0,0,0" />
+        
         <ScrollView Grid.Row="2">
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
                 <Label Text="Ürünler burada listelenecek" FontSize="Title"/>
@@ -47,6 +72,7 @@
                
             </StackLayout>
         </ScrollView>
-    </Grid>
+    </Grid> <!-- main grid -->
+    
 
 </ContentPage>

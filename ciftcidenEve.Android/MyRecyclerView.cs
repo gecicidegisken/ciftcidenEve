@@ -24,7 +24,7 @@ namespace ciftcidenEve
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
-            View row = LayoutInflater.From(parent.Context).Inflate(ciftcidenEve.Droid.Resource.Layout.abc_action_bar_title_item, parent, false);
+            View row = LayoutInflater.From(parent.Context).Inflate(ciftcidenEve.Droid.Resource.Layout.browser_actions_context_menu_page, parent, false);
 
             MyHolder myHolder = new MyHolder(row);
 

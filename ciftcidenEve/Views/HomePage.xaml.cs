@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,6 +11,13 @@ namespace ciftcidenEve.Views
         public HomePage()
         {
             InitializeComponent();
+            
+        }
+
+        async private void RefreshView_Refreshing(object sender, EventArgs e)
+        {
+            await Task.Delay(3000);
+            mRefreshViewHomePage.IsRefreshing = false;
         }
     }
 }

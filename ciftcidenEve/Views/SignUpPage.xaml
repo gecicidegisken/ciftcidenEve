@@ -2,17 +2,83 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ciftcidenEve.Views.SignUpPage"
-             xmlns:vm="clr-namespace:ciftcidenEve.ViewModels">
+             xmlns:vm="clr-namespace:ciftcidenEve.ViewModels"
+             xmlns:local="clr-namespace:ciftcidenEve">
     
     <ContentPage.BindingContext>
         <vm:SignUpViewModel />
     </ContentPage.BindingContext>
-    
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Burası yeni hesap açma sayfası"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+
+    <!--İLETİSİM BİLGİLERİ FORMU-->
+    <StackLayout Orientation="Vertical">
+        <ContentView Padding="0,10,0,100" VerticalOptions="Center">
+            <Image Source="ciftcidenEve_logo.png" VerticalOptions="Center"  />
+        </ContentView>
+        <StackLayout Orientation="Horizontal">
+            <Entry Placeholder="İsim"></Entry>
+            <Entry Placeholder="Soyisim"></Entry>
+   </StackLayout>
+        <Entry Placeholder="Email"></Entry>
+        <Entry Placeholder="Parola" IsPassword="True"></Entry>
+        <Entry Placeholder="Parola Tekrar" IsPassword="True"></Entry>
+ <!--İLETİSİM BİLGİLERİ FORMU -->
+        
+        <!--CAPTCHA HERE-->
+        
+      
+        
+
+           
+        <StackLayout Orientation="Horizontal"> <!-- OKUDUM ONAYLADIM -->
+          
+            <CheckBox Grid.Column="0" x:Name="checkBox" Color="Green" />
+
+            <Label Grid.Column="1" Padding="0,10,0,10">
+                <Label.FormattedText>
+                    <FormattedString >
+                        <Span Text="Bir hesap oluşturarak, ÇiftçidenEve  " />
+                        <local:HyperlinkSpan Text=" Üyelik ve Kullanım Sözleşmesi "
+                                             Url="https://www.ciftcideneve.com/page/terms_register/"
+                                             TextColor="Orange" ></local:HyperlinkSpan>
+                        
+                     
+                        <Span Text="ve "></Span>
+                        <local:HyperlinkSpan Text=" Gizlilik Kuralları "
+                                             Url="https://www.ciftcideneve.com/page/privacy_register/"
+                                             TextColor="Orange" ></local:HyperlinkSpan>
+                        <Span Text="koşullarını kabul ediyorum."></Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+
+
+        </StackLayout>  <!-- OKUDUM ONAYLADIM -->
+
+       
+        
+        <!-- UYE OL BUTONU -->
+        <Button Grid.Column="0" x:Name="signUpBtn" Text="Üye Ol">
+            <Button.Triggers>
+                <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference checkBox}, Path=IsChecked}" Value="True">
+                    <Setter Property="IsEnabled" Value="False" ></Setter>
+                    <Setter Property="IsEnabled" Value="True" ></Setter>
+
+                </DataTrigger>
+
+            </Button.Triggers>
+        </Button>
+        <!-- UYE OL BUTONU -->
+        <!--hesabınız varsa giriş yapın-->
+        
+        <Label  Padding="0,20,0,0" TextColor="Orange" >
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span TextColor="Green" Text="Hesabınız var mı? "></Span>
+                    <Span TextColor="Orange" Text=" Giriş Yapın"></Span>
+                    <!--  buraya login sayfasının linki -->
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </StackLayout>
 </ContentPage>

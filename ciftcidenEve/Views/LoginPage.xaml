@@ -31,10 +31,10 @@
                 <Label.FormattedText  >
                     <FormattedString>
                         <Span  Text="Hesabınız yoksa hemen üye olabilirsiniz.  " FontSize="Default"></Span>
-                        
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
+            
             <Button BorderColor="Transparent" 
                     BackgroundColor="Transparent" 
                     Text="Üye Ol" 

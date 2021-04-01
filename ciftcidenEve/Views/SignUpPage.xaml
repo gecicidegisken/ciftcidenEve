@@ -3,8 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ciftcidenEve.Views.SignUpPage"
              xmlns:vm="clr-namespace:ciftcidenEve.ViewModels"
-             xmlns:local="clr-namespace:ciftcidenEve">
-    
+             xmlns:local="clr-namespace:ciftcidenEve"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Shell.NavBarIsVisible="False">
+
     <ContentPage.BindingContext>
         <vm:SignUpViewModel />
     </ContentPage.BindingContext>
@@ -24,11 +28,7 @@
  <!--İLETİSİM BİLGİLERİ FORMU -->
         
         <!--CAPTCHA HERE-->
-        
-      
-        
-
-           
+                 
         <StackLayout Orientation="Horizontal"> <!-- OKUDUM ONAYLADIM -->
           
             <CheckBox Grid.Column="0" x:Name="checkBox" Color="Green" />

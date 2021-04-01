@@ -1,0 +1,11 @@
+﻿ -- Yapılacaklar
+ ++ Tamamlananlar
+ >> ÖNEMLİ, ACİL
+ 
+ 
+ 
+ -- Sign up sayfasından sonra geri tuşuna basınca uygulamadan çıkıyor, giriş yapma ekranına geri dönsün
+ -- Login sayfasından sonra geri tuşuna basınca uygulamadan çıkıyor, giriş yapma ekranına geri dönsün
+ -- Üye ol sayfasına captcha
+ ++ Üye ol sayfasına okudum onayladım
+ -- üye ol sayfasında giriş yapın linki

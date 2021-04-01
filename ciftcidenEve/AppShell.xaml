@@ -129,6 +129,9 @@
     <TabBar>
         <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
     </TabBar>
+    <TabBar>
+        <ShellContent Route="SignUpPage" ContentTemplate="{DataTemplate local:SignUpPage}" />
+    </TabBar>
 
     <Shell.FlyoutHeaderTemplate>
         <DataTemplate>

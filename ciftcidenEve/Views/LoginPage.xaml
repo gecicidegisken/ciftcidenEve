@@ -5,10 +5,48 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ciftcidenEve.Views.LoginPage"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="False"> 
+   
+    
     <ContentPage.Content>
-        <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
-            <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}"/>
+        <StackLayout>
+            <ContentView Padding="0,10,0,100" VerticalOptions="Center">
+            <Image Source="ciftcidenEve_logo.png" VerticalOptions="Center"  />
+        </ContentView>
+            <Entry   Text = "{Binding Email}" Placeholder = "Email"  
+                         PlaceholderColor = "Gray" HeightRequest = "80"  
+                         Keyboard = "Email"  
+                         TextColor = "Black" 
+                      />
+            <Entry  Text = "{Binding Password}" Placeholder = "Şifre"  
+                           PlaceholderColor = "Gray" HeightRequest = "40"  
+                           IsPassword = "True"  
+                           TextColor = "Black" />
+         
+
+            <Button Margin="0,20,0,20" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" WidthRequest="250" Text="GİRİŞ YAP" Command="{Binding LoginCommand}" FontSize = "Large"/>
+           
+            
+            <Label HorizontalOptions="Center" Padding="0,30,0,0">
+                <Label.FormattedText  >
+                    <FormattedString>
+                        <Span  Text="Hesabınız yoksa hemen üye olabilirsiniz.  " FontSize="Default"></Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            
+            <Button BorderColor="Transparent" 
+                    BackgroundColor="Transparent" 
+                    Text="Üye Ol" 
+                    TextColor="Orange"
+                    Command="{Binding SignUpCommand}"
+                    FontSize="Body"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    >
+                
+            </Button>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

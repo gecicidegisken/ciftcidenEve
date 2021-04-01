@@ -1,0 +1,1 @@
+﻿ --> Sign up sayfasından sonra geri tuşuna basınca uygulamadan çıkıyor, giriş yapma ekranına geri dönsün

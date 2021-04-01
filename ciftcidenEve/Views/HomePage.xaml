@@ -73,13 +73,7 @@
                     <Label HeightRequest="75" TextColor="#000" FontSize="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="1" Text="Hıyar" BackgroundColor="GreenYellow"/>
                     <Label HeightRequest="75" TextColor="#000" FontSize="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="1" Grid.Row="1" Text="Elma" BackgroundColor="Yellow"/>
                     <Label HeightRequest="75" TextColor="#000" FontSize="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="2" Text="Üzüm" BackgroundColor="Purple"/>
-                    <Label HeightRequest="75" TextColor="#000" FontSize="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="1" Grid.Row="2" Text="Hilalin bal dudakları" BackgroundColor="Red"/>
-                    <Label HeightRequest="75" TextColor="#000" FontSize="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="3" Text="Hilalin bal dudakları" BackgroundColor="Red"/>
-                    <Label HeightRequest="75" TextColor="#000" FontSize="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="1" Grid.Row="3" Text="Hilalin bal dudakları" BackgroundColor="Red"/>
-                    <Label HeightRequest="75" TextColor="#000" FontSize="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="4" Text="Hilalin bal dudakları" BackgroundColor="Red"/>
-                    <Label HeightRequest="75" TextColor="#000" FontSize="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="1" Grid.Row="4" Text="Hilalin bal dudakları" BackgroundColor="Red"/>
-                    <Label HeightRequest="75" TextColor="#000" FontSize="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="5" Text="Hilalin bal dudakları" BackgroundColor="Red"/>
-                    <Label HeightRequest="75" TextColor="#000" FontSize="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="1" Grid.Row="5" Text="Hilalin bal dudakları" BackgroundColor="Red"/>
+                   
                 </Grid>
 
             </ScrollView>

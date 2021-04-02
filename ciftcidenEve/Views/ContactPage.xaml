@@ -44,16 +44,14 @@ hizmet vermektedir. "></Span>
                 </Label.FormattedText>
                 
             </Label>
-
-            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-               
-                <!--social media icons-->
-                <Button ImageSource="urun_yag_icon.png" Command="{Binding SocialMediaCommand}" CommandParameter="https://twitter.com/ciftcideneve" BackgroundColor="Transparent"></Button>
-                <Button ImageSource="twitterIcon.png" Command="{Binding SocialMediaCommand}" CommandParameter="https://twitter.com/ciftcideneve" BackgroundColor="Transparent"> </Button>
-                <Button ImageSource="facebookIcon.png" Command="{Binding SocialMediaCommand}" CommandParameter="https://www.facebook.com/ciftcideneve"  BackgroundColor="Transparent"> </Button>
-                <Button ImageSource="linkedinIcon.png" Command="{Binding SocialMediaCommand}" CommandParameter="https://www.linkedin.com/company/ciftcideneve/"  BackgroundColor="Transparent"> </Button>
-                <Button ImageSource="instagramIcon.png" Command="{Binding SocialMediaCommand}" CommandParameter="https://www.instagram.com/ciftcideneve/"  BackgroundColor="Transparent"> </Button>
-          
+ 
+            
+            <!--social media icons-->
+            <StackLayout Padding="0,30,0,0" HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                <ImageButton WidthRequest="56" Source="twitterIcon.png" BackgroundColor="Transparent" Command="{Binding SocialMediaCommand}" CommandParameter="https://twitter.com/ciftcideneve" />
+                <ImageButton WidthRequest="56" Source="facebookIcon.png" BackgroundColor="Transparent" Command="{Binding SocialMediaCommand}" CommandParameter="https://www.facebook.com/ciftcideneve"/>
+                <ImageButton WidthRequest="56" Source="linkedinIcon.png" BackgroundColor="Transparent" Command="{Binding SocialMediaCommand}" CommandParameter="https://www.linkedin.com/company/ciftcideneve"/>
+                <ImageButton WidthRequest="56" Source="instagramIcon.png" BackgroundColor="Transparent" Command="{Binding SocialMediaCommand}" CommandParameter="https://www.instagram.com/ciftcideneve/"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

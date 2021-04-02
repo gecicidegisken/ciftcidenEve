@@ -107,7 +107,7 @@
 
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems"  >
         <Tab Title="Bize Ulaşın">
-            <ShellContent  Route="UrunSatisPage" ContentTemplate="{DataTemplate local:UrunSatisPage}" />
+            <ShellContent  Route="ContactPage" ContentTemplate="{DataTemplate local:ContactPage}" />
         </Tab>
        
     <Tab Title="Gizlilik ve Kullanım Şartları">

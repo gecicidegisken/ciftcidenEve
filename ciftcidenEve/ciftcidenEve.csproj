@@ -12,6 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\ContactPage.xaml.cs">
+      <DependentUpon>ContactPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
@@ -21,6 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\ContactPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\SignUpPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

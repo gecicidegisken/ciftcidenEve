@@ -7,17 +7,19 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="False"
+             Shell.PresentationMode="NotAnimated">
 
     <ContentPage.BindingContext>
         <vm:SignUpViewModel />
     </ContentPage.BindingContext>
 
-    <!--İLETİSİM BİLGİLERİ FORMU-->
+    
     <StackLayout Orientation="Vertical">
-        <ContentView Padding="0,10,0,100" VerticalOptions="Center">
-            <Image Source="ciftcidenEve_logo.png" VerticalOptions="Center"  />
+        <ContentView Padding="0,50,0,100" VerticalOptions="Center">
+            <Image Source="ciftcidenEve_logo.png" VerticalOptions="CenterAndExpand"  />
         </ContentView>
+        <!--İLETİSİM BİLGİLERİ FORMU-->
         <StackLayout Orientation="Horizontal">
             <Entry Placeholder="İsim"></Entry>
             <Entry Placeholder="Soyisim"></Entry>
@@ -58,7 +60,7 @@
        
         
         <!-- UYE OL BUTONU -->
-        <Button Grid.Column="0" x:Name="signUpBtn" Text="Üye Ol">
+        <Button Grid.Column="0" x:Name="signUpBtn" Text="Üye Ol" IsEnabled="False">
             <Button.Triggers>
                 <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference checkBox}, Path=IsChecked}" Value="True">
                     <Setter Property="IsEnabled" Value="False" ></Setter>
@@ -69,16 +71,30 @@
             </Button.Triggers>
         </Button>
         <!-- UYE OL BUTONU -->
-        <!--hesabınız varsa giriş yapın-->
         
-        <Label  Padding="0,20,0,0" TextColor="Orange" >
+        <!--hesabınız varsa giriş yapın-->
+        <StackLayout Orientation="Horizontal">
+            <Label HorizontalOptions="CenterAndExpand"  Text="Hesabınız var mı?" TextColor="Green" Padding="0,5,0,0" HeightRequest="20"></Label>
+        </StackLayout>
+        <Button Command="{Binding LoginCommand}" Text="Giriş Yapın" BackgroundColor="Transparent" TextColor="Orange" Padding="0,0,0,0" Margin="0,0,0,0"></Button>
+        
+        <!--<Label  Padding="0,20,0,0" TextColor="Orange" >
             <Label.FormattedText>
                 <FormattedString>
                     <Span TextColor="Green" Text="Hesabınız var mı? "></Span>
-                    <Span TextColor="Orange" Text=" Giriş Yapın"></Span>
-                    <!--  buraya login sayfasının linki -->
+                    
+                    <Span TextColor="Orange" Text=" Giriş Yapın" FontAttributes="Bold">
+                     
+                        <Span.GestureRecognizers>
+                            <TapGestureRecognizer  Command="{Binding LoginCommand}" NumberOfTapsRequired="1" >
+                                
+                            </TapGestureRecognizer>
+                        </Span.GestureRecognizers>
+                    </Span>
+                    --><!--  buraya login sayfasının linki --><!--
                 </FormattedString>
             </Label.FormattedText>
-        </Label>
+        </Label>-->
+     
     </StackLayout>
 </ContentPage>

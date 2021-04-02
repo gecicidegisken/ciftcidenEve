@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ciftcidenEve.Views.ContactPage"
+             xmlns:vm="clr-namespace:ciftcidenEve.ViewModels"
+             xmlns:local="clr-namespace:ciftcidenEve"
+             Title="{Binding Title}"
+             Shell.NavBarHasShadow="False"
+             >
+
+    <ContentPage.BindingContext>
+        <vm:ContactViewModel />
+    </ContentPage.BindingContext>
+
+    
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <ContentView Padding="0,10,0,100" VerticalOptions="Center">
+                <Image Source="ciftcidenEve_logo.png" VerticalOptions="Center"  />
+            </ContentView>
+            <Label HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString >
+                        <Span LineHeight="3" Text="Whatsapp:" TextColor="Orange" FontSize="Large" FontAttributes="Bold">
+
+                        </Span>
+                        <Span FontSize="Medium" LineHeight="3" CharacterSpacing="1" Text=" 0538 894 34 34" >
+
+                        </Span>
+                        <Span  Text="&#x0a;Müşteri temsilcimiz hafta içi 09:00-18:00 saatleri arasında
+hizmet vermektedir. "></Span>
+                        <Span LineHeight="3" Text=" &#x0a;Email: " TextColor="Orange" FontSize="Large" FontAttributes="Bold">
+
+                        </Span>
+                        <Span Text="info@ciftcideneve.com" FontSize="Large" >
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding EmailCommand}">
+                                    
+                                </TapGestureRecognizer>
+                            </Span.GestureRecognizers>
+                        </Span>
+
+                    </FormattedString>
+                </Label.FormattedText>
+                
+            </Label>
+
+            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+               
+                <!--social media icons-->
+                <Button ImageSource="urun_yag_icon.png" Command="{Binding SocialMediaCommand}" CommandParameter="https://twitter.com/ciftcideneve" BackgroundColor="Transparent"></Button>
+                <Button ImageSource="twitterIcon.png" Command="{Binding SocialMediaCommand}" CommandParameter="https://twitter.com/ciftcideneve" BackgroundColor="Transparent"> </Button>
+                <Button ImageSource="facebookIcon.png" Command="{Binding SocialMediaCommand}" CommandParameter="https://www.facebook.com/ciftcideneve"  BackgroundColor="Transparent"> </Button>
+                <Button ImageSource="linkedinIcon.png" Command="{Binding SocialMediaCommand}" CommandParameter="https://www.linkedin.com/company/ciftcideneve/"  BackgroundColor="Transparent"> </Button>
+                <Button ImageSource="instagramIcon.png" Command="{Binding SocialMediaCommand}" CommandParameter="https://www.instagram.com/ciftcideneve/"  BackgroundColor="Transparent"> </Button>
+          
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

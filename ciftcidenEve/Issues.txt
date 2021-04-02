@@ -8,4 +8,6 @@
  -- Login sayfasından sonra geri tuşuna basınca uygulamadan çıkıyor, giriş yapma ekranına geri dönsün
  -- Üye ol sayfasına captcha (sitede var ama app'de gerekli mi emin değilim)
  ++ Üye ol sayfasına okudum onayladım
- -- üye ol sayfasında giriş yapın linki
+ ++ üye ol sayfasında giriş yapın linki
+ -- Bize ulaş, hakkımızda ve gizlilik sayfaları
+ -- bize ulaş sayfasında emaile tıklayınca mail app'in açılması 

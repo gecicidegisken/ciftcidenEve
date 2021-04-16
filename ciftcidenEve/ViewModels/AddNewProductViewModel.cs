@@ -19,18 +19,21 @@ namespace ciftcidenEve.ViewModels
 
         public AddNewProductViewModel()
         {
-            SaveCommand = new Command(OnSave, ValidateSave);
+            
+            SaveCommand = new Command(OnSave);
             CancelCommand = new Command(OnCancel);
             this.PropertyChanged +=
                 (_, __) => SaveCommand.ChangeCanExecute();
         }
-        private bool ValidateSave()
-        { //isim ve açıklama boş bırakılamaz
-          //diğer alanların da boş bırakılmamasını garantiye al
-            return !String.IsNullOrWhiteSpace(Text)
-                && !String.IsNullOrWhiteSpace(Description);
+
+
+        //private bool ValidateSave()
+        //{ //isim ve açıklama boş bırakılamaz
+        //  //diğer alanların da boş bırakılmamasını garantiye al
+        //    return !String.IsNullOrWhiteSpace(Text)
+        //        && !String.IsNullOrWhiteSpace(Description);
                
-        }
+        //}
 
         private async void OnCancel()
         {
@@ -40,17 +43,20 @@ namespace ciftcidenEve.ViewModels
 
         private async void OnSave()
         {
-            Item newItem = new Item()
+            Product newItem = new Product()
             {
-                Id = Guid.NewGuid().ToString(),
+                //Id = Convert.ToInt32(Guid.NewGuid()),
                 Text = Text,
-                Description = Description
+                Description = Description,
+             //   Price = Price,
+                  Tag = Tag
             };
 
-            await DataStore.AddItemAsync(newItem);
+           await DataStore.AddItemAsync(newItem);
 
             // This will pop the current page off the navigation stack
             await Shell.Current.GoToAsync("..");
         }
+        
     }
 }

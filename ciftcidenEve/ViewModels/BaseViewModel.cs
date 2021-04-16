@@ -10,7 +10,7 @@ namespace ciftcidenEve.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+        public IDataStore<Product> DataStore => DependencyService.Get<IDataStore<Product>>();
 
         bool isBusy = false;
         public bool IsBusy

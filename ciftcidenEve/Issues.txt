@@ -4,8 +4,8 @@
  
  
  
- -- Sign up sayfasından sonra geri tuşuna basınca uygulamadan çıkıyor, giriş yapma ekranına geri dönsün
- -- Login sayfasından sonra geri tuşuna basınca uygulamadan çıkıyor, giriş yapma ekranına geri dönsün
+ ++ Sign up sayfasından sonra geri tuşuna basınca uygulamadan çıkıyor, giriş yapma ekranına geri dönsün
+ ++ Login sayfasından sonra geri tuşuna basınca uygulamadan çıkıyor, giriş yapma ekranına geri dönsün
  -- Üye ol sayfasına captcha (sitede var ama app'de gerekli mi emin değilim)
  ++ Üye ol sayfasına okudum onayladım
  ++ üye ol sayfasında giriş yapın linki

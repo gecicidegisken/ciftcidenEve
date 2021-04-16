@@ -19,5 +19,10 @@ namespace ciftcidenEve.Views
             await Task.Delay(3000);
             mRefreshViewHomePage.IsRefreshing = false;
         }
+        protected override bool OnBackButtonPressed()
+        {
+            Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
+            return true;
+        }
     }
 }

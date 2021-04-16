@@ -9,8 +9,12 @@ namespace ciftcidenEve.ViewModels
 {
     public class NewItemViewModel : BaseViewModel
     {
-        private string text;
-        private string description;
+        public Command SaveCommand { get; }
+        public Command CancelCommand { get; }
+        public string Text { get; set; }
+       public string Description { get; set; }
+       public string Tag { get; set; }
+       public float Price { get; set; }
 
         public NewItemViewModel()
         {
@@ -22,24 +26,14 @@ namespace ciftcidenEve.ViewModels
 
         private bool ValidateSave()
         {
-            return !String.IsNullOrWhiteSpace(text)
-                && !String.IsNullOrWhiteSpace(description);
+            return !String.IsNullOrWhiteSpace(Text)
+                && !String.IsNullOrWhiteSpace(Description);
         }
 
-        public string Text
-        {
-            get => text;
-            set => SetProperty(ref text, value);
-        }
+       
 
-        public string Description
-        {
-            get => description;
-            set => SetProperty(ref description, value);
-        }
 
-        public Command SaveCommand { get; }
-        public Command CancelCommand { get; }
+ 
 
         private async void OnCancel()
         {
@@ -49,14 +43,16 @@ namespace ciftcidenEve.ViewModels
 
         private async void OnSave()
         {
-            Item newItem = new Item()
+            Product newItem = new Product()
             {
-                Id = Guid.NewGuid().ToString(),
+                Id = Convert.ToInt32(Guid.NewGuid()),
                 Text = Text,
-                Description = Description
+                Description = Description,
+                Price = Price,
+                Tag = Tag
             };
 
-            await DataStore.AddItemAsync(newItem);
+           // await DataStore.AddItemAsync(newItem);
 
             // This will pop the current page off the navigation stack
             await Shell.Current.GoToAsync("..");

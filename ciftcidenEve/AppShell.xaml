@@ -96,11 +96,9 @@
         <Tab Title="Ana Sayfa" Icon="homePage_icon.png">
             <ShellContent Route="HomePage" ContentTemplate="{DataTemplate local:HomePage}" />
         </Tab>
-        <Tab Title="Tüm Ürünler" Icon="tumUrunler_icon.png">
-            <ShellContent Route="ProductsPage" ContentTemplate="{DataTemplate local:ProductsPage}" />
-        </Tab>
+       
         <Tab Title="Ürün Sat" Icon="satici_icon.png">
-            <ShellContent Route="ProductsPage" ContentTemplate="{DataTemplate local:ProductsPage}" />
+            <ShellContent Route="ProductsPage" ContentTemplate="{DataTemplate local:UrunSatisPage}" />
         </Tab>
         <Tab Title="Sepet" Icon="card_icon.png">
             <ShellContent Route="CardPage" ContentTemplate="{DataTemplate local:CardPage}" />

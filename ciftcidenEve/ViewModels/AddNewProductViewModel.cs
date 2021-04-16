@@ -9,10 +9,12 @@ namespace ciftcidenEve.ViewModels
 {
   public class AddNewProductViewModel : BaseViewModel
     {
-        private string text;
-        private string description;
         public Command SaveCommand { get; }
         public Command CancelCommand { get; }
+        public string Text { get; set; }
+        public string Description { get; set; }
+        public string Tag { get; set; }
+        public float Price { get; set; }
 
 
         public AddNewProductViewModel()
@@ -25,24 +27,11 @@ namespace ciftcidenEve.ViewModels
         private bool ValidateSave()
         { //isim ve açıklama boş bırakılamaz
           //diğer alanların da boş bırakılmamasını garantiye al
-            return !String.IsNullOrWhiteSpace(text)
-                && !String.IsNullOrWhiteSpace(description);
+            return !String.IsNullOrWhiteSpace(Text)
+                && !String.IsNullOrWhiteSpace(Description);
                
         }
 
-        public string Text
-        {
-            get => text;
-            set => SetProperty(ref text, value);
-        }
-
-        public string Description
-        {
-            get => description;
-            set => SetProperty(ref description, value);
-        }
-
-      
         private async void OnCancel()
         {
             // This will pop the current page off the navigation stack

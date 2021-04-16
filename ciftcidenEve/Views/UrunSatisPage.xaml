@@ -1,12 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ciftcidenEve.Views.UrunSatisPage">
+             x:Class="ciftcidenEve.Views.UrunSatisPage"
+             xmlns:vm="clr-namespace:ciftcidenEve.ViewModels">
+
+    <ContentPage.BindingContext>
+        <vm:AddNewProductViewModel />
+    </ContentPage.BindingContext>
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Spacing="3" Padding="15">
+            <Label Text="Ürün Adı" FontSize="Medium" />
+            <Entry Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" />
+            <Label Text="Ürün Açıklaması" FontSize="Medium" />
+            <Editor Text="{Binding Description, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+            <Picker x:Name="TagPicker" Title="Ürün Kategorisi Seçin" Margin="0,10,0,10">
+                <Picker.Items>
+                    <x:String > Sos ve Sirke </x:String>
+                    <x:String > Yağ </x:String>
+                    <x:String > Kahvaltılık </x:String>
+                    <x:String > Sağlıklı İçecek </x:String>
+                    <x:String > Kişisel Bakım </x:String>
+                    <x:String > Tohum, Fidan, Çiçek </x:String>
+                    <x:String > Et ve Balık </x:String>
+                    
+                </Picker.Items>
+            </Picker>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

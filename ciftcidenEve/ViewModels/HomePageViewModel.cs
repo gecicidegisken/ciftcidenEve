@@ -35,7 +35,7 @@ namespace ciftcidenEve.ViewModels
         }
         private async void OnAddItem(object obj)
         {
-            await Shell.Current.GoToAsync(nameof(NewItemPage));  //ürün satış page'ye gidecek şekilde yönlendirilecek
+            await Shell.Current.GoToAsync("//UrunSatisPage");  //ürün satış page'ye gidecek şekilde yönlendirilecek
         }
         private async void ShowItemDetails(Product product)
         {

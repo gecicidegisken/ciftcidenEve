@@ -8,7 +8,7 @@ namespace ciftcidenEve.Views
     {
         public ItemDetailPage()
         {
-            InitializeComponent();
+            //InitializeComponent();
             BindingContext = new ItemDetailViewModel();
         }
     }

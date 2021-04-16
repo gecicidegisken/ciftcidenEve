@@ -102,6 +102,9 @@
         <Tab Title="Ürün Sat" Icon="satici_icon.png">
             <ShellContent Route="ProductsPage" ContentTemplate="{DataTemplate local:ProductsPage}" />
         </Tab>
+        <Tab Title="Sepet" Icon="card_icon.png">
+            <ShellContent Route="CardPage" ContentTemplate="{DataTemplate local:CardPage}" />
+        </Tab>
     </FlyoutItem>
    
 

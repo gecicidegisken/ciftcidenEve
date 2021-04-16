@@ -14,32 +14,44 @@
 
     
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical">
+        <StackLayout>
+            <!--logo-->
             <ContentView Padding="0,10,0,100" VerticalOptions="Center">
                 <Image Source="ciftcidenEve_logo.png" VerticalOptions="Center"  />
             </ContentView>
-            <Label HorizontalOptions="Center">
-                <Label.FormattedText>
+            
+            <!--iletişim adresleri-->
+            <Label Padding="10,0,0,0">
+                <Label.FormattedText >
                     <FormattedString >
-                        <Span LineHeight="3" Text="Whatsapp:" TextColor="Orange" FontSize="Large" FontAttributes="Bold">
+                        <Span Text="Whatsapp:" TextColor="Orange" FontSize="Large" FontAttributes="Bold">
 
                         </Span>
-                        <Span FontSize="Medium" LineHeight="3" CharacterSpacing="1" Text=" 0538 894 34 34" >
+                        <Span FontSize="Medium"  CharacterSpacing="1" Text=" 0538 894 34 34" >
 
                         </Span>
-                        <Span  Text="&#x0a;Müşteri temsilcimiz hafta içi 09:00-18:00 saatleri arasında
-hizmet vermektedir. "></Span>
-                        <Span LineHeight="3" Text=" &#x0a;Email: " TextColor="Orange" FontSize="Large" FontAttributes="Bold">
+                        
+                        
+                        <Span Text=" &#x0a;Email: " TextColor="Orange" FontSize="Large" FontAttributes="Bold">
 
                         </Span>
+                        
+                    </FormattedString>
+                </Label.FormattedText>
+                
+            </Label>
+            <Label Padding="10,10,0,0">
+                <Label.FormattedText>
+                    <FormattedString>
+
                         <Span Text="info@ciftcideneve.com" FontSize="Large" >
                             <Span.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding EmailCommand}">
-                                    
                                 </TapGestureRecognizer>
                             </Span.GestureRecognizers>
                         </Span>
-
+                        <Span  Text="&#x0a;Müşteri temsilcimiz hafta içi 09:00-18:00 saatleri arasında
+                            hizmet vermektedir. "></Span>
                     </FormattedString>
                 </Label.FormattedText>
                 

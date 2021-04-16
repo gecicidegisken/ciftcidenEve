@@ -3,7 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ciftcidenEve.Views.HomePage"
              xmlns:vm="clr-namespace:ciftcidenEve.ViewModels"
+             xmlns:local="clr-namespace:ciftcidenEve.ViewModels"
              Title="{Binding Title}"
+           
+             xmlns:model="clr-namespace:ciftcidenEve.Models"  
+             x:Name="BrowseItemsPage"
              >
    
     
@@ -21,6 +25,7 @@
         <ToolbarItem Order="Primary" Priority="0" IconImageSource="mainLogo.png"></ToolbarItem>
         <ToolbarItem Text=" " Order="Primary" Priority="1"></ToolbarItem>
         <ToolbarItem Text=" " Order="Primary" Priority="2"></ToolbarItem>
+        
         <ToolbarItem  Order="Primary"  Priority="3" Text="Giriş Yap" Command="{Binding LoginCommand}">
         </ToolbarItem>
        
@@ -37,7 +42,7 @@
        
        
     
-        <Grid Grid.Row="0">  <!-- ürün iconları grid -->
+        <Grid Grid.Row="0">  <!-- kategori iconları grid -->
             <Grid.RowDefinitions >
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
@@ -62,25 +67,32 @@
 
            
 
-        </Grid> <!-- ürün iconları grid -->
+        </Grid> <!-- kategori iconları grid -->
        
-        
         <SearchBar HorizontalOptions="CenterAndExpand" Grid.Row="1" Placeholder="Ürün Ara" Margin="0,0,0,10" HeightRequest="50" />
+        
         <!--ürünlerin listesi-->
-        <RefreshView Grid.Row="2" x:Name="mRefreshViewHomePage" Refreshing="RefreshView_Refreshing" RefreshColor="Green">
-            <ScrollView x:Name="mScrollViewHomePage" Orientation="Vertical">
+        <RefreshView   x:DataType="local:HomePageViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Grid.Row="2" x:Name="mRefreshViewHomePage" Refreshing="RefreshView_Refreshing" RefreshColor="Green">
+            <!--<ScrollView x:Name="mScrollViewHomePage" Orientation="Vertical" >
                 <Grid BackgroundColor="White" x:Name="mGridViewProductsHomePage">
+                   
                     <Label HeightRequest="75" TextColor="#000" FontSize="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="0" Text="Domates" BackgroundColor="Red"/>
+                    <Button Command="ItemDetailCommand" Text="Ürün"></Button>
                     <Label HeightRequest="75" TextColor="#000" FontSize="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="1" Grid.Row="0" Text="Çilek" BackgroundColor="Red"/>
                     <Label HeightRequest="75" TextColor="#000" FontSize="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="1" Text="Salatalık" BackgroundColor="GreenYellow"/>
                     <Label HeightRequest="75" TextColor="#000" FontSize="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="1" Grid.Row="1" Text="Elma" BackgroundColor="Yellow"/>
                     <Label HeightRequest="75" TextColor="#000" FontSize="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="2" Text="Üzüm" BackgroundColor="Purple"/>
                 </Grid>
 
-            </ScrollView>
+            </ScrollView>-->
+            
         </RefreshView>
         <!--ürünlerin listesi-->
-
+        
+        
+        <!--test amaçlı buton-->
+        
+        <Button Grid.Row="3" Text="Ekle"  Command="{Binding AddItemCommand}"></Button>
     </Grid> <!-- main grid -->
     
 

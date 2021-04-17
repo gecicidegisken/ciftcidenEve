@@ -1,17 +1,18 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using ciftcidenEve.ViewModels;
 
 namespace ciftcidenEve.Views
 {
     public partial class HomePage : ContentPage
     {
+        HomePageViewModel _viewModel;
         public HomePage()
         {
             InitializeComponent();
-            
+            BindingContext = _viewModel = new HomePageViewModel();
+
         }
 
         async private void RefreshView_Refreshing(object sender, EventArgs e)
@@ -23,6 +24,11 @@ namespace ciftcidenEve.Views
         {
             Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
             return true;
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            _viewModel.OnAppearing();
         }
     }
 }

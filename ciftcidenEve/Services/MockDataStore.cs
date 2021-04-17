@@ -14,12 +14,9 @@ namespace ciftcidenEve.Services
         {
             items = new List<Product>()
             {
-                new Product {  Text = "First item", Description="This is an item description." },
-                new Product {  Text = "Second item", Description="This is an item description." },
-                new Product {  Text = "Third item", Description="This is an item description." },
-                new Product {  Text = "Fourth item", Description="This is an item description." },
-                new Product {  Text = "Fifth item", Description="This is an item description." },
-                new Product {  Text = "Sixth item", Description="This is an item description." }
+                new Product {  Text = "First item", Description="This is an item description.", Price=10, Tag = "Yağ"},
+                new Product {  Text = "Second item", Description="This is an item description.", Price=20, Tag = "Sos ve Sirke" },
+                
             };
         }
 

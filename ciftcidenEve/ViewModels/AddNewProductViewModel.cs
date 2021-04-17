@@ -22,8 +22,8 @@ namespace ciftcidenEve.ViewModels
             
             SaveCommand = new Command(OnSave);
             CancelCommand = new Command(OnCancel);
-            this.PropertyChanged +=
-                (_, __) => SaveCommand.ChangeCanExecute();
+            //this.PropertyChanged +=
+            //    (_, __) => SaveCommand.ChangeCanExecute();
         }
 
 
@@ -48,14 +48,12 @@ namespace ciftcidenEve.ViewModels
                 //Id = Convert.ToInt32(Guid.NewGuid()),
                 Text = Text,
                 Description = Description,
-             //   Price = Price,
-                  Tag = Tag
+                Price = Price,
+                Tag = Tag
             };
 
-           await DataStore.AddItemAsync(newItem);
-
-            // This will pop the current page off the navigation stack
-            await Shell.Current.GoToAsync("..");
+            await DataStore.AddItemAsync(newItem);
+            await Shell.Current.GoToAsync("//HomePage");
         }
         
     }

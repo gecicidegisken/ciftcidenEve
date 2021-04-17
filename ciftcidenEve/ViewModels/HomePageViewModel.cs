@@ -14,6 +14,7 @@ namespace ciftcidenEve.ViewModels
 {
     public class HomePageViewModel : BaseViewModel
     {
+        private Product _selectedItem;
         public ObservableCollection<Product> Products { get; }
         public ICommand LoginCommand { get; }
         public ICommand ItemDetailCommand { get; }
@@ -63,13 +64,29 @@ namespace ciftcidenEve.ViewModels
         {
             await Shell.Current.GoToAsync("//UrunSatisPage"); 
         }
-        private void ShowItemDetails(Product product)
+        public Product SelectedItem
+        {
+            get => _selectedItem;
+            set
+            {
+                SetProperty(ref _selectedItem, value);
+                ShowItemDetails(value);
+            }
+        }
+        public void OnAppearing()
+        {
+            IsBusy = true;
+            SelectedItem = null;
+        }
+        private async void ShowItemDetails(Product product)
         {
             if (product == null)
                 return;
 
             // This will push the ItemDetailPage onto the navigation stack
-            details = new ProductDetailViewModel(product.Text, product.Tag, product.Price);
+            //details = new ProductDetailViewModel(product.Text, product.Tag, product.Price);
+            //await Shell.Current.GoToAsync($"{nameof(ProductDetailPage)}?{nameof(details)}");
+            await Shell.Current.GoToAsync($"{nameof(ProductDetailPage)}?{nameof(ProductDetailViewModel.ItemId)}={product.Id}");
         }
 
     }

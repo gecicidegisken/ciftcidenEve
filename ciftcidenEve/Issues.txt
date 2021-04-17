@@ -4,10 +4,18 @@
  
  
  
- ++ Sign up sayfasından sonra geri tuşuna basınca uygulamadan çıkıyor, giriş yapma ekranına geri dönsün
- ++ Login sayfasından sonra geri tuşuna basınca uygulamadan çıkıyor, giriş yapma ekranına geri dönsün
+
+ >> bütün sayfalardan geri çıkınca ana sayfaya dönse iyi olabilir
+ >> refresh view yenilenmeden ürünler yüklenmiyor (ilk açılışta)
+ >> sepete eklemek
+ >> 5 kategori, 5 görsel ürün
+
+
  -- Üye ol sayfasına captcha (sitede var ama app'de gerekli mi emin değilim)
- ++ Üye ol sayfasına okudum onayladım
- ++ üye ol sayfasında giriş yapın linki
  -- Bize ulaş, hakkımızda ve gizlilik sayfaları
  -- bize ulaş sayfasında emaile tıklayınca mail app'in açılması 
+
+  ++ Sign up sayfasından sonra geri tuşuna basınca uygulamadan çıkıyor, giriş yapma ekranına geri dönsün
+ ++ Login sayfasından sonra geri tuşuna basınca uygulamadan çıkıyor, giriş yapma ekranına geri dönsün
+  ++ Üye ol sayfasına okudum onayladım
+ ++ üye ol sayfasında giriş yapın linki

@@ -46,10 +46,10 @@ namespace ciftcidenEve.ViewModels
             Product newItem = new Product()
             {
                 //Id = Convert.ToInt32(Guid.NewGuid()),
-                Text = Text,
-                Description = Description,
-                Price = Price,
-                Tag = Tag
+                Text = this.Text,
+                Description = this.Description,
+                Price = this.Price,
+                Tag = this.Tag
             };
 
             await DataStore.AddItemAsync(newItem);

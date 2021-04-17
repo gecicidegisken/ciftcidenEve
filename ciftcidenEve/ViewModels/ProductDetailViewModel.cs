@@ -60,18 +60,20 @@ namespace ciftcidenEve.ViewModels
         {
             try
             {
-                var item = await DataStore.GetItemAsync(itemId);
+                Product item = await DataStore.GetItemAsync(itemId);
                 Id = item.Id;
                 Text = item.Text;
                 Tag = item.Tag;
                 Description = item.Description;
                 Price = item.Price;
+           
               
             }
             catch (Exception)
             {
                 Debug.WriteLine("Failed to Load Item");
             }
+            this.OnPropertyChanged();
         }
 
     }

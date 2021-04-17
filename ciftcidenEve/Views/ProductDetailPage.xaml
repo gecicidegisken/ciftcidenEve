@@ -9,11 +9,11 @@
     </ContentPage.BindingContext>
     
     <StackLayout  Spacing="20" Padding="15">
-        <Label Text="Ürün Adı:" FontSize="Medium" />
-        <Label Text="{Binding Text}" FontSize="Small"/>
+        <Label FontSize="Medium" />
+        <Label x:Name="mTextTitle" Text="{Binding Text}" FontSize="Small"/>
 
         <Label Text="Fiyat:" FontSize="Medium" />
-        <Label Text="{Binding Price}" FontSize="Small"/>
+        <Label x:Name="mTextPrice" Text="{Binding Price}" FontSize="Small"/>
 
 
         <Label Text="Kategori:" FontSize="Medium" />

@@ -1,5 +1,6 @@
 ﻿using SQLite;
 using System;
+using Xamarin.Forms;
 
 namespace ciftcidenEve.Models
 {

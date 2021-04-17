@@ -10,11 +10,14 @@ namespace ciftcidenEve.Views
         HomePageViewModel _viewModel;
         public HomePage()
         {
+            
             InitializeComponent();
-            BindingContext = _viewModel = new HomePageViewModel();
+            
+            _viewModel = new HomePageViewModel();
+            BindingContext = _viewModel;
 
+            
         }
-
         async private void RefreshView_Refreshing(object sender, EventArgs e)
         {
             await Task.Delay(3000);
@@ -29,6 +32,7 @@ namespace ciftcidenEve.Views
         {
             base.OnAppearing();
             _viewModel.OnAppearing();
+
         }
     }
 }

@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ciftcidenEve.Android", "ciftcidenEve.Android\ciftcidenEve.Android.csproj", "{F063B026-8B43-42AC-9FC5-6FD205AF30AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ciftcidenEve", "ciftcidenEve\ciftcidenEve.csproj", "{347325B9-1233-4271-84CD-CD9BD478DF2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ciftcidenEve", "ciftcidenEve\ciftcidenEve.csproj", "{347325B9-1233-4271-84CD-CD9BD478DF2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

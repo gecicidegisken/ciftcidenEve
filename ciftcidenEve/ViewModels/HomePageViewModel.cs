@@ -33,7 +33,7 @@ namespace ciftcidenEve.ViewModels
             Products =new ObservableCollection<Product>();
             ItemTapped = new Command<Product>(ShowItemDetails);
         }
-
+        
         async Task ExecuteLoadItemsCommand()
         {
             IsBusy = true;
@@ -62,8 +62,9 @@ namespace ciftcidenEve.ViewModels
         }
         private async void OnAddItem(object obj)
         {
-            await Shell.Current.GoToAsync("//UrunSatisPage"); 
+            await Shell.Current.GoToAsync("//UrunSatisPage");
         }
+       
         public Product SelectedItem
         {
             get => _selectedItem;
@@ -75,6 +76,15 @@ namespace ciftcidenEve.ViewModels
         }
         public void OnAppearing()
         {
+            if (App.authorization == true)
+            {
+                BtnText = "Hesabım";
+            }
+            else
+            {
+                BtnText = "Giriş Yap";
+            }
+            this.OnPropertyChanged("BtnText");
             IsBusy = true;
             SelectedItem = null;
         }
@@ -87,8 +97,7 @@ namespace ciftcidenEve.ViewModels
             //details = new ProductDetailViewModel(product.Text, product.Tag, product.Price);
             //await Shell.Current.GoToAsync($"{nameof(ProductDetailPage)}?{nameof(details)}");
             await Shell.Current.GoToAsync($"{nameof(ProductDetailPage)}?{nameof(ProductDetailViewModel.ItemId)}={product.Id}");
-            Application.Current.MainPage.DisplayAlert("yauv hadi garşim", product.Id.ToString(), "yo", "ok");
-        
+
         }
 
     }

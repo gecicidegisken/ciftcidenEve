@@ -9,19 +9,19 @@ namespace ciftcidenEve.Services
     public class MockDataStore : IDataStore<Product>
     {
         readonly List<Product> items;
-
         public MockDataStore()
         {
             items = new List<Product>()
             {
-                new Product {  Text = "First item", Description="This is an item description.", Price=10, Tag = "Yağ"},
-                new Product {  Text = "Second item", Description="This is an item description.", Price=20, Tag = "Sos ve Sirke" },
+                new Product { Id =1, Text = "First item", Description="This is an item description.", Price=10, Tag = "Yağ"},
+                new Product { Id = 2, Text = "Second item", Description="This is an item description.", Price=20, Tag = "Sos ve Sirke" },
                 
             };
         }
 
         public async Task<bool> AddItemAsync(Product item)
         {
+            item.Id = items.Count + 1;
             items.Add(item);
 
             return await Task.FromResult(true);

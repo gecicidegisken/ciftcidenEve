@@ -18,7 +18,7 @@ namespace ciftcidenEve.Views
         }
         protected override bool OnBackButtonPressed()
         {
-            Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
+            Shell.Current.GoToAsync($"//{nameof(HomePage)}");
             return true;
         }
     }

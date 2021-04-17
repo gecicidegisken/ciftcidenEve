@@ -87,7 +87,7 @@ namespace ciftcidenEve.ViewModels
             //details = new ProductDetailViewModel(product.Text, product.Tag, product.Price);
             //await Shell.Current.GoToAsync($"{nameof(ProductDetailPage)}?{nameof(details)}");
             await Shell.Current.GoToAsync($"{nameof(ProductDetailPage)}?{nameof(ProductDetailViewModel.ItemId)}={product.Id}");
-            Application.Current.MainPage.DisplayAlert("yauv hadi garşim", product.Id.ToString(), "yo", "ok");
+        
         
         }
 

@@ -1,8 +1,5 @@
 ﻿using ciftcidenEve.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace ciftcidenEve.ViewModels
@@ -15,6 +12,7 @@ namespace ciftcidenEve.ViewModels
         public string Description { get; set; }
         public string Tag { get; set; }
         public float Price { get; set; }
+        public Image Image { get; set; }
 
 
         public AddNewProductViewModel()
@@ -38,7 +36,7 @@ namespace ciftcidenEve.ViewModels
         private async void OnCancel()
         {
             // This will pop the current page off the navigation stack
-            await Shell.Current.GoToAsync("..");
+            await Shell.Current.GoToAsync("//HomePage");
         }
 
         private async void OnSave()
@@ -55,6 +53,9 @@ namespace ciftcidenEve.ViewModels
             await DataStore.AddItemAsync(newItem);
             await Shell.Current.GoToAsync("//HomePage");
         }
-        
+
+
+       
+
     }
 }

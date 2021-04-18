@@ -1,9 +1,8 @@
 ﻿using ciftcidenEve.Models;
 using SQLite;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
+using Xamarin.Forms;
 using System.Threading.Tasks;
 
 namespace ciftcidenEve
@@ -25,14 +24,14 @@ namespace ciftcidenEve
             await db.CreateTableAsync<ciftcidenEve.Models.Product>();
         }
         //Ürün ekleme metodu
-        public static async Task AddProduct(string title, string description)
+        public static async Task AddProduct(string title, string description, Image image)
         {
             await Init();
             var product = new Product
             {
                 Text = title,
                 Description = description,
-                Image = "image.jpg"
+                Image = image
             };
             var id = await db.InsertAsync(product);
         }

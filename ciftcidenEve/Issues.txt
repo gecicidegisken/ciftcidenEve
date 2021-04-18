@@ -2,7 +2,7 @@
  ++ Tamamlananlar
  >> ÖNEMLİ, ACİL
  
- 
+ >> Görsel ekleyince kaydet butonu görünmez oluyor (bazen oluyor bazen olmuyro çok saçma???)
  
  >> ÜRÜNE SATICI ÖZELLİĞİ GELECEK
  >> bütün sayfalardan geri çıkınca ana sayfaya dönse iyi olabilir

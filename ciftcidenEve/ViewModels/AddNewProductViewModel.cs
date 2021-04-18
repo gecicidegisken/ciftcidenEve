@@ -1,5 +1,4 @@
 ﻿using ciftcidenEve.Models;
-using System;
 using Xamarin.Forms;
 
 namespace ciftcidenEve.ViewModels
@@ -11,6 +10,7 @@ namespace ciftcidenEve.ViewModels
         public string Text { get; set; }
         public string Description { get; set; }
         public string Tag { get; set; }
+        public string Satici { get; set; }
         public float Price { get; set; }
         public Image Image { get; set; }
 
@@ -20,17 +20,19 @@ namespace ciftcidenEve.ViewModels
             
             SaveCommand = new Command(OnSave);
             CancelCommand = new Command(OnCancel);
-            //this.PropertyChanged +=
-            //    (_, __) => SaveCommand.ChangeCanExecute();
-        }
+            this.PropertyChanged +=
+               (_, __) => SaveCommand.ChangeCanExecute();
 
+            this.ImagePropertyChanged += (Image,__) => SaveCommand.ChangeCanExecute();
+        }
+      
 
         //private bool ValidateSave()
         //{ //isim ve açıklama boş bırakılamaz
         //  //diğer alanların da boş bırakılmamasını garantiye al
         //    return !String.IsNullOrWhiteSpace(Text)
         //        && !String.IsNullOrWhiteSpace(Description);
-               
+
         //}
 
         private async void OnCancel()
@@ -43,11 +45,12 @@ namespace ciftcidenEve.ViewModels
         {
             Product newItem = new Product()
             {
-                //Id = Convert.ToInt32(Guid.NewGuid()),
                 Text = this.Text,
                 Description = this.Description,
                 Price = this.Price,
-                Tag = this.Tag
+                Tag = this.Tag,
+                Image = this.Image,
+                Satici = this.Satici
             };
 
             await DataStore.AddItemAsync(newItem);

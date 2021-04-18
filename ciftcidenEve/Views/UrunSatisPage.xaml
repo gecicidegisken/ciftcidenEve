@@ -7,32 +7,47 @@
     <ContentPage.BindingContext>
         <vm:AddNewProductViewModel />
     </ContentPage.BindingContext>
-    
-    <ContentPage.Content>
-        <StackLayout Spacing="3" Padding="15">
-            <Label Text="Ürün Adı" FontSize="Medium" />
-            <Entry Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" />
-            <Label Text="Ürün Açıklaması" FontSize="Medium" />
-            <Editor Text="{Binding Description, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
-            <Picker x:Name="TagPicker"  Title="Ürün Kategorisi Seçin" Margin="0,10,0,10" SelectedItem="{Binding Tag}">
-                <Picker.Items>
-                    <x:String > Sos ve Sirke </x:String>
-                    <x:String > Yağ </x:String>
-                    <x:String > Kahvaltılık </x:String>
-                    <x:String > Sağlıklı İçecek </x:String>
-                    <x:String > Kişisel Bakım </x:String>
-                    <x:String > Tohum, Fidan, Çiçek </x:String>
-                    <x:String > Et ve Balık </x:String>
-                    
-                </Picker.Items>
-            </Picker>
-            <Label Text="Ürünün Fiyatını Belirleyin" FontSize="Medium" />
-            <Entry Text="{Binding Price, Mode=TwoWay}" FontSize="Medium" />
 
-            <StackLayout Orientation="Horizontal">
-                <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
-                <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="3" Padding="15">
+               
+                <Label Text="Ürün Adı" FontSize="Medium" />
+                <Entry Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" />
+                
+                <Label Text="satıcı" FontSize="Medium" />
+                <Entry Text="{Binding Satici, Mode=TwoWay}" FontSize="Medium" />
+
+                <Label Text="Ürün Açıklaması" FontSize="Medium" />
+                <Editor Text="{Binding Description, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+
+                <Label Text="Ürünün Fiyatını Belirleyin" FontSize="Medium" />
+                <Entry Keyboard="Numeric" Text="{Binding Price, Mode=TwoWay}" FontSize="Medium" />
+                
+                <Picker x:Name="TagPicker"  Title="Ürün Kategorisi Seçin" Margin="0,10,0,10" SelectedItem="{Binding Tag}">
+                    <Picker.Items>
+                        <x:String >Sos ve Sirke</x:String>
+                        <x:String >Yağ</x:String>
+                        <x:String >Kahvaltılık</x:String>
+                        <x:String >Sağlıklı İçecek</x:String>
+                        <x:String >Kişisel Bakım</x:String>
+                        <x:String >Tohum, Fidan, Çiçek</x:String>
+                        <x:String >Et ve Balık</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Button Margin="0,10,0,20" HorizontalOptions="CenterAndExpand" HeightRequest="50" WidthRequest="1000"  Text="Ürün Fotoğrafı Yükleyin"
+                  Clicked="OnPickPhotoButtonClicked" />
+
+                <Image Margin="0,0,0,30" Aspect="AspectFit"  x:Name="image" Source="{Binding Image, Mode=TwoWay}"></Image>
+
+               
+               
+                <StackLayout Padding="0,10,0,0" Orientation="Horizontal">
+                    <Button Text="İptal" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                    <Button FontAttributes="Bold" Text="Ürünü Satışa Çıkar" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

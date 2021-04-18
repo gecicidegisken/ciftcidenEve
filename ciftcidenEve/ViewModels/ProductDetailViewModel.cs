@@ -10,13 +10,15 @@ namespace ciftcidenEve.ViewModels
     [QueryProperty(nameof(ItemId), nameof(ItemId))]
     public class ProductDetailViewModel : BaseViewModel
     {
-        Product product = new Product();
+        
 
         string text;
         string tag;
         float price;
         string description;
+        string satici;
         int itemId;
+        Image image;
 
         public int Id { get; set; }
      
@@ -24,7 +26,23 @@ namespace ciftcidenEve.ViewModels
         {
             get => text;
             set => SetProperty(ref text, value);
-        }   
+        }
+        public string Satici
+        {
+            get => satici;
+            set => SetProperty(ref satici, value);
+        }
+        public Image Image
+        {
+
+            get => image;
+            set
+            {
+                SetProperty(ref image, value);
+                OnImagePropertyChanged(Image);
+            }
+           
+        }
         public string Tag
         {
             get => tag;
@@ -66,7 +84,8 @@ namespace ciftcidenEve.ViewModels
                 Tag = item.Tag;
                 Description = item.Description;
                 Price = item.Price;
-           
+                Image = item.Image;
+                Satici = item.Satici;
               
             }
             catch (Exception)

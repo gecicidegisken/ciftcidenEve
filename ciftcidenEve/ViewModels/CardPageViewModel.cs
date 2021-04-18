@@ -25,6 +25,7 @@ namespace ciftcidenEve.ViewModels
             try
             {
                 BagProducts.Clear();
+                BagProducts.Clear();
                 var bagItems = App.products;
 
                 foreach (var item in bagItems)

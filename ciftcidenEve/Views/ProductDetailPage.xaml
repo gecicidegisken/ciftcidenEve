@@ -36,7 +36,7 @@
             
             
         </StackLayout>
-            <Button BackgroundColor="Orange" Text="Sepete Ekle" FontAttributes="Bold"></Button>
+            <Button BackgroundColor="Orange" Text="Sepete Ekle" Command="{Binding AddBagCommand}" FontAttributes="Bold"></Button>
     </StackLayout>
     </ScrollView>
 </ContentPage>

@@ -1,5 +1,6 @@
 ﻿using ciftcidenEve.Models;
 using System;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -10,8 +11,8 @@ namespace ciftcidenEve.ViewModels
     [QueryProperty(nameof(ItemId), nameof(ItemId))]
     public class ProductDetailViewModel : BaseViewModel
     {
+        public Command AddBagCommand { get; }
         
-
         string text;
         string tag;
         float price;
@@ -20,6 +21,18 @@ namespace ciftcidenEve.ViewModels
         int itemId;
         Image image;
 
+        public ProductDetailViewModel()
+        {
+            LoadItemId(ItemId);
+            AddBagCommand = new Command(OnAddClicked);
+            
+        }
+        private async void OnAddClicked(object obj)
+        {
+            Product product = await DataStore.GetItemAsync(ItemId);
+
+            App.products.Add(product);
+        }
         public int Id { get; set; }
      
         public string Text

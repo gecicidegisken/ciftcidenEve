@@ -30,7 +30,7 @@ namespace ciftcidenEve.Views
             if (stream != null)
             {
                 image.Source = ImageSource.FromStream(() => stream);
-              
+               
             }
 
                  (sender as Button).IsEnabled = true;

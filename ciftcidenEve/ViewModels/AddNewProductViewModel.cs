@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace ciftcidenEve.ViewModels
 {
-  public class AddNewProductViewModel : BaseViewModel
+    public class AddNewProductViewModel : BaseViewModel
     {
         public Command SaveCommand { get; }
         public Command CancelCommand { get; }
@@ -12,7 +12,7 @@ namespace ciftcidenEve.ViewModels
         public string Tag { get; set; }
         public string Satici { get; set; }
         public float Price { get; set; }
-        public Image Image { get; set; }
+        public Image Image{get; set;}
 
 
         public AddNewProductViewModel()
@@ -23,7 +23,7 @@ namespace ciftcidenEve.ViewModels
             this.PropertyChanged +=
                (_, __) => SaveCommand.ChangeCanExecute();
 
-            this.ImagePropertyChanged += (Image,__) => SaveCommand.ChangeCanExecute();
+           
         }
       
 
@@ -49,8 +49,8 @@ namespace ciftcidenEve.ViewModels
                 Description = this.Description,
                 Price = this.Price,
                 Tag = this.Tag,
-                Image = this.Image,
-                Satici = this.Satici
+                Satici = this.Satici,
+                Image = this.Image
             };
 
             await DataStore.AddItemAsync(newItem);

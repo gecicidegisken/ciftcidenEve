@@ -14,14 +14,14 @@
     <ScrollView>
     <StackLayout  Spacing="3" Padding="5,20,15,5">
 
-        <Image Margin="0,0,0,20" Aspect="AspectFit" WidthRequest="100" HeightRequest="300" BackgroundColor="AliceBlue" Source="{Binding Image}">
+        <Image Margin="0,0,0,20" Aspect="AspectFit" WidthRequest="100" HeightRequest="300" Source="{Binding Image.Source}">
         </Image>
         
         <StackLayout  Padding="15,15,15,15">
             
             <StackLayout Orientation="Horizontal">
-                 <Label Text="{Binding Tag}" FontSize="Micro"/>
-                    <Label Text="{Binding Satici, StringFormat='Satıcı: {0}'}" FontSize="Micro"></Label>
+                 <Label Text="{Binding Tag}" FontSize="Micro" FontAttributes="Bold"/>
+                    <Label Text="{Binding Satici, StringFormat=' | Satıcı: {0} '}" FontSize="Micro"></Label>
             </StackLayout>
             <Rectangle HorizontalOptions="FillAndExpand" HeightRequest="1" WidthRequest="100" BackgroundColor="Gray" />
            

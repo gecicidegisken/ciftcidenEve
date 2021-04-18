@@ -23,6 +23,7 @@ namespace ciftcidenEve.ViewModels
         public ICommand ItemDetailCommand { get; }
         public Command LoadItemsCommand { get; }
         public Command AddItemCommand { get; }
+
         public ProductDetailViewModel details;
         public Command<Product> ItemTapped { get; }
 

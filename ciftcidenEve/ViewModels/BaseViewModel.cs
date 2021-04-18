@@ -66,16 +66,7 @@ namespace ciftcidenEve.ViewModels
         }
 
 
-        //deneme
-        public event PropertyChangedEventHandler ImagePropertyChanged;
-        protected void OnImagePropertyChanged(Image propertyName)
-        {
-            var changed = ImagePropertyChanged;
-            if (changed == null)
-                return;
-
-            changed.Invoke(this, new PropertyChangedEventArgs(propertyName.ToString()));
-        }
+       
         #endregion
     }
 }

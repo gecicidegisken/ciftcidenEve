@@ -5,10 +5,8 @@
              xmlns:vm="clr-namespace:ciftcidenEve.ViewModels"
              xmlns:local="clr-namespace:ciftcidenEve.ViewModels"
              Title="{Binding Title}"
-           
              xmlns:model="clr-namespace:ciftcidenEve.Models"  
-             x:Name="BrowseItemsPage"
-             >
+             x:Name="BrowseItemsPage">
    
     
     <ContentPage.BindingContext>
@@ -78,27 +76,43 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Padding="10" x:DataType="model:Product">
-                            <Image Source="{Binding Image}" WidthRequest="100" HeightRequest="100"></Image>
-                            <Label Text="{Binding Satici}" 
-                            LineBreakMode="NoWrap" 
-                            Style="{DynamicResource ListItemTextStyle}" 
-                            FontSize="16" />
+                            
+                            <Image BackgroundColor="Transparent" Source="{Binding Image.Source}" ></Image>
+
+                            <StackLayout Spacing="70" Orientation="Horizontal">
+                            <StackLayout Orientation="Vertical">
+                                
                             <Label Text="{Binding Text}" 
+                            FontAttributes="Bold"
+                            TextColor="Green"
                             LineBreakMode="NoWrap" 
                             Style="{DynamicResource ListItemTextStyle}" 
-                            FontSize="16" />
-                            <Label Text="{Binding Description}" 
+                            FontSize="20" />
+                                <Label Text="{Binding Tag}"
+                             TextColor="Orange"
                             LineBreakMode="NoWrap"
                             Style="{DynamicResource ListItemDetailTextStyle}"
                             FontSize="13" />
-                            <Label Text="{Binding Tag}" 
+
+                            </StackLayout>
+                                <Frame
+                                    CornerRadius="10" 
+                                    HorizontalOptions="EndAndExpand" 
+                                    BorderColor="Green"
+                                    Padding="5"
+                                   BackgroundColor="Orange">
+                                    <Label Text="{Binding Price, StringFormat='{0} TL'}"
+                             HorizontalOptions="EndAndExpand"
+                            FontAttributes="Bold"
                             LineBreakMode="NoWrap"
+                            TextColor="White"
                             Style="{DynamicResource ListItemDetailTextStyle}"
-                            FontSize="13" />
-                            <Label Text="{Binding Price}" 
-                            LineBreakMode="NoWrap"
-                            Style="{DynamicResource ListItemDetailTextStyle}"
-                            FontSize="13" />
+                            FontSize="25" 
+ />
+                                </Frame>
+                            
+                            </StackLayout>
+                            <Rectangle HorizontalOptions="FillAndExpand" HeightRequest="1" WidthRequest="100" BackgroundColor="Orange" />
 
                             <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer 

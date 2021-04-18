@@ -24,12 +24,12 @@ namespace ciftcidenEve.Services
          
             items = new List<Product>()
             {
-                new Product { Id =1, Text = "Yerli Domates Fidesi", Description="10 adet", Price=10, Tag = "Sebze", Image=domates, Satici="Hilal" },
-                new Product { Id = 2, Text = "Tavuk Yumurtası", Description="1 Adet", Price=3, Tag = "Kahvaltılık", Image=yumurta},
-                new Product { Text = "Doğal Sabun", Description="Lavantalı el yapımı sabun", Price=20, Tag = "Kişisel Bakım", Image=sabun},
-                new Product { Text = "Çilek Reçeli", Description="En taze çileklerden üretilen çilek reçeli, 500 gr", Price=25, Tag = "Kahvaltılık", Image=recel},
-                new Product { Text = "Elma Fidanı", Description="1 Adet", Price=50, Tag = "Çiçek, Fidan, Tohum", Image=meyveFidani},
-                
+                new Product { Id =1, Text = "Yerli Domates Fidesi", Description="10 adet", Price=10, Tag = "Sebze", Image=domates, Satici="Hilal Elif Mutlu" },
+                new Product { Id = 2, Text = "Tavuk Yumurtası", Description="1 Adet", Price=3, Tag = "Kahvaltılık", Image=yumurta,  Satici="Arif Karaçalıoğlu"},
+                new Product { Id=3, Text = "Doğal Sabun", Description="Lavantalı el yapımı sabun", Price=20, Tag = "Kişisel Bakım", Image=sabun,  Satici="Hilal Elif Mutlu"},
+                new Product { Id= 4, Text = "Çilek Reçeli", Description="En taze çileklerden üretilen çilek reçeli, 500 gr", Price=25, Tag = "Kahvaltılık", Image=recel, Satici="Hilal Elif Mutlu"},
+                new Product { Id=5, Text = "Elma Fidanı", Description="1 Adet", Price=50, Tag = "Çiçek, Fidan, Tohum", Image=meyveFidani, Satici="Arif Karaçalıoğlu"},
+
             };
         }
 

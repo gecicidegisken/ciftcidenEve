@@ -67,5 +67,10 @@ namespace ciftcidenEve.Services
         {
             return await Task.FromResult(items);
     }
-}
+
+        public Product GetItemsAsync(int itemId)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

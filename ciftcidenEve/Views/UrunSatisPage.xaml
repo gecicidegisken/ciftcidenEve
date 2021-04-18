@@ -39,7 +39,9 @@
                 <Button Margin="0,10,0,20" HorizontalOptions="CenterAndExpand" HeightRequest="50" WidthRequest="1000"  Text="Ürün Fotoğrafı Yükleyin"
                   Clicked="OnPickPhotoButtonClicked" />
 
-                <Image Margin="0,0,0,30" Aspect="AspectFit"  x:Name="image" Source="{Binding Image, Mode=TwoWay}"></Image>
+                <Image Margin="0,0,0,30" Aspect="AspectFit"  x:Name="image" Source="{Binding Image.Source, Mode=TwoWay}"></Image>
+               
+                <!--<Image Margin="0,0,0,30" Aspect="AspectFit"  x:Name="image" Source="{Binding Source=card_icon.png, Mode=TwoWay}"></Image>-->
 
                
                

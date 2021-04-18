@@ -14,5 +14,7 @@ namespace ciftcidenEve.Models
         public Image Image { get; set; }
         public float Price { get; set; }
         public string Tag { get; set; }  //ürün kategorisi (meyve sebze vs)
+        
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using ciftcidenEve.Models;
+﻿
+using ciftcidenEve.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,13 +15,20 @@ namespace ciftcidenEve.Services
         readonly List<Product> items;
         public MockDataStore()
         {
-            var domates = new Image { Source = "card_icon" };
-            var yumurta = new Image();
-            yumurta.Source = ImageSource.FromUri(new Uri("https://xamarin.com/content/images/pages/forms/example-app.png"));
+            var domates = new Image { Source = "domates.png" };
+            var yumurta = new Image { Source = "yumurta.png" };
+            var sabun = new Image { Source = "sabun.png" };
+            var recel = new Image { Source = "recel.png" };
+            var meyveFidani = new Image { Source = "meyve_fidani.png" };
+            
+         
             items = new List<Product>()
             {
                 new Product { Id =1, Text = "Yerli Domates Fidesi", Description="10 adet", Price=10, Tag = "Sebze", Image=domates, Satici="Hilal" },
                 new Product { Id = 2, Text = "Tavuk Yumurtası", Description="1 Adet", Price=3, Tag = "Kahvaltılık", Image=yumurta},
+                new Product { Text = "Doğal Sabun", Description="Lavantalı el yapımı sabun", Price=20, Tag = "Kişisel Bakım", Image=sabun},
+                new Product { Text = "Çilek Reçeli", Description="En taze çileklerden üretilen çilek reçeli, 500 gr", Price=25, Tag = "Kahvaltılık", Image=recel},
+                new Product { Text = "Elma Fidanı", Description="1 Adet", Price=50, Tag = "Çiçek, Fidan, Tohum", Image=meyveFidani},
                 
             };
         }

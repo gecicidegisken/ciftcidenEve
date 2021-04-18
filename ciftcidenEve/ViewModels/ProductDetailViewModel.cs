@@ -19,6 +19,7 @@ namespace ciftcidenEve.ViewModels
         string satici;
         int itemId;
         Image image;
+      
 
         public int Id { get; set; }
      
@@ -26,7 +27,8 @@ namespace ciftcidenEve.ViewModels
         {
             get => text;
             set => SetProperty(ref text, value);
-        }
+        }  
+       
         public string Satici
         {
             get => satici;
@@ -39,7 +41,8 @@ namespace ciftcidenEve.ViewModels
             set
             {
                 SetProperty(ref image, value);
-                OnImagePropertyChanged(Image);
+                OnPropertyChanged(nameof(Image));
+              
             }
            
         }
@@ -84,7 +87,8 @@ namespace ciftcidenEve.ViewModels
                 Tag = item.Tag;
                 Description = item.Description;
                 Price = item.Price;
-                Image = item.Image;
+                Image = item.Image; 
+                Image.Source = item.Image.Source;
                 Satici = item.Satici;
               
             }

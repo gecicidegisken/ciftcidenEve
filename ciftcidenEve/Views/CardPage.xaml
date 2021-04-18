@@ -1,10 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ciftcidenEve.Views.CardPage">
+             x:Class="ciftcidenEve.Views.CardPage"
+             xmlns:vm="clr-namespace:ciftcidenEve.ViewModels"
+             xmlns:local="clr-namespace:ciftcidenEve.ViewModels"
+             xmlns:model="clr-namespace:ciftcidenEve.Models"  >
+
+    <ContentPage.BindingContext>
+        <vm:CardPageViewModel />
+    </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <StackLayout>
-            
+
+            <RefreshView   x:DataType="local:CardPageViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Grid.Row="2" x:Name="mRefreshViewCardPage" Refreshing="mRefreshViewCardPage_Refreshing" RefreshColor="Green">
+
+                <CollectionView ItemsSource="{Binding BagProducts}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="10" x:DataType="model:Product">
+                                <Image Source="{Binding Image}" WidthRequest="100" HeightRequest="100"></Image>
+                                <Label Text="{Binding Satici}" 
+                            LineBreakMode="NoWrap" 
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="16" />
+                                <Label Text="{Binding Text}" 
+                            LineBreakMode="NoWrap" 
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="16" />
+                                <Label Text="{Binding Description}" 
+                            LineBreakMode="NoWrap"
+                            Style="{DynamicResource ListItemDetailTextStyle}"
+                            FontSize="13" />
+                                <Label Text="{Binding Tag}" 
+                            LineBreakMode="NoWrap"
+                            Style="{DynamicResource ListItemDetailTextStyle}"
+                            FontSize="13" />
+                                <Label Text="{Binding Price}" 
+                            LineBreakMode="NoWrap"
+                            Style="{DynamicResource ListItemDetailTextStyle}"
+                            FontSize="13" />
+
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer 
+                                NumberOfTapsRequired="1"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:CardPageViewModel}}, Path=ItemTapped}"		
+                                CommandParameter="{Binding .}">
+                                    </TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </RefreshView>
+            <!--ürünlerin listesi-->
+
+
             <!--SEPETE EKLELEN ÜRÜNLER BURAYA LİSTVİEW İLE GELECEK-->
 
         </StackLayout>

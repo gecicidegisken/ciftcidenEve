@@ -8,7 +8,7 @@ namespace ciftcidenEve
 {
     public partial class App : Application
     {
-
+        public static Boolean authorization = false;
         public App()
         {
             InitializeComponent();

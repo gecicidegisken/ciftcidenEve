@@ -26,12 +26,12 @@
         <ToolbarItem Text=" " Order="Primary" Priority="1"></ToolbarItem>
         <ToolbarItem Text=" " Order="Primary" Priority="2"></ToolbarItem>
         
-        <ToolbarItem  Order="Primary"  Priority="3" Text="Giriş Yap" Command="{Binding LoginCommand}">
+        <ToolbarItem x:Name="rightTopButton" Order="Primary" Priority="3" Text="{Binding BtnText , Mode=TwoWay}" Command="{Binding LoginCommand}">
         </ToolbarItem>
        
        
     </ContentPage.ToolbarItems>
-
+    
     <Grid><!-- main grid -->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" /> <!-- 0 ürün kategorileri -->

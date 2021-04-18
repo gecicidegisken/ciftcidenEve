@@ -13,6 +13,21 @@ namespace ciftcidenEve.ViewModels
         public IDataStore<Product> DataStore => DependencyService.Get<IDataStore<Product>>();
 
         bool isBusy = false;
+        string btnText = "Giriş Yap";
+        public string BtnText
+        {
+
+            set
+            {
+                btnText = value;
+                OnPropertyChanged("BtnText");
+            }
+            get
+            {
+                return btnText;
+            }
+
+        }
         public bool IsBusy
         {
             get { return isBusy; }

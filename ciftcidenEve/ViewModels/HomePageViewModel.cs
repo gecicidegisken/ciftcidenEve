@@ -1,4 +1,4 @@
-﻿using System.Windows.Input;
+using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using ciftcidenEve.Models;
@@ -8,12 +8,15 @@ using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 
 namespace ciftcidenEve.ViewModels
 {
-    public class HomePageViewModel : BaseViewModel
+    public class HomePageViewModel : BaseViewModel, INotifyPropertyChanged
     {
+        
+
         private Product _selectedItem;
         public ObservableCollection<Product> Products { get; }
         public ICommand LoginCommand { get; }
@@ -99,6 +102,8 @@ namespace ciftcidenEve.ViewModels
             await Shell.Current.GoToAsync($"{nameof(ProductDetailPage)}?{nameof(ProductDetailViewModel.ItemId)}={product.Id}");
 
         }
+
+        
 
     }
 }

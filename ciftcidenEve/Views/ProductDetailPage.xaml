@@ -7,22 +7,36 @@
     <ContentPage.BindingContext>
         <vm:ProductDetailViewModel />
     </ContentPage.BindingContext>
-    
-    <StackLayout  Spacing="20" Padding="15">
-        <Label FontSize="Medium" />
-        <Label x:Name="mTextTitle" Text="{Binding Text}" FontSize="Small"/>
-
-        <Label Text="Fiyat:" FontSize="Medium" />
-        <Label x:Name="mTextPrice" Text="{Binding Price}" FontSize="Small"/>
 
 
-        <Label Text="Kategori:" FontSize="Medium" />
-        <Label Text="{Binding Tag}" FontSize="Small"/>
+
+
+    <ScrollView>
+    <StackLayout  Spacing="3" Padding="5,20,15,5">
+
+        <Image Margin="0,0,0,20" Aspect="AspectFit" WidthRequest="100" HeightRequest="300" BackgroundColor="AliceBlue" Source="{Binding Image}">
+        </Image>
         
-        <!--<Label Text="Açıklama:" FontSize="Medium" />
-        <Label Text="{Binding Description}" FontSize="Small"/>-->
-        
-     
+        <StackLayout  Padding="15,15,15,15">
+            
+            <StackLayout Orientation="Horizontal">
+                 <Label Text="{Binding Tag}" FontSize="Micro"/>
+                    <Label Text="{Binding Satici, StringFormat='Satıcı: {0}'}" FontSize="Micro"></Label>
+            </StackLayout>
+            <Rectangle HorizontalOptions="FillAndExpand" HeightRequest="1" WidthRequest="100" BackgroundColor="Gray" />
+           
+            <Label x:Name="mTextTitle" Text="{Binding Text}" FontSize="Title" TextColor="Green" FontAttributes="Bold"/>    
+                <Label  x:Name="mTextPrice" Text="{Binding Price, StringFormat='{0} TL'}"
+                       FontAttributes="Bold" FontSize="Title"  TextColor="Orange" />
+
+            <Rectangle Margin="0,0,0,15" HorizontalOptions="FillAndExpand" HeightRequest="1" WidthRequest="100" BackgroundColor="Gray" />
+            
+            <Label Text="Ürün Hakkında" FontSize="Medium" />
+        <Label Text="{Binding Description}" FontSize="Small"/>
+            
+            
+        </StackLayout>
+            <Button BackgroundColor="Orange" Text="Sepete Ekle" FontAttributes="Bold"></Button>
     </StackLayout>
-
+    </ScrollView>
 </ContentPage>

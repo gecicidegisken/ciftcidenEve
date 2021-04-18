@@ -3,18 +3,24 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Xamarin.Forms;
+
 
 namespace ciftcidenEve.Services
 {
     public class MockDataStore : IDataStore<Product>
     {
+        
         readonly List<Product> items;
         public MockDataStore()
         {
+            var domates = new Image { Source = "card_icon" };
+            var yumurta = new Image();
+            yumurta.Source = ImageSource.FromUri(new Uri("https://xamarin.com/content/images/pages/forms/example-app.png"));
             items = new List<Product>()
             {
-                new Product { Id =1, Text = "First item", Description="This is an item description.", Price=10, Tag = "Yağ"},
-                new Product { Id = 2, Text = "Second item", Description="This is an item description.", Price=20, Tag = "Sos ve Sirke" },
+                new Product { Id =1, Text = "Yerli Domates Fidesi", Description="10 adet", Price=10, Tag = "Sebze", Image=domates, Satici="Hilal" },
+                new Product { Id = 2, Text = "Tavuk Yumurtası", Description="1 Adet", Price=3, Tag = "Kahvaltılık", Image=yumurta},
                 
             };
         }

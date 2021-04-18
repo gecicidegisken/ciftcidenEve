@@ -4,17 +4,21 @@ using ciftcidenEve.Models;
 using ciftcidenEve.ViewModels;
 using System;
 using System.IO;
+using System.Collections.Generic;
+
 namespace ciftcidenEve.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UrunSatisPage : ContentPage
     {
-        public Product Product { get; set; }
+        public Product Product = new Product();
        
         public UrunSatisPage()
         {
             InitializeComponent();
             BindingContext = new AddNewProductViewModel();
+           TagPicker.ItemsSource = Product.Categories;
+           
         }
         protected override bool OnBackButtonPressed()
         {

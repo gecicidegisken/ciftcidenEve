@@ -23,18 +23,11 @@
 
                 <Label Text="Ürünün Fiyatını Belirleyin" FontSize="Medium" />
                 <Entry Keyboard="Numeric" Text="{Binding Price, Mode=TwoWay}" FontSize="Medium" />
-                
+      
                 <Picker x:Name="TagPicker"  Title="Ürün Kategorisi Seçin" Margin="0,10,0,10" SelectedItem="{Binding Tag}">
-                    <Picker.Items>
-                        <x:String >Sos ve Sirke</x:String>
-                        <x:String >Yağ</x:String>
-                        <x:String >Kahvaltılık</x:String>
-                        <x:String >Sağlıklı İçecek</x:String>
-                        <x:String >Kişisel Bakım</x:String>
-                        <x:String >Tohum, Fidan, Çiçek</x:String>
-                        <x:String >Et ve Balık</x:String>
-                    </Picker.Items>
+                   
                 </Picker>
+
 
                 <Button Margin="0,10,0,20" HorizontalOptions="CenterAndExpand" HeightRequest="50" WidthRequest="1000"  Text="Ürün Fotoğrafı Yükleyin"
                   Clicked="OnPickPhotoButtonClicked" />

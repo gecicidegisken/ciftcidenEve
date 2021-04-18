@@ -1,6 +1,7 @@
 ﻿using ciftcidenEve.Models;
 using Xamarin.Forms;
 
+
 namespace ciftcidenEve.ViewModels
 {
     public class AddNewProductViewModel : BaseViewModel
@@ -10,6 +11,7 @@ namespace ciftcidenEve.ViewModels
         public string Text { get; set; }
         public string Description { get; set; }
         public string Tag { get; set; }
+       
         public string Satici { get; set; }
         public float Price { get; set; }
         public Image Image{get; set;}

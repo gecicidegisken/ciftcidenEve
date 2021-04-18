@@ -24,6 +24,8 @@ namespace ciftcidenEve.ViewModels
         public Command LoadItemsCommand { get; }
         public Command AddItemCommand { get; }
 
+        public Command CategoryCommand { get; }
+
         public ProductDetailViewModel details;
         public Command<Product> ItemTapped { get; }
 
@@ -104,6 +106,10 @@ namespace ciftcidenEve.ViewModels
 
         }
 
+        private async void ShowCategory()
+        {
+
+        }
         
 
     }

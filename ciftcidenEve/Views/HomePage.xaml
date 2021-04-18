@@ -37,8 +37,11 @@
             <RowDefinition Height="Auto" /> <!-- 2  ürünler listesi -->
        
         </Grid.RowDefinitions>
-       
-       
+
+        <Button Text="Kahvaltılık"
+                Command="{Binding}">
+            
+        </Button>
     
         <Grid Grid.Row="0">  <!-- kategori iconları grid -->
             <Grid.RowDefinitions >

@@ -4,12 +4,15 @@
              x:Class="ciftcidenEve.Views.CardPage"
              xmlns:vm="clr-namespace:ciftcidenEve.ViewModels"
              xmlns:local="clr-namespace:ciftcidenEve.ViewModels"
-             xmlns:model="clr-namespace:ciftcidenEve.Models"  >
+             xmlns:model="clr-namespace:ciftcidenEve.Models" 
+             Title="Sepetim"
+            >
 
     <ContentPage.BindingContext>
         <vm:CardPageViewModel />
     </ContentPage.BindingContext>
-    
+
+   
     <ContentPage.Content>
         <StackLayout>
 
@@ -18,29 +21,33 @@
                 <CollectionView ItemsSource="{Binding BagProducts}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
+                            
                             <StackLayout Padding="10" x:DataType="model:Product">
-                                <Image Source="{Binding Image}" WidthRequest="100" HeightRequest="100"></Image>
-                                <Label Text="{Binding Satici}" 
-                            LineBreakMode="NoWrap" 
-                            Style="{DynamicResource ListItemTextStyle}" 
-                            FontSize="16" />
-                                <Label Text="{Binding Text}" 
-                            LineBreakMode="NoWrap" 
-                            Style="{DynamicResource ListItemTextStyle}" 
-                            FontSize="16" />
-                                <Label Text="{Binding Description}" 
-                            LineBreakMode="NoWrap"
-                            Style="{DynamicResource ListItemDetailTextStyle}"
-                            FontSize="13" />
-                                <Label Text="{Binding Tag}" 
-                            LineBreakMode="NoWrap"
-                            Style="{DynamicResource ListItemDetailTextStyle}"
-                            FontSize="13" />
-                                <Label Text="{Binding Price}" 
-                            LineBreakMode="NoWrap"
-                            Style="{DynamicResource ListItemDetailTextStyle}"
-                            FontSize="13" />
+                                <Frame>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Source="{Binding Image.Source}" HorizontalOptions="Start" HeightRequest="100"></Image>
+                                        <StackLayout>
+                                            <Label Text="{Binding Text}" 
+                                              LineBreakMode="NoWrap" 
+                                              Style="{DynamicResource ListItemTextStyle}" 
+                                              FontSize="20"
+                                              FontAttributes="Bold"/>
+                                           
+                                            <Label Text="{Binding Tag}" 
+                                              LineBreakMode="NoWrap"
+                                              Style="{DynamicResource ListItemDetailTextStyle}"
+                                              FontSize="13" />
 
+                                            <Label Text="{Binding Price, StringFormat='{0} TL'}"
+                                              FontAttributes="Bold"
+                                              LineBreakMode="NoWrap"
+                                              Style="{DynamicResource ListItemDetailTextStyle}"
+                                              FontSize="13" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                              
+                        
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer 
                                 NumberOfTapsRequired="1"

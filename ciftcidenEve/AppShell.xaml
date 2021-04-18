@@ -29,7 +29,7 @@
                 <Setter Property="Shell.BackgroundColor" Value="White" />
                 <Setter Property="Shell.TabBarBackgroundColor" Value="Blue" />
                 <Setter Property="Shell.ForegroundColor" Value="{StaticResource Primary}" />
-                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="Green" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
                 <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />

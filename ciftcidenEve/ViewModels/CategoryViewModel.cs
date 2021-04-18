@@ -12,7 +12,7 @@ using System.ComponentModel;
 
 namespace ciftcidenEve.ViewModels
 {
- public   class CategoryViewModel : BaseViewModel
+ public class CategoryViewModel : BaseViewModel
     {
         public ObservableCollection<Product> Products { get; }
         public Command LoadItemsCommand { get; }
@@ -32,7 +32,7 @@ namespace ciftcidenEve.ViewModels
                 var items = await DataStore.GetItemsAsync(true);
                 foreach (var item in items)
                 {
-                    if(item.Tag==)
+                   // if(item.Tag)
                     Products.Add(item);
                 }
             }

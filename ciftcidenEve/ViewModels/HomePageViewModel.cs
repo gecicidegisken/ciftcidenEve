@@ -38,6 +38,7 @@ namespace ciftcidenEve.ViewModels
             LoginCommand = new Command(OnLoginClicked);
             Products =new ObservableCollection<Product>();
             ItemTapped = new Command<Product>(ShowItemDetails);
+           
         }
         
         async Task ExecuteLoadItemsCommand()
@@ -106,9 +107,12 @@ namespace ciftcidenEve.ViewModels
 
         }
 
-        private async void ShowCategory()
+        private async void ShowCategory(string tag)
         {
+            if (tag == null)
+                return;
 
+            await Shell.Current.GoToAsync($"{nameof(CategoryViewModel)}");
         }
         
 

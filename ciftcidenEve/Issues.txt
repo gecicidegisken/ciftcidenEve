@@ -1,13 +1,15 @@
 ﻿ -- Yapılacaklar
  ++ Tamamlananlar
  >> ÖNEMLİ, ACİL
+?? bug, hata
  
- >> Görsel ekleyince kaydet butonu görünmez oluyor (bazen oluyor bazen olmuyro çok saçma???)
- 
+ ?? Görsel ekleyince kaydet butonu görünmez oluyor (bazen oluyor bazen olmuyro çok saçma???)
+ ?? Card page refresh view auto refresh
+
  >> ÜRÜNE SATICI ÖZELLİĞİ GELECEK
 
 
- >> sepete eklemek
+
  >> 5 kategori, 5 görsel ürün
 
 
@@ -21,3 +23,4 @@
  ++ üye ol sayfasında giriş yapın linki
  ++ bütün sayfalardan geri çıkınca ana sayfaya dönse iyi olabilir
   ++ refresh view yenilenmeden ürünler yüklenmiyor (ilk açılışta)
+  ++ sepete eklemek

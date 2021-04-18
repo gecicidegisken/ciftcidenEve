@@ -19,6 +19,7 @@ namespace ciftcidenEve.Views
             InitializeComponent();
             _viewModel =new CardPageViewModel();
             BindingContext = _viewModel;
+            Title = "Sepetim";
         }
         protected override bool OnBackButtonPressed()
         {

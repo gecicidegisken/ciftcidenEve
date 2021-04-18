@@ -15,8 +15,8 @@ namespace ciftcidenEve.Views
             
             _viewModel = new HomePageViewModel();
             BindingContext = _viewModel;
+           
 
-            
         }
         async private void RefreshView_Refreshing(object sender, EventArgs e)
         {

@@ -15,11 +15,13 @@ namespace ciftcidenEve.ViewModels
     {
         public ObservableCollection<Product> Products { get; }
 
+        
         public Command LoadItemsCommand { get; }
         public Command<Product> ItemTapped { get; }
 
         public static string Tag;
-       
+
+        public string PageTitle { get; }
 
         
         public CategoryViewModel()
@@ -28,7 +30,8 @@ namespace ciftcidenEve.ViewModels
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
             Products = new ObservableCollection<Product>();
             ItemTapped = new Command<Product>(ShowItemDetails);
-
+            PageTitle = Tag;
+       
         }
 
         async Task ExecuteLoadItemsCommand()
@@ -60,12 +63,11 @@ namespace ciftcidenEve.ViewModels
             if (product == null)
                 return;
 
-            // This will push the ItemDetailPage onto the navigation stack
-            //details = new ProductDetailViewModel(product.Text, product.Tag, product.Price);
-            //await Shell.Current.GoToAsync($"{nameof(ProductDetailPage)}?{nameof(details)}");
+           
             await Shell.Current.GoToAsync($"{nameof(ProductDetailPage)}?{nameof(ProductDetailViewModel.ItemId)}={product.Id}");
 
         }
+      
 
     }
 }

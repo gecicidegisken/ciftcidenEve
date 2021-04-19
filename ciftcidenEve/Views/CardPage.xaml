@@ -23,7 +23,7 @@
                    FontSize="Large"
                    Margin="0,30,0,0"
                    TextColor="Orange"
-                   IsVisible="{Binding hasItems, Mode=TwoWay}">
+                   IsVisible="{Binding hasItems, Mode=OneWayToSource}">
                 </Label>
             </StackLayout>
 
@@ -37,17 +37,13 @@
                                 <Frame HasShadow="True">
                                     <SwipeView>
                                         <SwipeView.RightItems>
-                                            <SwipeItem 
-                                                Text="Sepetten Kaldır"
-                                        IconImageSource="delete.png"
+                                        <SwipeItem 
+                                                Text="Kaldır"
                                         BackgroundColor="Red"
-                                        Invoked="OnDeleteSwipeItemInvoked"
                                                 Clicked="SwipeItem_Clicked"
                                                 Command="{Binding DeleteCommand}"
                                                 CommandParameter=""/>
-                                                         <!--silme işlemi buraya yazılacak-->
-
-                                        </SwipeView.RightItems>
+                                    </SwipeView.RightItems>
 
                                         <StackLayout Orientation="Horizontal">
                                             <Image Source="{Binding Image.Source}" HorizontalOptions="Start" HeightRequest="100"></Image>
@@ -90,9 +86,6 @@
 
             </RefreshView>
             <!--ürünlerin listesi-->
-
-
-         
 
         </StackLayout>
       

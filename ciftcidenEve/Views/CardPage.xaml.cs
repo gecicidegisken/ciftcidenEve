@@ -1,12 +1,12 @@
 ﻿using ciftcidenEve.ViewModels;
+using ciftcidenEve.Views;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ciftcidenEve.Models;
+using System.IO;
+using System.Threading.Tasks;
+
 
 namespace ciftcidenEve.Views
 {
@@ -20,6 +20,8 @@ namespace ciftcidenEve.Views
             _viewModel =new CardPageViewModel();
             BindingContext = _viewModel;
             Title = "Sepetim";
+            
+            
         }
         protected override bool OnBackButtonPressed()
         {
@@ -31,7 +33,9 @@ namespace ciftcidenEve.Views
         {
             await Task.Delay(3000);
             mRefreshViewCardPage.IsRefreshing = false;
+            
         }
+
 
         private void SwipeItem_Clicked(object sender, EventArgs e)
         {

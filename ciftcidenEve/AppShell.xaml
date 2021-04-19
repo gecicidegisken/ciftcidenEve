@@ -27,7 +27,6 @@
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
                 <Setter Property="Shell.BackgroundColor" Value="White" />
-                <Setter Property="Shell.TabBarBackgroundColor" Value="Blue" />
                 <Setter Property="Shell.ForegroundColor" Value="{StaticResource Primary}" />
                 <Setter Property="Shell.TitleColor" Value="Green" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
@@ -105,15 +104,11 @@
         <Tab Title="Sepet" Icon="card_icon.png">
             <ShellContent Route="CardPage" ContentTemplate="{DataTemplate local:CardPage}" />
         </Tab>
-        
+
         <Tab Title="Ürün Sat" Icon="satici_icon.png">
             <ShellContent Route="ProductsPage" ContentTemplate="{DataTemplate local:UrunSatisPage}" />
         </Tab>
-     
-            <Tab FlyoutItemIsVisible="False" >
-                <ShellContent Route="CategoryPage" ContentTemplate="{DataTemplate local:CategoryPage}" />
-            </Tab>
-     
+
     </FlyoutItem>
    
 

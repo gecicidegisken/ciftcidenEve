@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using Xamarin.Forms.Xaml;
 
 
 namespace ciftcidenEve.ViewModels
@@ -113,7 +114,9 @@ namespace ciftcidenEve.ViewModels
         private async void ShowCategory(string tag)
         {
             CategoryViewModel.Tag = tag;
-            await Shell.Current.GoToAsync($"//{nameof(CategoryPage)}");
+            //await Shell.Current.GoToAsync($"//{nameof(CategoryPage)}");
+            await Application.Current.MainPage.Navigation.PushAsync(new CategoryPage());
+
         }
         
 

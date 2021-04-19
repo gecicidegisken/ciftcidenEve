@@ -22,5 +22,9 @@ namespace ciftcidenEve.Views
             return true;
            
         }
+       async protected void OnButtonClicked()
+        {
+            await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+        }
     }
 }

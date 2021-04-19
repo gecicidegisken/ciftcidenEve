@@ -32,7 +32,8 @@
         <ToolbarItem Text=" " Order="Primary" Priority="1"></ToolbarItem>
         <ToolbarItem Text=" " Order="Primary" Priority="2"></ToolbarItem>
 
-        <ToolbarItem x:Name="rightTopButton" Order="Primary" Priority="3" Text="{Binding BtnText , Mode=TwoWay}" Command="{Binding LoginCommand}">
+        <ToolbarItem x:Name="rightTopButton" Order="Primary" Priority="3"
+                     Text="{Binding BtnText , Mode=TwoWay}" Command="{Binding LoginCommand}">
         </ToolbarItem>
 
 

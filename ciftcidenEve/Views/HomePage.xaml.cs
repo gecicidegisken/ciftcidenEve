@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using ciftcidenEve.ViewModels;
+using ciftcidenEve.Views;
 
 namespace ciftcidenEve.Views
 {
@@ -34,5 +35,6 @@ namespace ciftcidenEve.Views
             _viewModel.OnAppearing();
 
         }
+
     }
 }

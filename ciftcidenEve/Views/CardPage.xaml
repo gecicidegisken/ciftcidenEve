@@ -35,20 +35,15 @@
                             
                             <StackLayout Padding="10" x:DataType="model:Product">
                                 <Frame HasShadow="True">
-
+                                    <SwipeView>
                                         <SwipeView.RightItems>
-                                            <SwipeItem 
-                                                Text="Sepetten Kaldır"
-                                        IconImageSource="delete.png"
+                                        <SwipeItem 
+                                                Text="Kaldır"
                                         BackgroundColor="Red"
-                                        Invoked="OnDeleteSwipeItemInvoked"
                                                 Clicked="SwipeItem_Clicked"
                                                 Command="{Binding DeleteCommand}"
                                                 CommandParameter=""/>
-                                                         <!--silme işlemi buraya yazılacak-->
-
-
-                                        </SwipeView.RightItems>
+                                    </SwipeView.RightItems>
 
                                         <StackLayout Orientation="Horizontal">
                                             <Image Source="{Binding Image.Source}" HorizontalOptions="Start" HeightRequest="100"></Image>
@@ -91,9 +86,6 @@
 
             </RefreshView>
             <!--ürünlerin listesi-->
-
-
-         
 
         </StackLayout>
       

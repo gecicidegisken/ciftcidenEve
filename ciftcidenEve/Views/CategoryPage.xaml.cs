@@ -11,6 +11,7 @@ namespace ciftcidenEve.Views
         {
             InitializeComponent();
             this.BindingContext = new CategoryViewModel();
+           
             
         }
         protected override bool OnBackButtonPressed()

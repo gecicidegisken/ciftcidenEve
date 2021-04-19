@@ -23,7 +23,7 @@
                    FontSize="Large"
                    Margin="0,30,0,0"
                    TextColor="Orange"
-                   IsVisible="{Binding hasItems, Mode=OneWayToSource}">
+                   IsVisible="{Binding hasItems, Mode=TwoWay}">
                 </Label>
             </StackLayout>
 

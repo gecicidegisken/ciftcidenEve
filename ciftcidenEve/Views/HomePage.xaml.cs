@@ -33,7 +33,7 @@ namespace ciftcidenEve.Views
         {
             base.OnAppearing();
             _viewModel.OnAppearing();
-
+            mRefreshViewHomePage.IsRefreshing = true;
         }
 
     }

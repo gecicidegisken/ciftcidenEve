@@ -18,7 +18,7 @@ namespace ciftcidenEve.Models
                                          //public Categories Category { get; set; }  //ürün kategorisi (meyve sebze vs)
 
         public List<string> Categories = new List<string>();
-        
+        public Command DeleteCommand { get; }
        public Product()
         {
             Categories.Add("Sebze");
@@ -28,6 +28,20 @@ namespace ciftcidenEve.Models
             Categories.Add("Kişisel Bakım");
             Categories.Add("Tohum, Fidan, Çiçek");
             Categories.Add("Et ve Balık");
+            DeleteCommand = new Command(deleteThis);
+        }
+        private async void deleteThis(object obj)
+        {
+            int maxCount = App.products.Count;
+            if (this.Id < maxCount)
+            {
+                for (int i = this.Id; i < maxCount; i++)
+                {
+                    App.products[i].Id -= 1;
+                }
+            }
+            App.products.RemoveAt(this.Id-1);
+           
         }
 
     }

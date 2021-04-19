@@ -35,6 +35,18 @@ namespace ciftcidenEve.Views
             mRefreshViewCardPage.IsRefreshing = false;
             
         }
-      
+
+
+        private void SwipeItem_Clicked(object sender, EventArgs e)
+        {
+            Task.Delay(3000);
+            mRefreshViewCardPage.IsRefreshing = true;
+        }
+        protected override void OnAppearing()
+        {
+            mRefreshViewCardPage.IsRefreshing = true;
+            base.OnAppearing();
+        }
+
     }
 }

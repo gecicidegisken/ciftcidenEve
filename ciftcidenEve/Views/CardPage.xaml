@@ -35,14 +35,19 @@
                             
                             <StackLayout Padding="10" x:DataType="model:Product">
                                 <Frame HasShadow="True">
-                                    <SwipeView>
-                                        <SwipeView.RightItems >
-                                            <SwipeItem
-                                                x:Name="deleteButton" 
-                                                  Text="Kaldır"
-                                                   BackgroundColor="Red"     
-                                                />  <!--silme işlemi buraya yazılacak-->
-                                            
+
+                                        <SwipeView.RightItems>
+                                            <SwipeItem 
+                                                Text="Sepetten Kaldır"
+                                        IconImageSource="delete.png"
+                                        BackgroundColor="Red"
+                                        Invoked="OnDeleteSwipeItemInvoked"
+                                                Clicked="SwipeItem_Clicked"
+                                                Command="{Binding DeleteCommand}"
+                                                CommandParameter=""/>
+                                                         <!--silme işlemi buraya yazılacak-->
+
+
                                         </SwipeView.RightItems>
 
                                         <StackLayout Orientation="Horizontal">

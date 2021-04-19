@@ -118,7 +118,7 @@
         </Tab>
        
     <Tab Title="Gizlilik ve Kullanım Şartları">
-        <ShellContent Route="UrunSatisPage" ContentTemplate="{DataTemplate local:UrunSatisPage}" />
+        <ShellContent Route="ContactPage" ContentTemplate="{DataTemplate local:ContactPage}" />
     </Tab>
        
     </FlyoutItem>

@@ -15,39 +15,61 @@
    
     <ContentPage.Content>
         <StackLayout>
+            <StackLayout>
+                <Label Text="Sepetinizde Hiç Ürün Yok :("
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   Margin="0,30,0,0"
+                   TextColor="Orange"
+                   IsVisible="{Binding hasItems, Mode=TwoWay}">
+                </Label>
+            </StackLayout>
 
             <RefreshView   x:DataType="local:CardPageViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Grid.Row="2" x:Name="mRefreshViewCardPage" Refreshing="mRefreshViewCardPage_Refreshing" RefreshColor="Green">
-
+               
                 <CollectionView ItemsSource="{Binding BagProducts}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             
                             <StackLayout Padding="10" x:DataType="model:Product">
-                                <Frame>
-                                    <StackLayout Orientation="Horizontal">
-                                        <Image Source="{Binding Image.Source}" HorizontalOptions="Start" HeightRequest="100"></Image>
-                                        <StackLayout>
-                                            <Label Text="{Binding Text}" 
+                                <Frame HasShadow="True">
+                                    <SwipeView>
+                                        <SwipeView.RightItems>
+                                            <SwipeItem Text="Sepetten Kaldır"
+                                        IconImageSource="delete.png"
+                                        BackgroundColor="Red"
+                                        Invoked="OnDeleteSwipeItemInvoked" />  <!--silme işlemi buraya yazılacak-->
+
+                                        </SwipeView.RightItems>
+
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="{Binding Image.Source}" HorizontalOptions="Start" HeightRequest="100"></Image>
+                                            <StackLayout>
+                                                <Label Text="{Binding Text}" 
                                               LineBreakMode="NoWrap" 
                                               Style="{DynamicResource ListItemTextStyle}" 
                                               FontSize="20"
                                               FontAttributes="Bold"/>
-                                           
-                                            <Label Text="{Binding Tag}" 
+
+                                                <Label Text="{Binding Tag}" 
                                               LineBreakMode="NoWrap"
                                               Style="{DynamicResource ListItemDetailTextStyle}"
                                               FontSize="13" />
 
-                                            <Label Text="{Binding Price, StringFormat='{0} TL'}"
+                                                <Label Text="{Binding Price, StringFormat='{0} TL'}"
                                               FontAttributes="Bold"
                                               LineBreakMode="NoWrap"
                                               Style="{DynamicResource ListItemDetailTextStyle}"
                                               FontSize="13" />
+                                            </StackLayout>
+
                                         </StackLayout>
-                                    </StackLayout>
+
+                                    </SwipeView>
                                 </Frame>
-                              
-                        
+
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer 
                                 NumberOfTapsRequired="1"

@@ -60,7 +60,7 @@
        
         
         <!-- UYE OL BUTONU -->
-        <Button Grid.Column="0" x:Name="signUpBtn" Text="Üye Ol" IsEnabled="False">
+        <Button Grid.Column="0" x:Name="signUpBtn" Text="Üye Ol" IsEnabled="False" Clicked="OnButtonClicked">
             <Button.Triggers>
                 <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference checkBox}, Path=IsChecked}" Value="True">
                     <Setter Property="IsEnabled" Value="False" ></Setter>

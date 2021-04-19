@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-
+using Plugin.Toast;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -22,8 +21,11 @@ namespace ciftcidenEve.Views
             return true;
            
         }
-       async protected void OnButtonClicked()
+       async protected void OnButtonClicked(object sender, EventArgs e)
         {
+            CrossToastPopUp.Current.ShowCustomToast("Üyelik işlemi tamamlandı", "#f5712f","white", Plugin.Toast.Abstractions.ToastLength.Short);
+           //CrossToastPopUp.Current.ShowToastMessage("Üyelik tamamlandı.");
+
             await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
         }
     }

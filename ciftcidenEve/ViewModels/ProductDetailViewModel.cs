@@ -2,7 +2,7 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.Threading.Tasks;
+using Plugin.Toast;
 using Xamarin.Forms;
 
 
@@ -33,6 +33,7 @@ namespace ciftcidenEve.ViewModels
             Product product = await DataStore.GetItemAsync(ItemId);
 
             App.products.Add(product);
+            CrossToastPopUp.Current.ShowCustomToast("Ürün Sepete Eklendi", "#f5712f", "white", Plugin.Toast.Abstractions.ToastLength.Short);
         }
         public int Id { get; set; }
      

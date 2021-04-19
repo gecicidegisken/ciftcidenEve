@@ -4,18 +4,20 @@
 ?? bug, hata
  
  ?? Görsel ekleyince kaydet butonu görünmez oluyor (bazen oluyor bazen olmuyor çok saçma???)
+
+ ?? sepette ürün yok yazısı
  ?? Card page refresh view auto refresh
 
- >> ÜRÜNE SATICI ÖZELLİĞİ GELECEK
 
 
+ -- Sepetten silme
+ 
 
- >> 5 kategori, 5 görsel ürün
+
+  >> ÜRÜNE SATICI ÖZELLİĞİ GELECEK
+	Kişi modeli oluşturulacak
 
 
- -- Üye ol sayfasına captcha (sitede var ama app'de gerekli mi emin değilim)
- -- Bize ulaş, hakkımızda ve gizlilik sayfaları
- -- bize ulaş sayfasında emaile tıklayınca mail app'in açılması 
 
   ++ Sign up sayfasından sonra geri tuşuna basınca uygulamadan çıkıyor, giriş yapma ekranına geri dönsün
  ++ Login sayfasından sonra geri tuşuna basınca uygulamadan çıkıyor, giriş yapma ekranına geri dönsün
@@ -24,3 +26,5 @@
  ++ bütün sayfalardan geri çıkınca ana sayfaya dönse iyi olabilir
   ++ refresh view yenilenmeden ürünler yüklenmiyor (ilk açılışta)
   ++ sepete eklemek
+  ++ 5 kategori, 5 görsel ürün
+   ++ Bize ulaş, hakkımızda ve gizlilik sayfaları

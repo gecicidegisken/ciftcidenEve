@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Plugin.Toast;
 
 namespace ciftcidenEve.ViewModels
 {
@@ -12,12 +13,16 @@ namespace ciftcidenEve.ViewModels
     {
         public ObservableCollection<Product> BagProducts { get; }
         public Command LoadItemsCommand { get; }
+      
+        public bool hasItems { get; set; }
         public Command<Product> ItemTapped { get; }
         public CardPageViewModel()
         {
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
             BagProducts = new ObservableCollection<Product>();
             ItemTapped = new Command<Product>(ShowItemDetails);
+           
+            hasItems = true;
         }
         async Task ExecuteLoadItemsCommand()
         {
@@ -32,6 +37,7 @@ namespace ciftcidenEve.ViewModels
                 foreach (var item in bagItems)
                 {
                     BagProducts.Add(item);
+                    hasItems = false;
                 }
             }
             catch (Exception ex)
@@ -49,10 +55,10 @@ namespace ciftcidenEve.ViewModels
                 return;
 
             // This will push the ItemDetailPage onto the navigation stack
-            //details = new ProductDetailViewModel(product.Text, product.Tag, product.Price);
-            //await Shell.Current.GoToAsync($"{nameof(ProductDetailPage)}?{nameof(details)}");
             await Shell.Current.GoToAsync($"{nameof(ProductDetailPage)}?{nameof(ProductDetailViewModel.ItemId)}={product.Id}");
 
         }
+
+
     }
 }

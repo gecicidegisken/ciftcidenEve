@@ -37,11 +37,14 @@ namespace ciftcidenEve.Views
         {
             Task.Delay(3000);
             mRefreshViewCardPage.IsRefreshing = true;
+            _viewModel.onAppearing();
         }
         protected override void OnAppearing()
         {
-            mRefreshViewCardPage.IsRefreshing = true;
             base.OnAppearing();
+            _viewModel.onAppearing();
+            mRefreshViewCardPage.IsRefreshing = true;
+
         }
 
     }

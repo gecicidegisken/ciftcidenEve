@@ -66,11 +66,7 @@ namespace ciftcidenEve.Services
         public async Task<IEnumerable<Product>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
-    }
-
-        public Product GetItemsAsync(int itemId)
-        {
-            throw new NotImplementedException();
         }
+
     }
 }

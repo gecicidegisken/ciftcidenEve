@@ -13,7 +13,6 @@ namespace ciftcidenEve.ViewModels
     {
         public ObservableCollection<Product> BagProducts { get; }
         public Command LoadItemsCommand { get; }
-      
         public bool hasItems { get; set; }
         public Command<Product> ItemTapped { get; }
         public CardPageViewModel()
@@ -21,7 +20,6 @@ namespace ciftcidenEve.ViewModels
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
             BagProducts = new ObservableCollection<Product>();
             ItemTapped = new Command<Product>(ShowItemDetails);
-           
             hasItems = true;
         }
         async Task ExecuteLoadItemsCommand()
@@ -58,7 +56,5 @@ namespace ciftcidenEve.ViewModels
             await Shell.Current.GoToAsync($"{nameof(ProductDetailPage)}?{nameof(ProductDetailViewModel.ItemId)}={product.Id}");
 
         }
-
-
     }
 }

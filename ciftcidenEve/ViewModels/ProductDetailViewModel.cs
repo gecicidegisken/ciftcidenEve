@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using Plugin.Toast;
 using Xamarin.Forms;
-
+using System.Threading.Tasks;
 
 namespace ciftcidenEve.ViewModels
 {
@@ -31,8 +31,16 @@ namespace ciftcidenEve.ViewModels
         private async void OnAddClicked(object obj)
         {
             Product product = await DataStore.GetItemAsync(ItemId);
+            Product bagProduct = new Product();
+            bagProduct.Id = App.products.Count + 1;
+            bagProduct.Image = product.Image;
+            bagProduct.Text = product.Text;
+            bagProduct.Price = product.Price;
+            bagProduct.Satici = product.Satici;
+            bagProduct.Tag = product.Tag;
 
-            App.products.Add(product);
+
+            App.products.Add(bagProduct);
             CrossToastPopUp.Current.ShowCustomToast("Ürün Sepete Eklendi", "#f5712f", "white", Plugin.Toast.Abstractions.ToastLength.Short);
         }
         public int Id { get; set; }

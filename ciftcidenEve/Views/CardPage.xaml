@@ -37,10 +37,15 @@
                                 <Frame HasShadow="True">
                                     <SwipeView>
                                         <SwipeView.RightItems>
-                                            <SwipeItem Text="Sepetten Kaldır"
+                                            <SwipeItem 
+                                                Text="Sepetten Kaldır"
                                         IconImageSource="delete.png"
                                         BackgroundColor="Red"
-                                        Invoked="OnDeleteSwipeItemInvoked" />  <!--silme işlemi buraya yazılacak-->
+                                        Invoked="OnDeleteSwipeItemInvoked"
+                                                Clicked="SwipeItem_Clicked"
+                                                Command="{Binding DeleteCommand}"
+                                                CommandParameter=""/>
+                                                         <!--silme işlemi buraya yazılacak-->
 
                                         </SwipeView.RightItems>
 

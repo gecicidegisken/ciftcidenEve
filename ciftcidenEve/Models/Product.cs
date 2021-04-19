@@ -21,8 +21,8 @@ namespace ciftcidenEve.Models
         
        public Product()
         {
-            Categories.Add("Sos ve Sirke");
-            Categories.Add("Yağ");
+            Categories.Add("Sebze");
+            Categories.Add("Meyve");
             Categories.Add("Kahvaltılık");
             Categories.Add("Sağlıklı İçecek");
             Categories.Add("Kişisel Bakım");

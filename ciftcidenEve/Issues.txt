@@ -3,7 +3,7 @@
  >> ÖNEMLİ, ACİL
 ?? bug, hata
  
- ?? Görsel ekleyince kaydet butonu görünmez oluyor (bazen oluyor bazen olmuyro çok saçma???)
+ ?? Görsel ekleyince kaydet butonu görünmez oluyor (bazen oluyor bazen olmuyor çok saçma???)
  ?? Card page refresh view auto refresh
 
  >> ÜRÜNE SATICI ÖZELLİĞİ GELECEK

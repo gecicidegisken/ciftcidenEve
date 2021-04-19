@@ -4,19 +4,26 @@
              x:Class="ciftcidenEve.Views.HomePage"
              xmlns:vm="clr-namespace:ciftcidenEve.ViewModels"
              xmlns:local="clr-namespace:ciftcidenEve.ViewModels"
-             xmlns:model="clr-namespace:ciftcidenEve.Models"  
+             xmlns:model="clr-namespace:ciftcidenEve.Models" x:DataType="vm:HomePageViewModel"
              x:Name="BrowseItemsPage">
    
     
     <ContentPage.BindingContext>
         <vm:HomePageViewModel />
     </ContentPage.BindingContext>
-    
+
    
     
     <ContentPage.Resources>
         <ResourceDictionary>
             <Color x:Key="Accent">#96d1ff</Color>
+            <Style TargetType="ImageButton">
+                <Setter Property="BackgroundColor" Value="Transparent"></Setter>
+                <Setter Property="Margin" Value="0,0,0,10"> </Setter>
+                <Setter Property="HeightRequest" Value="70"> </Setter>
+                <Setter Property="VerticalOptions" Value="Center"> </Setter>
+                <Setter Property="Command" Value="{Binding CategoryCommand}"></Setter> 
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -56,16 +63,19 @@
           
 
             </Grid.ColumnDefinitions>
-            <Image Grid.Column=" 0" Source="urun_sossirke_icon.png" VerticalOptions="Center" HeightRequest="70" Margin="0,0,0,10" />
-            <Image Grid.Column=" 1" Source="urun_yag_icon.png" VerticalOptions="Center" HeightRequest="70" Margin="0,0,0,10" />
-            <Image Grid.Column=" 2" Source="urun_kahvaltilik_icon.png" VerticalOptions="Center" HeightRequest="70" Margin="0,0,0,10" />
-            <Image Grid.Column=" 3" Source="urun_icecek_icon.png" VerticalOptions="Center" HeightRequest="70" Margin="0,0,0,10" />
-            <Image Grid.Column=" 4" Source="urun_kisiselBakim_icon.png" VerticalOptions="Center" HeightRequest="70" Margin="0,0,0,10" />
-            <Image Grid.Column=" 5" Source="urun_tohumCicek_icon.png" VerticalOptions="Center" HeightRequest="70" Margin="0,0,0,10" />
-            <Image Grid.Column=" 6" Source="urun_etBalik_icon.png" VerticalOptions="Center" HeightRequest="70" Margin="0,0,0,10" />
+            <ImageButton Grid.Column=" 0" Source="urun_sebze_icon.png"  CommandParameter="Sebze" />
+            <ImageButton Grid.Column=" 1" Source="urun_meyve_icon.png" CommandParameter="Meyve" />
+            <ImageButton Grid.Column=" 2" Source="urun_kahvaltilik_icon.png" CommandParameter="Kahvaltılık" />
+            <ImageButton Grid.Column=" 3" Source="urun_icecek_icon.png" CommandParameter="Sağlıklı İçecek"   />
+            <ImageButton Grid.Column=" 4" Source="urun_kisiselBakim_icon.png" CommandParameter="Kişisel Bakım" />
+            <ImageButton Grid.Column=" 5" Source="urun_tohumCicek_icon.png" CommandParameter="Çiçek, Fidan, Tohum" />
+            <ImageButton Grid.Column=" 6" Source="urun_etBalik_icon.png" CommandParameter="Et ve Balık"  />
 
 
         </Grid> <!-- kategori iconları grid -->
+       
+            
+    
        
         <SearchBar HorizontalOptions="CenterAndExpand" Grid.Row="1" Placeholder="Ürün Ara" Margin="0,0,0,10" HeightRequest="50" />
         

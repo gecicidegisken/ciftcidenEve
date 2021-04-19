@@ -1,9 +1,7 @@
 using System.Windows.Input;
-using Xamarin.Essentials;
 using Xamarin.Forms;
 using ciftcidenEve.Models;
 using ciftcidenEve.Views;
-using ciftcidenEve.ViewModels;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -15,8 +13,6 @@ namespace ciftcidenEve.ViewModels
 {
     public class HomePageViewModel : BaseViewModel, INotifyPropertyChanged
     {
-        
-
         private Product _selectedItem;
         public ObservableCollection<Product> Products { get; }
         public ICommand LoginCommand { get; }
@@ -24,20 +20,26 @@ namespace ciftcidenEve.ViewModels
         public Command LoadItemsCommand { get; }
         public Command AddItemCommand { get; }
 
-        public Command CategoryCommand { get; }
+        public ICommand CategoryCommand { get; }
 
         public ProductDetailViewModel details;
         public Command<Product> ItemTapped { get; }
+        public string Tag { get; }
 
         public HomePageViewModel()
         {
             Title = "Ana Sayfa";
             AddItemCommand = new Command(OnAddItem);
+
             ItemDetailCommand = new Command<Product>(ShowItemDetails);
+
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
             LoginCommand = new Command(OnLoginClicked);
             Products =new ObservableCollection<Product>();
             ItemTapped = new Command<Product>(ShowItemDetails);
+
+            CategoryCommand = new Command<string>(ShowCategory);
+          
            
         }
         
@@ -63,6 +65,7 @@ namespace ciftcidenEve.ViewModels
                 IsBusy = false;
             }
         }
+
         private async void OnLoginClicked(object obj)
         {
             await Shell.Current.GoToAsync("//LoginPage");
@@ -109,10 +112,8 @@ namespace ciftcidenEve.ViewModels
 
         private async void ShowCategory(string tag)
         {
-            if (tag == null)
-                return;
-
-            await Shell.Current.GoToAsync($"{nameof(CategoryViewModel)}");
+            CategoryViewModel.Tag = tag;
+            await Shell.Current.GoToAsync($"//{nameof(CategoryPage)}");
         }
         
 

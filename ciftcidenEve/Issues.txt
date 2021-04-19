@@ -6,11 +6,11 @@
  ?? Görsel ekleyince kaydet butonu görünmez oluyor (bazen oluyor bazen olmuyor çok saçma???)
 
  ?? sepette ürün yok yazısı
- ?? Card page refresh view auto refresh
 
 
 
- -- Sepetten silme
+
+
  
 
 
@@ -19,12 +19,14 @@
 
 
 
-  ++ Sign up sayfasından sonra geri tuşuna basınca uygulamadan çıkıyor, giriş yapma ekranına geri dönsün
- ++ Login sayfasından sonra geri tuşuna basınca uygulamadan çıkıyor, giriş yapma ekranına geri dönsün
-  ++ Üye ol sayfasına okudum onayladım
- ++ üye ol sayfasında giriş yapın linki
- ++ bütün sayfalardan geri çıkınca ana sayfaya dönse iyi olabilir
-  ++ refresh view yenilenmeden ürünler yüklenmiyor (ilk açılışta)
-  ++ sepete eklemek
-  ++ 5 kategori, 5 görsel ürün
-   ++ Bize ulaş, hakkımızda ve gizlilik sayfaları
+++ Sign up sayfasından sonra geri tuşuna basınca uygulamadan çıkıyor, giriş yapma ekranına geri dönsün
+++ Login sayfasından sonra geri tuşuna basınca uygulamadan çıkıyor, giriş yapma ekranına geri dönsün
+++ Üye ol sayfasına okudum onayladım
+++ üye ol sayfasında giriş yapın linki
+++ bütün sayfalardan geri çıkınca ana sayfaya dönse iyi olabilir
+++ refresh view yenilenmeden ürünler yüklenmiyor (ilk açılışta)
+++ sepete eklemek
+++ 5 kategori, 5 görsel ürün
+++ Bize ulaş, hakkımızda ve gizlilik sayfaları
+++ Sepetten silme
+++ Card page refresh view auto refresh

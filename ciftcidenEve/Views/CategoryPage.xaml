@@ -16,7 +16,7 @@
 
 
         <!--ürünlerin listesi-->
-        <RefreshView   x:DataType="local:CategoryViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}" x:Name="mRefreshViewHomePage" RefreshColor="Green">
+        <RefreshView   x:DataType="local:CategoryViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}" x:Name="mRefreshViewCategoryPage" RefreshColor="Green">
 
             <CollectionView x:Name="collectionView" ItemsSource="{Binding Products}" >
 

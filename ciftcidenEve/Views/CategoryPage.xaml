@@ -5,7 +5,7 @@
               xmlns:vm="clr-namespace:ciftcidenEve.ViewModels"
               xmlns:local="clr-namespace:ciftcidenEve.ViewModels"
               xmlns:model="clr-namespace:ciftcidenEve.Models"
-             Title="{Binding Tag}">
+             Title="{Binding PageTitle}">
     
     <ContentPage.BindingContext>
         <vm:CategoryViewModel />

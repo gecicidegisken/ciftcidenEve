@@ -23,7 +23,7 @@
                    FontSize="Large"
                    Margin="0,30,0,0"
                    TextColor="Orange"
-                   IsVisible="{Binding hasItems, Mode=TwoWay}">
+                   IsVisible="{Binding hasItems, Mode=OneWayToSource}">
                 </Label>
             </StackLayout>
 
@@ -35,7 +35,7 @@
                             
                             <StackLayout Padding="10" x:DataType="model:Product">
                                 <Frame HasShadow="True">
-                                    <SwipeView>
+
                                         <SwipeView.RightItems>
                                             <SwipeItem 
                                                 Text="Sepetten Kaldır"
@@ -46,6 +46,7 @@
                                                 Command="{Binding DeleteCommand}"
                                                 CommandParameter=""/>
                                                          <!--silme işlemi buraya yazılacak-->
+
 
                                         </SwipeView.RightItems>
 

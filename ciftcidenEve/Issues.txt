@@ -5,17 +5,26 @@
  
  ?? Görsel ekleyince kaydet butonu görünmez oluyor (bazen oluyor bazen olmuyor çok saçma???)
 
- ?? sepette ürün yok yazısı
+
+      >> SQLite - ürün ekleme, ürün cıkarma
+      >> SQLite - listeleme                               
+      >> SQLite - veritabanı güncelleme  
 
 
+      >> Graphql - veritabanından veri cekme 
 
+      -- Ürün arama ve listeleme
+      
+  >> ÜRÜNE SATICI ÖZELLİĞİ GELECEK
+	Kişi modeli oluşturulacak
+
+    - Filtreleme butonu
+    - Alt kategori ara yüzleri
 
 
  
 
 
-  >> ÜRÜNE SATICI ÖZELLİĞİ GELECEK
-	Kişi modeli oluşturulacak
 
 
 
@@ -30,3 +39,4 @@
 ++ Bize ulaş, hakkımızda ve gizlilik sayfaları
 ++ Sepetten silme
 ++ Card page refresh view auto refresh
+ ++ sepette ürün yok yazısı

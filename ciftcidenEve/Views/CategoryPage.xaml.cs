@@ -32,5 +32,10 @@ namespace ciftcidenEve.Views
             mRefreshViewCategoryPage.IsRefreshing = true;
             base.OnAppearing();
         }
+
+        protected void ShowSubCategories()
+        {
+           
+        }
     }
 }

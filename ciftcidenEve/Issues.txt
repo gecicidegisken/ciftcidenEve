@@ -1,22 +1,29 @@
-﻿ -- Yapılacaklar
+ -- Yapılacaklar
  ++ Tamamlananlar
  >> ÖNEMLİ, ACİL
 ?? bug, hata
  
  ?? Görsel ekleyince kaydet butonu görünmez oluyor (bazen oluyor bazen olmuyor çok saçma???)
 
- ?? sepette ürün yok yazısı
+
+      >> SQLite - ürün ekleme, ürün cıkarma
+      >> SQLite - listeleme                               
+      >> SQLite - veritabanı güncelleme  
 
 
 
- -- Satın alma arayüzü
+      >> Graphql - veritabanından veri cekme 
 
- 
-
-
+      -- Ürün arama ve listeleme
+      
   >> ÜRÜNE SATICI ÖZELLİĞİ GELECEK
 	Kişi modeli oluşturulacak
 
+    - Filtreleme butonu
+    - Alt kategori ara yüzleri
+
+
+ -- Satın alma arayüzü
 
 
 ++ Sign up sayfasından sonra geri tuşuna basınca uygulamadan çıkıyor, giriş yapma ekranına geri dönsün
@@ -30,3 +37,4 @@
 ++ Bize ulaş, hakkımızda ve gizlilik sayfaları
 ++ Sepetten silme
 ++ Card page refresh view auto refresh
+ ++ sepette ürün yok yazısı

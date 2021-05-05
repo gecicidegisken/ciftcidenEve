@@ -1,4 +1,4 @@
-﻿ -- Yapılacaklar
+ -- Yapılacaklar
  ++ Tamamlananlar
  >> ÖNEMLİ, ACİL
 ?? bug, hata
@@ -9,6 +9,7 @@
       >> SQLite - ürün ekleme, ürün cıkarma
       >> SQLite - listeleme                               
       >> SQLite - veritabanı güncelleme  
+
 
 
       >> Graphql - veritabanından veri cekme 
@@ -22,10 +23,7 @@
     - Alt kategori ara yüzleri
 
 
- 
-
-
-
+ -- Satın alma arayüzü
 
 
 ++ Sign up sayfasından sonra geri tuşuna basınca uygulamadan çıkıyor, giriş yapma ekranına geri dönsün

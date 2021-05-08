@@ -33,7 +33,6 @@ namespace ciftcidenEve.ViewModels
             Product product = await DataStore.GetItemAsync(ItemId);
             Product bagProduct = new Product();
             bagProduct.Id = App.products.Count + 1;
-            bagProduct.Image = product.Image;
             bagProduct.Text = product.Text;
             bagProduct.Price = product.Price;
             bagProduct.Satici = product.Satici;
@@ -109,8 +108,8 @@ namespace ciftcidenEve.ViewModels
                 Tag = item.Tag;
                 Description = item.Description;
                 Price = item.Price;
-                Image = item.Image; 
-                Image.Source = item.Image.Source;
+               // Image = item.Image; 
+               // Image.Source = item.Image.Source;
                 Satici = item.Satici;
               
             }

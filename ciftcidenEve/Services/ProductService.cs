@@ -1,53 +1,56 @@
 ﻿using ciftcidenEve.Models;
 using SQLite;
-using System.Collections.Generic;
 using System.IO;
-using Xamarin.Forms;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace ciftcidenEve
 {
-    public static class ProductService
+    public class ProductService 
     {
         //ASYNC olarak bir SQLite bağlantısı tanımlıyoruz, henüz boş.
-        static SQLiteAsyncConnection db;
-        static async Task Init()
+        public SQLiteAsyncConnection db;
+       
+        public ProductService()
         {
-            //Init metodu ile veritabanı bağlanıtmızı kuruyoruz.
-            //Ne zaman veritabanı ile çalışacak olsak, öncelikle bu metodu çağıracağız.
-            if(db != null)
+            db = new SQLiteAsyncConnection(Path.Combine(Xamarin.Essentials.FileSystem.
+                AppDataDirectory, "producttt.db3"));
+            db.CreateTableAsync<Product>().Wait();
+
+            //İlk ürünü otomatik eklesin diye bir örnek- bu yorum satırı sonradan
+            //kaldırılacağı için Türkçe yazıldı.
+            Product darari = new Product
             {
-                var path = Path.Combine(Xamarin.Essentials.FileSystem.AppDataDirectory, "MyData.db");
-                db = new SQLiteAsyncConnection(path);
-            }
-            //Tablomuzu oluşturuyor, parametre olarak kendi itemimizi veriyoruz.
-            await db.CreateTableAsync<ciftcidenEve.Models.Product>();
-        }
-        //Ürün ekleme metodu
-        public static async Task AddProduct(string title, string description, Image image)
-        {
-            await Init();
-            var product = new Product
-            {
-                Text = title,
-                Description = description,
-                Image = image
+                Id = 21,
+                Text = "Yerli Domates Fidesiiii",
+                Description = "10 adet",
+                Price = 10,
+                Tag = "Sebze",
+                Satici = "Hilal Elif Mutlu"
+               // Image
             };
-            var id = await db.InsertAsync(product);
+            db.InsertAsync(darari);
         }
-        //Ürün çıkarma metodu
-        public static async Task RemoveProduct(int id) 
+        //Get all porudcts
+        public List<Product> GetProducts()
         {
-            await Init();
-            await db.DeleteAsync<Product>(id);
+            List<Product> returnsfor = db.Table<Product>().ToListAsync().Result;
+            return returnsfor;
         }
-        //Ürün çağırma metodu
-        public static async Task<IEnumerable<Product>> GetProduct()
+        //Get a spesific product
+        public Task<Product> GetProduct(int id)
         {
-            await Init();
-            var products = await db.Table<Product>().ToListAsync();
-            return products;
+            return db.Table<Product>().Where(i => i.Id == id).FirstOrDefaultAsync();
+        }
+        //Add new product
+        public void Add(Product product)
+        {
+            db.InsertAsync(product);
+        }
+        //Delete a product
+        public void Delete(Product product)
+        {
+            db.DeleteAsync(product);
         }
     }
-   
 }

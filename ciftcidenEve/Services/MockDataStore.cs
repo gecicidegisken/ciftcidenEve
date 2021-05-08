@@ -22,15 +22,15 @@ namespace ciftcidenEve.Services
             var meyveFidani = new Image { Source = "meyve_fidani.png" };
             var papatyaCayi = new Image { Source = "papatyaCayi.png" };
             
-         
+            //Images are has been deleted by Arif.
             items = new List<Product>()
             {
-                new Product { Id =1, Text = "Yerli Domates Fidesi", Description="10 adet", Price=10, Tag = "Sebze", Image=domates, Satici="Hilal Elif Mutlu" },
-                new Product { Id = 2, Text = "Tavuk Yumurtası", Description="1 Adet", Price=3, Tag = "Kahvaltılık", Image=yumurta,  Satici="Arif Karaçalıoğlu"},
-                new Product { Id=3, Text = "Doğal Sabun", Description="Lavantalı el yapımı sabun", Price=20, Tag = "Kişisel Bakım", Image=sabun,  Satici="Hilal Elif Mutlu"},
-                new Product { Id= 4, Text = "Çilek Reçeli", Description="En taze çileklerden üretilen çilek reçeli, 500 gr", Price=25, Tag = "Kahvaltılık", Image=recel, Satici="Hilal Elif Mutlu"},
-                new Product { Id=5, Text = "Elma Fidanı", Description="1 Adet", Price=50, Tag = "Çiçek, Fidan, Tohum", Image=meyveFidani, Satici="Arif Karaçalıoğlu"},
-                new Product { Id=6, Text = "Papatya Çayı", Description="1 kutuda 20 paket doğal papatya çayı bulunur.", Price=5, Tag = "Sağlıklı İçecek", Image=papatyaCayi, Satici="Arif Karaçalıoğlu"},
+                new Product { Id =1, Text = "Yerli Domates Fidesi", Description="10 adet", Price=10, Tag = "Sebze",  Satici="Hilal Elif Mutlu" },
+                new Product { Id = 2, Text = "Tavuk Yumurtası", Description="1 Adet", Price=3, Tag = "Kahvaltılık",  Satici="Arif Karaçalıoğlu"},
+                new Product { Id=3, Text = "Doğal Sabun", Description="Lavantalı el yapımı sabun", Price=20, Tag = "Kişisel Bakım",  Satici="Hilal Elif Mutlu"},
+                new Product { Id= 4, Text = "Çilek Reçeli", Description="En taze çileklerden üretilen çilek reçeli, 500 gr", Price=25, Tag = "Kahvaltılık",  Satici="Hilal Elif Mutlu"},
+                new Product { Id=5, Text = "Elma Fidanı", Description="1 Adet", Price=50, Tag = "Çiçek, Fidan, Tohum",  Satici="Arif Karaçalıoğlu"},
+                new Product { Id=6, Text = "Papatya Çayı", Description="1 kutuda 20 paket doğal papatya çayı bulunur.", Price=5, Tag = "Sağlıklı İçecek", Satici="Arif Karaçalıoğlu"},
 
             };
         }

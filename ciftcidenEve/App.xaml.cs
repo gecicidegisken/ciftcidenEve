@@ -1,10 +1,9 @@
 ﻿using ciftcidenEve.Models;
 using ciftcidenEve.Services;
-using ciftcidenEve.Views;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+
 
 namespace ciftcidenEve
 {
@@ -12,6 +11,7 @@ namespace ciftcidenEve
     {
         public static Boolean authorization = false;
         public static List<Product> products = new List<Product>();
+        public static ProductService mDatabase = new ProductService();
         public App()
         {
             InitializeComponent();

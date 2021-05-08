@@ -6,9 +6,11 @@
  ?? Görsel ekleyince kaydet butonu görünmez oluyor (bazen oluyor bazen olmuyor çok saçma???)
 
 
-      >> SQLite - ürün ekleme, ürün cıkarma
+      >> SQLite - ürün cıkarma
       >> SQLite - listeleme                               
       >> SQLite - veritabanı güncelleme  
+      >> SQLite - Kullanıcı servisi
+      >> Ürün Stok sistemi
 
 
 
@@ -25,7 +27,7 @@
 
  -- Satın alma arayüzü
 
-
+++ SQLite ürün ekleme
 ++ Sign up sayfasından sonra geri tuşuna basınca uygulamadan çıkıyor, giriş yapma ekranına geri dönsün
 ++ Login sayfasından sonra geri tuşuna basınca uygulamadan çıkıyor, giriş yapma ekranına geri dönsün
 ++ Üye ol sayfasına okudum onayladım

@@ -3,29 +3,27 @@ using Xamarin.Forms;
 using ciftcidenEve.Models;
 using ciftcidenEve.Views;
 using System;
-using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.ComponentModel;
-using Xamarin.Forms.Xaml;
-
+using System.Collections.Generic;
 
 namespace ciftcidenEve.ViewModels
 {
     public class HomePageViewModel : BaseViewModel, INotifyPropertyChanged
     {
         private Product _selectedItem;
-        public ObservableCollection<Product> Products { get; }
+        public List<Product> Products { get; }
         public ICommand LoginCommand { get; }
         public ICommand ItemDetailCommand { get; }
         public Command LoadItemsCommand { get; }
         public Command AddItemCommand { get; }
-
         public ICommand CategoryCommand { get; }
 
         public ProductDetailViewModel details;
         public Command<Product> ItemTapped { get; }
         public string Tag { get; }
+      
 
         public HomePageViewModel()
         {
@@ -36,22 +34,25 @@ namespace ciftcidenEve.ViewModels
 
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
             LoginCommand = new Command(OnLoginClicked);
-            Products =new ObservableCollection<Product>();
+            Products = new List<Product>();
             ItemTapped = new Command<Product>(ShowItemDetails);
 
             CategoryCommand = new Command<string>(ShowCategory);
-          
-           
         }
-        
+
         async Task ExecuteLoadItemsCommand()
         {
             IsBusy = true;
-
+            
             try
             {
                 Products.Clear();
                 var items = await DataStore.GetItemsAsync(true);
+                List<Product> itemsdb = App.mDatabase.GetProducts();
+                foreach (var item in itemsdb)
+                {
+                    Products.Add(item);
+                }
                 foreach (var item in items)
                 {
                     Products.Add(item);
@@ -60,11 +61,13 @@ namespace ciftcidenEve.ViewModels
             catch (Exception ex)
             {
                 Debug.WriteLine(ex);
+
             }
             finally
             {
                 IsBusy = false;
             }
+           
         }
 
         private async void OnLoginClicked(object obj)

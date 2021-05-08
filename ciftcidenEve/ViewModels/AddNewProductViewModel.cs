@@ -52,15 +52,14 @@ namespace ciftcidenEve.ViewModels
                 Price = this.Price,
                 Tag = this.Tag,
                 Satici = this.Satici,
-                Image = this.Image
+              //  Image = this.Image
             };
+            //Add item to our local SQLite database.
+            App.mDatabase.Add(newItem);
 
             await DataStore.AddItemAsync(newItem);
             await Shell.Current.GoToAsync("//HomePage");
+          //  await ProductService.AddProduct(newItem);
         }
-
-
-       
-
     }
 }

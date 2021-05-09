@@ -3,6 +3,7 @@ using Xamarin.Forms.Xaml;
 using ciftcidenEve.Models;
 using ciftcidenEve.ViewModels;
 using System;
+using Plugin.Toast;
 using System.IO;
 
 
@@ -19,6 +20,19 @@ namespace ciftcidenEve.Views
             BindingContext = new AddNewProductViewModel();
            TagPicker.ItemsSource = Product.Categories;
            
+        }
+        protected override void OnAppearing()
+        {
+            
+            if (App.authorization)
+            {
+                base.OnAppearing();
+            }
+            else
+            {
+                CrossToastPopUp.Current.ShowCustomToast("Bunun için giriş yapmalısınız", "#f5712f", "white", Plugin.Toast.Abstractions.ToastLength.Short);
+                Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
+            }
         }
         protected override bool OnBackButtonPressed()
         {
@@ -39,5 +53,7 @@ namespace ciftcidenEve.Views
 
                  (sender as Button).IsEnabled = true;
         }
+        
+       
     }
 }

@@ -14,7 +14,7 @@ namespace ciftcidenEve.ViewModels
     {
         private Product _selectedItem;
         public List<Product> Products { get; }
-        public ICommand LoginCommand { get; }
+        public ICommand AccountCommand { get; }
         public ICommand ItemDetailCommand { get; }
         public Command LoadItemsCommand { get; }
         public Command AddItemCommand { get; }
@@ -33,7 +33,7 @@ namespace ciftcidenEve.ViewModels
             ItemDetailCommand = new Command<Product>(ShowItemDetails);
 
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
-            LoginCommand = new Command(OnLoginClicked);
+            AccountCommand = new Command(OnAccountClicked);
             Products = new List<Product>();
             ItemTapped = new Command<Product>(ShowItemDetails);
 
@@ -47,16 +47,12 @@ namespace ciftcidenEve.ViewModels
             try
             {
                 Products.Clear();
-                var items = await DataStore.GetItemsAsync(true);
                 List<Product> itemsdb = App.mDatabase.GetProducts();
                 foreach (var item in itemsdb)
                 {
                     Products.Add(item);
                 }
-                foreach (var item in items)
-                {
-                    Products.Add(item);
-                }
+              
             }
             catch (Exception ex)
             {
@@ -70,9 +66,18 @@ namespace ciftcidenEve.ViewModels
            
         }
 
-        private async void OnLoginClicked(object obj)
+        private async void OnAccountClicked(object obj)
         {
-            await Shell.Current.GoToAsync("//LoginPage");
+            if (App.authorization)
+            {
+                Debug.WriteLine("giriş yapılmış");
+                //burda hesabım sayfasına yönlendirelecek
+            }
+            else
+            {
+                await Shell.Current.GoToAsync("//LoginPage");
+            }
+            
         }
         private async void OnAddItem(object obj)
         {
@@ -88,28 +93,12 @@ namespace ciftcidenEve.ViewModels
                 ShowItemDetails(value);
             }
         }
-        public void OnAppearing()
-        {
-            if (App.authorization == true)
-            {
-                BtnText = "Hesabım";
-            }
-            else
-            {
-                BtnText = "Giriş Yap";
-            }
-            this.OnPropertyChanged("BtnText");
-            IsBusy = true;
-            SelectedItem = null;
-        }
+ 
         private async void ShowItemDetails(Product product)
         {
             if (product == null)
                 return;
-
-            // This will push the ItemDetailPage onto the navigation stack
-            //details = new ProductDetailViewModel(product.Text, product.Tag, product.Price);
-            //await Shell.Current.GoToAsync($"{nameof(ProductDetailPage)}?{nameof(details)}");
+        
             await Shell.Current.GoToAsync($"{nameof(ProductDetailPage)}?{nameof(ProductDetailViewModel.ItemId)}={product.Id}");
 
         }
@@ -117,7 +106,6 @@ namespace ciftcidenEve.ViewModels
         private async void ShowCategory(string tag)
         {
             CategoryViewModel.Tag = tag;
-            //await Shell.Current.GoToAsync($"//{nameof(CategoryPage)}");
             await Application.Current.MainPage.Navigation.PushAsync(new CategoryPage());
 
         }

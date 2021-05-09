@@ -8,7 +8,6 @@ namespace ciftcidenEve.ViewModels
     public class LoginViewModel : BaseViewModel
     {
         public Command LoginCommand { get; }
-        public Command LoginCommandGuess { get; }
         public Command SignUpCommand { get; }
         public string Email { get; set; }
         public string Password { get; set; }
@@ -22,11 +21,10 @@ namespace ciftcidenEve.ViewModels
 
         private async void OnLoginClicked(object obj)
         {
-         
-
             if (App.memberDatabase.MemberLogin(Email,Password))
             {
                 App.authorization = true;
+               
                 CrossToastPopUp.Current.ShowCustomToast("Giriş başarılı", "#f5712f", "white", Plugin.Toast.Abstractions.ToastLength.Short);
                 await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
             }

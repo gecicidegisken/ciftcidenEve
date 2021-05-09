@@ -28,9 +28,9 @@ namespace ciftcidenEve.ViewModels
             AddBagCommand = new Command(OnAddClicked);
             
         }
-        private async void OnAddClicked(object obj)
-        {
-            Product product = await DataStore.GetItemAsync(ItemId);
+        private async void OnAddClicked(object obj) { 
+        
+            Product product = App.mDatabase.GetProduct(itemId).Result;
             Product bagProduct = new Product();
             bagProduct.Id = App.products.Count + 1;
             bagProduct.Text = product.Text;
@@ -102,7 +102,7 @@ namespace ciftcidenEve.ViewModels
         {
             try
             {
-                Product item = await DataStore.GetItemAsync(itemId);
+                Product item = App.mDatabase.GetProduct(itemId).Result;
                 Id = item.Id;
                 Text = item.Text;
                 Tag = item.Tag;

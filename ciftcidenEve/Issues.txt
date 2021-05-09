@@ -9,7 +9,7 @@
       >> SQLite - ürün cıkarma
       >> SQLite - listeleme                               
       >> SQLite - veritabanı güncelleme  
-      >> SQLite - Kullanıcı servisi
+    
       >> Ürün Stok sistemi
 
 
@@ -19,14 +19,15 @@
       -- Ürün arama ve listeleme
       
   >> ÜRÜNE SATICI ÖZELLİĞİ GELECEK
-	Kişi modeli oluşturulacak
+
 
     - Filtreleme butonu
     - Alt kategori ara yüzleri
-
-
  -- Satın alma arayüzü
 
+
+++ SQLite - Kullanıcı servisi
+++	Kişi modeli oluşturulacak
 ++ SQLite ürün ekleme
 ++ Sign up sayfasından sonra geri tuşuna basınca uygulamadan çıkıyor, giriş yapma ekranına geri dönsün
 ++ Login sayfasından sonra geri tuşuna basınca uygulamadan çıkıyor, giriş yapma ekranına geri dönsün

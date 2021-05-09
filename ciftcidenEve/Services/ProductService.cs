@@ -14,7 +14,7 @@ namespace ciftcidenEve
         public ProductService()
         {
             db = new SQLiteAsyncConnection(Path.Combine(Xamarin.Essentials.FileSystem.
-                AppDataDirectory, "producttt.db3"));
+                AppDataDirectory, "product.db3"));
             db.CreateTableAsync<Product>().Wait();
 
             //İlk ürünü otomatik eklesin diye bir örnek- bu yorum satırı sonradan
@@ -27,7 +27,7 @@ namespace ciftcidenEve
                 Price = 10,
                 Tag = "Sebze",
                 Satici = "Hilal Elif Mutlu"
-               // Image
+                // Image
             };
             db.InsertAsync(darari);
         }

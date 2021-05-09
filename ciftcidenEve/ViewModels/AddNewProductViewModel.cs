@@ -11,6 +11,7 @@ namespace ciftcidenEve.ViewModels
         public string Text { get; set; }
         public string Description { get; set; }
         public string Tag { get; set; }
+        public string SubTag { get; set; }
        
         public string Satici { get; set; }
         public float Price { get; set; }
@@ -51,15 +52,14 @@ namespace ciftcidenEve.ViewModels
                 Description = this.Description,
                 Price = this.Price,
                 Tag = this.Tag,
-                Satici = this.Satici,
+                //SubTag
+                Satici = App.currentUser.Name,
               //  Image = this.Image
             };
             //Add item to our local SQLite database.
             App.mDatabase.Add(newItem);
-
-            await DataStore.AddItemAsync(newItem);
             await Shell.Current.GoToAsync("//HomePage");
-          //  await ProductService.AddProduct(newItem);
+          
         }
     }
 }

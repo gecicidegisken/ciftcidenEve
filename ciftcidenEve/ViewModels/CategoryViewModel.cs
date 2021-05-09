@@ -41,10 +41,9 @@ namespace ciftcidenEve.ViewModels
             try
             {
                 Products.Clear();
-                var items = await DataStore.GetItemsAsync(true);
-                foreach (var item in items)
+                List<Product> itemsdb = App.mDatabase.GetProducts();
+                foreach (var item in itemsdb)
                 {
-                    if(item.Tag==Tag)
                     Products.Add(item);
                 }
             }

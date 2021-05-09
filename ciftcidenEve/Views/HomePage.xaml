@@ -31,9 +31,9 @@
         <ToolbarItem Order="Primary" Priority="0" IconImageSource="mainLogo.png"></ToolbarItem>
         <ToolbarItem Text=" " Order="Primary" Priority="1"></ToolbarItem>
         <ToolbarItem Text=" " Order="Primary" Priority="2"></ToolbarItem>
-
-        <ToolbarItem x:Name="rightTopButton" Order="Primary" Priority="3"
-                     Text="{Binding BtnText , Mode=TwoWay}" Command="{Binding LoginCommand}">
+        <ToolbarItem Text=" " Order="Primary" Priority="3"></ToolbarItem>
+        <ToolbarItem x:Name="rightTopButton" Order="Primary" Priority="4"
+                      IconImageSource="profil_icon.png" Command="{Binding AccountCommand}">
         </ToolbarItem>
 
 

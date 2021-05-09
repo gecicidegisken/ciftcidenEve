@@ -105,9 +105,10 @@
             <ShellContent Route="CardPage" ContentTemplate="{DataTemplate local:CardPage}" />
         </Tab>
 
-        <Tab Title="Ürün Sat" Icon="satici_icon.png">
-            <ShellContent Route="ProductsPage" ContentTemplate="{DataTemplate local:UrunSatisPage}" />
+        <Tab Title="Ürün Sat" Icon="satici_icon.png"  >
+            <ShellContent Route="UrunSatisPage" ContentTemplate="{DataTemplate local:UrunSatisPage}" />
         </Tab>
+
 
     </FlyoutItem>
    
@@ -126,7 +127,7 @@
     
     
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
-    <MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">
+    <MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnLogoutClicked">
     </MenuItem>
     
 
@@ -168,15 +169,8 @@
      <!--Optional Templates 
     // These may be provided inline as below or as separate classes.
 
-    // This header appears at the top of the Flyout.
-    // https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/flyout#flyout-header
-    <Shell.FlyoutHeaderTemplate>
-        <DataTemplate>
-            <Grid>ContentHere</Grid>
-        </DataTemplate>
-    </Shell.FlyoutHeaderTemplate>-->
 
-    <!--// ItemTemplate is for ShellItems as displayed in a Flyout
+    // ItemTemplate is for ShellItems as displayed in a Flyout
     // https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/flyout#define-flyoutitem-appearance-->
     <!--<Shell.ItemTemplate>
         <DataTemplate>

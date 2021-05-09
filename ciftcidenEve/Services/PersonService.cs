@@ -48,8 +48,17 @@ namespace ciftcidenEve.Services
 
             var results = memberDB.Table<Person>().Where(p => p.Email == email && p.Password == password);
 
-            return (results.CountAsync().Result > 0);
+            if (results.CountAsync().Result > 0)
+            {
+                App.currentUser = results.ElementAtAsync(0).Result;
+                return true;
+               
+            }
+            
+            return false;
         }
+
+      
     }
 }
 

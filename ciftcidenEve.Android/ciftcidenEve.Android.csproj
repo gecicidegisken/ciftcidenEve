@@ -184,5 +184,8 @@
   <ItemGroup>
     <AndroidAsset Include="Resources\drawable\papatyaCayi.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\profil_icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

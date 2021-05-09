@@ -10,6 +10,7 @@ namespace ciftcidenEve
     public partial class App : Application
     {
         public static Boolean authorization = false;
+        public static Person currentUser;
         public static List<Product> products = new List<Product>();
         public static ProductService mDatabase = new ProductService();
         public static PersonService memberDatabase = new PersonService();
@@ -17,7 +18,7 @@ namespace ciftcidenEve
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            //DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 

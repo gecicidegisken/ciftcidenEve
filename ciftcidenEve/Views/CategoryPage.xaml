@@ -69,7 +69,7 @@
                     <DataTemplate>
                         <StackLayout Padding="10" x:DataType="model:Product">
 
-                            <Image BackgroundColor="Transparent" Source="{Binding Image.Source}" ></Image>
+                            <!--<Image BackgroundColor="Transparent" Source="{Binding Image.Source}" ></Image>-->
 
                             <StackLayout Spacing="70" Orientation="Horizontal">
                                 <StackLayout Orientation="Vertical">

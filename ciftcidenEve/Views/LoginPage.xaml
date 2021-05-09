@@ -14,19 +14,18 @@
             <ContentView Padding="0,10,0,100" VerticalOptions="Center">
             <Image Source="ciftcidenEve_logo.png" VerticalOptions="Center"  />
         </ContentView>
-            <Entry   Text = "{Binding Email}" Placeholder = "Email"  
+            <Entry   Text = "{Binding Email, Mode=TwoWay}" Placeholder = "Email"  
                          PlaceholderColor = "Gray" HeightRequest = "80"  
                          Keyboard = "Email"  
                          TextColor = "Black" 
                       />
-            <Entry  Text = "{Binding Password}" Placeholder = "Şifre"  
+            <Entry  Text = "{Binding Password, Mode=TwoWay}" Placeholder = "Şifre"  
                            PlaceholderColor = "Gray" HeightRequest = "40"  
                            IsPassword = "True"  
                            TextColor = "Black" />
          
 
             <Button Margin="0,20,0,20" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" WidthRequest="250" Text="GİRİŞ YAP" Command="{Binding LoginCommand}" FontSize = "Large"/>
-            <Button Margin="0,0,0,0" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" WidthRequest="250" Text="MİSAFİR GİRİSİ" Command="{Binding LoginCommandGuess}" FontSize = "Large"/>
            
             
             <Label HorizontalOptions="Center" Padding="0,30,0,0">

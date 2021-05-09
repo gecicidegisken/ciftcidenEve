@@ -21,12 +21,13 @@
         </ContentView>
         <!--İLETİSİM BİLGİLERİ FORMU-->
         <StackLayout Orientation="Horizontal">
-            <Entry Placeholder="İsim"></Entry>
-            <Entry Placeholder="Soyisim"></Entry>
+            <Entry Placeholder="İsim Soyisim" Text="{Binding Name, Mode=TwoWay}"></Entry>
+          
    </StackLayout>
-        <Entry Placeholder="Email"></Entry>
-        <Entry Placeholder="Parola" IsPassword="True"></Entry>
-        <Entry Placeholder="Parola Tekrar" IsPassword="True"></Entry>
+        <Entry Placeholder="Email"  Text="{Binding Email, Mode=TwoWay}"></Entry>
+        <Entry Placeholder="Parola" IsPassword="True"  Text="{Binding Password, Mode=TwoWay}"></Entry>
+        <Entry Placeholder="Parola Tekrar" IsPassword="True"  Text="{Binding PasswordCheck, Mode=TwoWay}"></Entry>
+        <Entry Placeholder="Şehriniz"  Text="{Binding City, Mode=TwoWay}"></Entry>
  <!--İLETİSİM BİLGİLERİ FORMU -->
         
         <!--CAPTCHA HERE-->
@@ -60,7 +61,7 @@
        
         
         <!-- UYE OL BUTONU -->
-        <Button Grid.Column="0" x:Name="signUpBtn" Text="Üye Ol" IsEnabled="False" Clicked="OnButtonClicked">
+        <Button Grid.Column="0" x:Name="signUpBtn" Text="Üye Ol" IsEnabled="False"  Command="{Binding TapCommand}">
             <Button.Triggers>
                 <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference checkBox}, Path=IsChecked}" Value="True">
                     <Setter Property="IsEnabled" Value="False" ></Setter>

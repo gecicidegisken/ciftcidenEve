@@ -1,5 +1,6 @@
 ﻿using ciftcidenEve.Views;
 using Xamarin.Forms;
+using Plugin.Toast;
 
 
 namespace ciftcidenEve.ViewModels
@@ -9,36 +10,40 @@ namespace ciftcidenEve.ViewModels
         public Command LoginCommand { get; }
         public Command LoginCommandGuess { get; }
         public Command SignUpCommand { get; }
+        public string Email { get; set; }
+        public string Password { get; set; }
 
         public LoginViewModel()
         {
             LoginCommand = new Command(OnLoginClicked);
             SignUpCommand = new Command(OnSignUpClicked);
-            LoginCommandGuess = new Command(OnLoginGuessClicked);
+           
         }
 
         private async void OnLoginClicked(object obj)
         {
-            //Kullanıcı girişi kontrolü
-            App.authorization = true;
-            // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
-            await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
-           
+         
+
+            if (App.memberDatabase.MemberLogin(Email,Password))
+            {
+                App.authorization = true;
+                CrossToastPopUp.Current.ShowCustomToast("Giriş başarılı", "#f5712f", "white", Plugin.Toast.Abstractions.ToastLength.Short);
+                await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+            }
+            else
+            {
+                CrossToastPopUp.Current.ShowCustomToast("Kullanıcı bulunamadı.\nEmail ve şifrenizi kontrol edin.", "#f5712f", "white", Plugin.Toast.Abstractions.ToastLength.Short);
+
+            }
+
         } 
         private async void OnSignUpClicked(object obj)
         {
-             
-            
+                     
              // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
              await Shell.Current.GoToAsync($"//{nameof(SignUpPage)}");
         }
-        private async void OnLoginGuessClicked(object obj)
-        {
-            //Misafir girişi kontrolü
-            App.authorization = false;
-            
-            await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
-        }
+    
 
     }
 }

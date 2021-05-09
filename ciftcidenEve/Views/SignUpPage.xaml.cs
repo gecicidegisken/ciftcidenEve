@@ -23,10 +23,11 @@ namespace ciftcidenEve.Views
         }
        async protected void OnButtonClicked(object sender, EventArgs e)
         {
-            CrossToastPopUp.Current.ShowCustomToast("Üyelik işlemi tamamlandı", "#f5712f","white", Plugin.Toast.Abstractions.ToastLength.Short);
-           //CrossToastPopUp.Current.ShowToastMessage("Üyelik tamamlandı.");
+            //CrossToastPopUp.Current.ShowCustomToast("Üyelik işlemi tamamlandı", "#f5712f","white", Plugin.Toast.Abstractions.ToastLength.Short);
+           //CrossToastPopUp.Current.ShowToastMessage("bu çalışıtyo.");
 
-            await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+            //await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+
         }
     }
 }

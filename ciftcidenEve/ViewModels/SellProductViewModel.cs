@@ -1,5 +1,6 @@
 ﻿using ciftcidenEve.Models;
 using Xamarin.Forms;
+using Plugin.Toast;
 
 
 namespace ciftcidenEve.ViewModels
@@ -40,7 +41,6 @@ namespace ciftcidenEve.ViewModels
 
         private async void OnCancel()
         {
-            // This will pop the current page off the navigation stack
             await Shell.Current.GoToAsync("//HomePage");
         }
 
@@ -52,12 +52,14 @@ namespace ciftcidenEve.ViewModels
                 Description = this.Description,
                 Price = this.Price,
                 Tag = this.Tag,
-                //SubTag
-                Satici = App.currentUser.Name,
+                SubTag = this.SubTag,
+              //  Satici = App.currentUser.Name,
               //  Image = this.Image
             };
+
             //Add item to our local SQLite database.
             App.mDatabase.Add(newItem);
+            CrossToastPopUp.Current.ShowCustomToast("Ürün satışa çıkarıldı.", "#f5712f", "white", Plugin.Toast.Abstractions.ToastLength.Short);
             await Shell.Current.GoToAsync("//HomePage");
           
         }

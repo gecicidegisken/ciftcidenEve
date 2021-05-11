@@ -15,6 +15,7 @@ namespace ciftcidenEve.ViewModels
         
         string text;
         string tag;
+        string subTag;
         float price;
         string description;
         string satici;
@@ -72,6 +73,11 @@ namespace ciftcidenEve.ViewModels
             get => tag;
             set => SetProperty(ref tag, value);
         }
+        public string SubTag
+        {
+            get => subTag;
+            set => SetProperty(ref subTag, value);
+        }
 
         public string Description
         {
@@ -106,6 +112,7 @@ namespace ciftcidenEve.ViewModels
                 Id = item.Id;
                 Text = item.Text;
                 Tag = item.Tag;
+                SubTag = item.SubTag;
                 Description = item.Description;
                 Price = item.Price;
                // Image = item.Image; 

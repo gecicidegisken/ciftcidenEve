@@ -19,7 +19,7 @@
                 <Setter Property="Margin" Value="0,0,0,10"></Setter>
                 <Setter Property="HeightRequest" Value="70"></Setter>
                 <Setter Property="VerticalOptions" Value="Center"></Setter>
-                <Setter Property="Command" Value="{Binding CategoryCommand}"></Setter>
+                <Setter Property="Command" Value="{Binding SubCategoryCommand}"></Setter>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -51,13 +51,13 @@
 
 
             </Grid.ColumnDefinitions>
-            <ImageButton Grid.Column=" 0" Source="urun_kahvaltilik_icon.png" CommandParameter="Kahvaltılık" />
-            <ImageButton Grid.Column=" 1" Source="urun_icecek_icon.png" CommandParameter="Sağlıklı İçecek"   />
-            <ImageButton Grid.Column=" 2" Source="urun_sebze_icon.png"  CommandParameter="Sebze" />
-            <ImageButton Grid.Column=" 3" Source="urun_meyve_icon.png" CommandParameter="Meyve" />
-            <ImageButton Grid.Column=" 4" Source="urun_tohumCicek_icon.png" CommandParameter="Çiçek, Fidan, Tohum" />
+                <ImageButton Grid.Column="0" x:Name="ImageButton1"  />
+                <ImageButton Grid.Column="1" x:Name="ImageButton2"  />
+                <ImageButton Grid.Column="2" x:Name="ImageButton3"  />
+                <ImageButton Grid.Column="3" x:Name="ImageButton4"  />
+                <ImageButton Grid.Column="4" x:Name="ImageButton5"  />
 
-        </Grid>
+            </Grid>
         <!-- kategori iconları grid -->
         <!--ürünlerin listesi-->
         <RefreshView Grid.Row="1"   x:DataType="local:CategoryViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}" x:Name="mRefreshViewCategoryPage" RefreshColor="Green">

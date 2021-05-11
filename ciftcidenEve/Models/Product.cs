@@ -22,13 +22,7 @@ namespace ciftcidenEve.Models
         public Command DeleteCommand { get; }
        public Product()
         {
-            Categories.Add("Sebze");
-            Categories.Add("Meyve");
-            Categories.Add("Kahvaltılık");
-            Categories.Add("Sağlıklı İçecek");
-            Categories.Add("Kişisel Bakım");
-            Categories.Add("Tohum, Fidan, Çiçek");
-            Categories.Add("Et ve Balık");
+           
             DeleteCommand = new Command(deleteThis);
         }
         private async void deleteThis(object obj)

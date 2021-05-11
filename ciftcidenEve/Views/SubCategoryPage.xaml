@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ciftcidenEve.Views.SubCategoryPage"
+              xmlns:vm="clr-namespace:ciftcidenEve.ViewModels"
+              xmlns:local="clr-namespace:ciftcidenEve.ViewModels"
+              xmlns:model="clr-namespace:ciftcidenEve.Models"
+             Title="{Binding PageTitle}">
+
+    <ContentPage.BindingContext>
+        <vm:SubCategoryViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Style TargetType="ImageButton">
+                <Setter Property="BackgroundColor" Value="Transparent"></Setter>
+                <Setter Property="Margin" Value="0,0,0,10"></Setter>
+                <Setter Property="HeightRequest" Value="70"></Setter>
+                <Setter Property="VerticalOptions" Value="Center"></Setter>
+                <Setter Property="Command" Value="{Binding LoadItemsCommand}"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid>
+            <!-- main grid -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <!-- 0 ürün kategorileri -->
+                <RowDefinition Height="Auto" />
+                <!-- 2  ürünler listesi -->
+
+            </Grid.RowDefinitions>
+
+
+             
+            <!--ürünlerin listesi-->
+            <RefreshView Grid.Row="1"   x:DataType="local:CategoryViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}" x:Name="mRefreshViewSubCategoryPage" RefreshColor="Green">
+
+                <CollectionView x:Name="collectionView" ItemsSource="{Binding Products}" >
+
+                    <CollectionView.ItemTemplate>
+
+                        <DataTemplate>
+                            <StackLayout Padding="10" x:DataType="model:Product">
+
+                                <!--<Image BackgroundColor="Transparent" Source="{Binding Image.Source}" ></Image>-->
+
+                                <StackLayout Spacing="70" Orientation="Horizontal">
+                                    <StackLayout Orientation="Vertical">
+
+                                        <Label Text="{Binding Text}" 
+                            FontAttributes="Bold"
+                            TextColor="Green"
+                            LineBreakMode="NoWrap" 
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="20" />
+                                        <Label Text="{Binding Tag}"
+                             TextColor="Orange"
+                            LineBreakMode="NoWrap"
+                            Style="{DynamicResource ListItemDetailTextStyle}"
+                            FontSize="13" />
+
+                                    </StackLayout>
+                                    <Frame
+                                    CornerRadius="10"  
+                                    HorizontalOptions="EndAndExpand" 
+                                  HasShadow="False"
+                                    Padding="8"
+                                   BackgroundColor="White">
+                                        <Label Text="{Binding Price, StringFormat='{0} TL'}"
+                             HorizontalOptions="EndAndExpand"
+                            FontAttributes="Bold"
+                            LineBreakMode="NoWrap"
+                            TextColor="Orange"
+                            Style="{DynamicResource ListItemDetailTextStyle}"
+                            FontSize="25" 
+                                  />
+                                    </Frame>
+
+                                </StackLayout>
+                                <Rectangle HorizontalOptions="FillAndExpand" HeightRequest="1" WidthRequest="100" BackgroundColor="Orange" />
+
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer 
+                                NumberOfTapsRequired="1"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:CategoryViewModel}}, Path=ItemTapped}"		
+                                CommandParameter="{Binding .}">
+                                    </TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+
+
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </RefreshView>
+            <!--ürünlerin listesi-->
+        </Grid>
+        <!-- main grid -->
+    </ContentPage.Content>
+</ContentPage>

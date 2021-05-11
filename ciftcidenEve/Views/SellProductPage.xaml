@@ -15,19 +15,17 @@
                
                 <Label Text="Ürün Adı" FontSize="Medium" />
                 <Entry Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" />
-                
-                <Label Text="satıcı" FontSize="Medium" />
-                <Entry Text="{Binding Satici, Mode=TwoWay}" FontSize="Medium" />
 
                 <Label Text="Ürün Açıklaması" FontSize="Medium" />
                 <Editor Text="{Binding Description, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
 
                 <Label Text="Ürünün Fiyatını Belirleyin" FontSize="Medium" />
                 <Entry Keyboard="Numeric" Text="{Binding Price, Mode=TwoWay}" FontSize="Medium" />
-      
-                <Picker x:Name="TagPicker"  Title="Ürün Kategorisi Seçin" Margin="0,10,0,10" SelectedItem="{Binding Tag}">
-                   
+
+                <Picker x:Name="TagPicker"  Title="Ürün Kategorisi Seçin" Margin="0,10,0,10" SelectedItem="{Binding Tag}" SelectedIndexChanged="OnTagPickerSelectedIndexChanged">
+
                 </Picker>
+                <Picker x:Name="SubTagPicker" Title="Alt kategori seçin" Margin="0,10,0,10" Focused="SubTagPicker_Focused" SelectedItem="{Binding SubTag} "></Picker>
 
 
                 <Button Margin="0,10,0,20" HorizontalOptions="CenterAndExpand" HeightRequest="50" WidthRequest="1000"  Text="Ürün Fotoğrafı Yükleyin"

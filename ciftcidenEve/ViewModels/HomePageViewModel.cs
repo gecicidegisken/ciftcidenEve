@@ -16,8 +16,7 @@ namespace ciftcidenEve.ViewModels
         public List<Product> Products { get; }
         public ICommand AccountCommand { get; }
         public ICommand ItemDetailCommand { get; }
-        public Command LoadItemsCommand { get; }
-        public Command AddItemCommand { get; }
+        public Command LoadItemsCommand { get; }     
         public ICommand CategoryCommand { get; }
 
         public ProductDetailViewModel details;
@@ -28,15 +27,11 @@ namespace ciftcidenEve.ViewModels
         public HomePageViewModel()
         {
             Title = "Ana Sayfa";
-            AddItemCommand = new Command(OnAddItem);
-
             ItemDetailCommand = new Command<Product>(ShowItemDetails);
-
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
             AccountCommand = new Command(OnAccountClicked);
             Products = new List<Product>();
             ItemTapped = new Command<Product>(ShowItemDetails);
-
             CategoryCommand = new Command<string>(ShowCategory);
         }
 
@@ -79,11 +74,7 @@ namespace ciftcidenEve.ViewModels
             }
             
         }
-        private async void OnAddItem(object obj)
-        {
-            await Shell.Current.GoToAsync("//UrunSatisPage");
-        }
-       
+      
         public Product SelectedItem
         {
             get => _selectedItem;
@@ -105,8 +96,8 @@ namespace ciftcidenEve.ViewModels
 
         private async void ShowCategory(string tag)
         {
-            CategoryViewModel.Tag = tag;
-            await Application.Current.MainPage.Navigation.PushAsync(new CategoryPage());
+            Debug.WriteLine("buraya kadar geldi");
+            await Application.Current.MainPage.Navigation.PushAsync(new CategoryPage(tag));
 
         }
         

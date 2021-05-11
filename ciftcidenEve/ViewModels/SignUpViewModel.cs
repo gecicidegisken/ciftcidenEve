@@ -63,8 +63,8 @@ namespace ciftcidenEve.ViewModels
             {
                 //Add new member to our local SQLite database.
                 App.memberDatabase.Add(newMember);
-                CrossToastPopUp.Current.ShowCustomToast("Üyelik işlemi tamamlandı", "#f5712f", "white", Plugin.Toast.Abstractions.ToastLength.Short);
-                await Shell.Current.GoToAsync("//HomePage");
+                CrossToastPopUp.Current.ShowCustomToast("Üyelik işlemi tamamlandı.\nGiriş yapabilirsiniz.", "#f5712f", "white", Plugin.Toast.Abstractions.ToastLength.Short);
+                await Shell.Current.GoToAsync("//LoginPage");
             }
 
            

@@ -10,14 +10,14 @@ using System.IO;
 namespace ciftcidenEve.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class UrunSatisPage : ContentPage
+    public partial class SellProductPage : ContentPage
     {
         public Product Product = new Product();
        
-        public UrunSatisPage()
+        public SellProductPage()
         {
             InitializeComponent();
-            BindingContext = new AddNewProductViewModel();
+            BindingContext = new SellProductViewModel();
            TagPicker.ItemsSource = Product.Categories;
            
         }

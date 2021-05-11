@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 namespace ciftcidenEve.ViewModels
 {
-    public class AddNewProductViewModel : BaseViewModel
+    public class SellProductViewModel : BaseViewModel
     {
         public Command SaveCommand { get; }
         public Command CancelCommand { get; }
@@ -18,7 +18,7 @@ namespace ciftcidenEve.ViewModels
         public Image Image{get; set;}
 
 
-        public AddNewProductViewModel()
+        public SellProductViewModel()
         {
             
             SaveCommand = new Command(OnSave);

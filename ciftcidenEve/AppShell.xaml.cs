@@ -13,7 +13,7 @@ namespace ciftcidenEve
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(ProductDetailPage), typeof(ProductDetailPage));
-            Routing.RegisterRoute(nameof(UrunSatisPage), typeof(UrunSatisPage));
+            Routing.RegisterRoute(nameof(SellProductPage), typeof(SellProductPage));
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)

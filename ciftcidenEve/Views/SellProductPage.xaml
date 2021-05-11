@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ciftcidenEve.Views.UrunSatisPage"
+             x:Class="ciftcidenEve.Views.SellProductPage"
              xmlns:vm="clr-namespace:ciftcidenEve.ViewModels"
              Title="Ürün Sat">
 
     <ContentPage.BindingContext>
-        <vm:AddNewProductViewModel />
+        <vm:SellProductViewModel />
     </ContentPage.BindingContext>
 
     <ContentPage.Content>

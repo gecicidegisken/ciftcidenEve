@@ -106,7 +106,7 @@
         </Tab>
 
         <Tab Title="Ürün Sat" Icon="satici_icon.png"  >
-            <ShellContent Route="UrunSatisPage" ContentTemplate="{DataTemplate local:UrunSatisPage}" />
+            <ShellContent Route="SellProductPage" ContentTemplate="{DataTemplate local:SellProductPage}" />
         </Tab>
 
 

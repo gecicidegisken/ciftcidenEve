@@ -29,7 +29,10 @@ namespace ciftcidenEve.ViewModels
 
            
         }
-      
+        private void darari()
+        {
+            
+        }
 
         //private bool ValidateSave()
         //{ //isim ve açıklama boş bırakılamaz

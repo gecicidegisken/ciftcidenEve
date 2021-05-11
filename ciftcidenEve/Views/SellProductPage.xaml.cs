@@ -17,6 +17,7 @@ namespace ciftcidenEve.Views
         public Product Product = new Product();
         public CategoryService categoryService = new CategoryService();
         public string cat = "";
+        public Boolean isThereMainCategory = false;
         public SellProductPage()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace ciftcidenEve.Views
         }
         protected override void OnAppearing()
         {
-            
+          
             if (App.authorization)
             {
                 base.OnAppearing();
@@ -41,33 +42,46 @@ namespace ciftcidenEve.Views
 
         async void OnTagPickerSelectedIndexChanged(object sender, EventArgs e)
         {
-
+            SubTagPicker.Items.Clear();
+            isThereMainCategory = true;
             cat = TagPicker.SelectedItem.ToString();
             categoryService.ShowSubCategory(cat);
-            SubTagPicker.ItemsSource = categoryService.SubCategories;
+            // SubTagPicker.ItemsSource = categoryService.SubCategories;
+            foreach(string i in categoryService.SubCategories)
+            {
+                SubTagPicker.Items.Add(i);
+            }
+           
+            //CrossToastPopUp.Current.ShowCustomToast(cat, "#f5712f", "white", Plugin.Toast.Abstractions.ToastLength.Short);
+            notifySubTags();
+
         }
+        private void notifySubTags()
+        {
+            if (isThereMainCategory)
+            {
+                SubTagPicker.Items.Clear();
+                foreach (string i in categoryService.SubCategories)
+                {
+                    SubTagPicker.Items.Add(i);
+                }
+                Debug.WriteLine("darari");
+                cat = TagPicker.SelectedItem.ToString();
+                categoryService.ShowSubCategory(cat);
+               // SubTagPicker.ItemsSource = categoryService.SubCategories;
+                OnPropertyChanged("SubTagPicker");
+                OnPropertyChanged("SubTag");
+            }
+                
+        }
+        
         private void SubTagPicker_Focused(object sender, FocusEventArgs e)
         {
             Debug.WriteLine("focused");
-
+            notifySubTags();
             categoryService.ShowSubCategory(cat);
 
-
-
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         protected override bool OnBackButtonPressed()
         {
@@ -88,7 +102,5 @@ namespace ciftcidenEve.Views
 
                  (sender as Button).IsEnabled = true;
         }
-        
-       
     }
 }

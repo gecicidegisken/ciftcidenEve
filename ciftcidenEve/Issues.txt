@@ -7,8 +7,9 @@
 
  >>giris yapmayı dbug için kapattım geri açılacak, aynı şekilde sell product VM'de satıcı bilgisini aç
  
- >> alt kategoriye gelince sadece ekranda dönen bir yenileme simgesi var, alt kategorinin ürünleri yüklenmiyor
 
+  -- sepette ürün yok yazısını tekrar aç
+  >> sepetle ilgili hiçbir ley yapmadık henüz
  >>ürün kategorisi seçerken (satış yapmada) ilk kategoriyi seçtikten sonra alt kategoriler bir daha düzenlenmiyor. ??
 
       >> SQLite - ürün cıkarma
@@ -46,4 +47,6 @@
 ++ Bize ulaş, hakkımızda ve gizlilik sayfaları
 ++ Sepetten silme
 ++ Card page refresh view auto refresh
- ++ sepette ürün yok yazısı
+
+
+  ++ alt kategoriye gelince sadece ekranda dönen bir yenileme simgesi var, alt kategorinin ürünleri yüklenmiyor

@@ -11,18 +11,6 @@
         <vm:SubCategoryViewModel />
     </ContentPage.BindingContext>
 
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Color x:Key="Accent">#96d1ff</Color>
-            <Style TargetType="ImageButton">
-                <Setter Property="BackgroundColor" Value="Transparent"></Setter>
-                <Setter Property="Margin" Value="0,0,0,10"></Setter>
-                <Setter Property="HeightRequest" Value="70"></Setter>
-                <Setter Property="VerticalOptions" Value="Center"></Setter>
-                <Setter Property="Command" Value="{Binding LoadItemsCommand}"></Setter>
-            </Style>
-        </ResourceDictionary>
-    </ContentPage.Resources>
 
     <ContentPage.Content>
         <Grid>
@@ -38,7 +26,7 @@
 
              
             <!--ürünlerin listesi-->
-            <RefreshView Grid.Row="1"   x:DataType="local:CategoryViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}" x:Name="mRefreshViewSubCategoryPage" RefreshColor="Green">
+            <RefreshView Grid.Row="1"   x:DataType="local:SubCategoryViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}" x:Name="mRefreshViewSubCategoryPage" RefreshColor="Green">
 
                 <CollectionView x:Name="collectionView" ItemsSource="{Binding Products}" >
 
@@ -87,7 +75,7 @@
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer 
                                 NumberOfTapsRequired="1"
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:CategoryViewModel}}, Path=ItemTapped}"		
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:SubCategoryViewModel}}, Path=ItemTapped}"		
                                 CommandParameter="{Binding .}">
                                     </TapGestureRecognizer>
                                 </StackLayout.GestureRecognizers>

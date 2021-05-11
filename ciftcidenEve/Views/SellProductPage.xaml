@@ -25,7 +25,7 @@
                 <Picker x:Name="TagPicker"  Title="Ürün Kategorisi Seçin" Margin="0,10,0,10" SelectedItem="{Binding Tag}" SelectedIndexChanged="OnTagPickerSelectedIndexChanged">
 
                 </Picker>
-                <Picker x:Name="SubTagPicker" Title="Alt kategori seçin" Margin="0,10,0,10" Focused="SubTagPicker_Focused" SelectedItem="{Binding SubTag} "></Picker>
+                <Picker x:Name="SubTagPicker" Title="Alt kategori seçin" Margin="0,10,0,10" Focused="SubTagPicker_Focused" SelectedItem="{Binding SubTag}"></Picker>
 
 
                 <Button Margin="0,10,0,20" HorizontalOptions="CenterAndExpand" HeightRequest="50" WidthRequest="1000"  Text="Ürün Fotoğrafı Yükleyin"

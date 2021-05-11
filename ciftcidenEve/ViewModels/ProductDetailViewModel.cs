@@ -19,6 +19,7 @@ namespace ciftcidenEve.ViewModels
         float price;
         string description;
         string satici;
+        string city;
         int itemId;
         Image image;
       
@@ -37,6 +38,7 @@ namespace ciftcidenEve.ViewModels
             bagProduct.Text = product.Text;
             bagProduct.Price = product.Price;
             bagProduct.Satici = product.Satici;
+            bagProduct.City = product.City;
             bagProduct.Tag = product.Tag;
 
 
@@ -55,6 +57,11 @@ namespace ciftcidenEve.ViewModels
         {
             get => satici;
             set => SetProperty(ref satici, value);
+        }
+        public string City
+        {
+            get => city;
+            set => SetProperty(ref city, value);
         }
         public Image Image
         {
@@ -118,6 +125,7 @@ namespace ciftcidenEve.ViewModels
                // Image = item.Image; 
                // Image.Source = item.Image.Source;
                 Satici = item.Satici;
+                City = item.City;
               
             }
             catch (Exception)

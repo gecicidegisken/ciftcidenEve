@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using System.Diagnostics;
+using Plugin.Toast;
 
 namespace ciftcidenEve
 {
@@ -23,7 +24,9 @@ namespace ciftcidenEve
         private async void OnLogoutClicked(object sender, EventArgs e)
         {
             App.authorization = false;
+            CrossToastPopUp.Current.ShowCustomToast("Hesabınızdan çıkış yaptınız.", "#f5712f", "white", Plugin.Toast.Abstractions.ToastLength.Short);
             await Shell.Current.GoToAsync("//HomePage");
+            Shell.Current.FlyoutIsPresented = false;
         }
 
         private async void OnSatisClicked(object sender, EventArgs e)

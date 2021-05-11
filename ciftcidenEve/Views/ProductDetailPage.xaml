@@ -23,7 +23,9 @@
             <StackLayout Orientation="Horizontal">
                  <Label Text="{Binding Tag}" FontSize="Micro" FontAttributes="Bold"/>
                     <Label Text="{Binding Satici, StringFormat=' | Satıcı: {0} '}" FontSize="Micro"></Label>
-            </StackLayout>
+                    <Label Text="{Binding City, StringFormat=' | Şehir: {0} '}" FontSize="Micro">
+                    </Label>
+                </StackLayout>
             <Rectangle HorizontalOptions="FillAndExpand" HeightRequest="1" WidthRequest="100" BackgroundColor="Gray" />
            
             <Label x:Name="mTextTitle" Text="{Binding Text}" FontSize="Title" TextColor="Green" FontAttributes="Bold"/>    

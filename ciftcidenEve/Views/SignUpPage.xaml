@@ -20,10 +20,7 @@
             <Image Source="ciftcidenEve_logo.png" VerticalOptions="CenterAndExpand"  />
         </ContentView>
         <!--İLETİSİM BİLGİLERİ FORMU-->
-        <StackLayout Orientation="Horizontal">
-            <Entry Placeholder="İsim Soyisim" Text="{Binding Name, Mode=TwoWay}"></Entry>
-          
-   </StackLayout>
+        <Entry Placeholder="İsim Soyisim" Text="{Binding Name, Mode=TwoWay}"></Entry>
         <Entry Placeholder="Email"  Text="{Binding Email, Mode=TwoWay}"></Entry>
         <Entry Placeholder="Parola" IsPassword="True"  Text="{Binding Password, Mode=TwoWay}"></Entry>
         <Entry Placeholder="Parola Tekrar" IsPassword="True"  Text="{Binding PasswordCheck, Mode=TwoWay}"></Entry>

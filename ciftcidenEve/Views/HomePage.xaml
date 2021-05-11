@@ -88,27 +88,28 @@
 
                             <!--<Image BackgroundColor="Transparent" Source="{Binding Image.Source}" ></Image>-->
 
-                            <StackLayout Spacing="70" Orientation="Horizontal">
+                            <StackLayout Spacing="50" Orientation="Horizontal">
                                 <StackLayout Orientation="Vertical">
 
                                     <Label Text="{Binding Text}" 
-                            FontAttributes="Bold"
-                            TextColor="Green"
-                            LineBreakMode="NoWrap" 
-                            Style="{DynamicResource ListItemTextStyle}" 
-                            FontSize="20" />
+                                       FontAttributes="Bold"
+                                       TextColor="Green"
+                                       LineBreakMode="NoWrap" 
+                                       Style="{DynamicResource ListItemTextStyle}" 
+                                       FontSize="20" />
                                     <StackLayout Orientation="Horizontal">
                                         <Label Text="{Binding Tag}"
                                              TextColor="Gray"
                                               FontSize="13"
                                                />
-                                        <Label Text="{Binding SubTag, StringFormat='>> {0}'}"
+                                        <Label Text="{Binding SubTag, StringFormat='> {0}'}"
                                               TextColor="Gray"
                                             FontAttributes="Italic"
                                               FontSize="13" />
                                         <Label Text="{Binding Satici, StringFormat='| {0}'}"
                                               TextColor="Gray"                                       
                                               FontSize="13" />
+                                    
                                     </StackLayout>
                                 </StackLayout>
                                 <Frame

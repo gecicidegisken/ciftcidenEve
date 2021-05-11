@@ -13,8 +13,7 @@ namespace ciftcidenEve.ViewModels
         public string Description { get; set; }
         public string Tag { get; set; }
         public string SubTag { get; set; }
-       
-        public string Satici { get; set; }
+
         public float Price { get; set; }
         public Image Image{get; set;}
 
@@ -53,7 +52,8 @@ namespace ciftcidenEve.ViewModels
                 Price = this.Price,
                 Tag = this.Tag,
                 SubTag = this.SubTag,
-              //  Satici = App.currentUser.Name,
+                 Satici = App.currentUser.Name,
+                City = App.currentUser.City,
               //  Image = this.Image
             };
 

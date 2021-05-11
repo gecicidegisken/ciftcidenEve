@@ -9,7 +9,7 @@ namespace ciftcidenEve
 {
     public partial class App : Application
     {
-        public static Boolean authorization = true;
+        public static Boolean authorization = false;
         public static Person currentUser;
         public static List<Product> products = new List<Product>();
         public static ProductService mDatabase = new ProductService();

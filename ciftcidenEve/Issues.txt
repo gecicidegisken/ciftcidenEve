@@ -6,6 +6,8 @@
  ?? Görsel ekleyince kaydet butonu görünmez oluyor (bazen oluyor bazen olmuyor çok saçma???)
 
  >>giris yapmayı dbug için kapattım geri açılacak, aynı şekilde sell product VM'de satıcı bilgisini aç
+ 
+ >> alt kategoriye gelince sadece ekranda dönen bir yenileme simgesi var, alt kategorinin ürünleri yüklenmiyor
 
  >>ürün kategorisi seçerken (satış yapmada) ilk kategoriyi seçtikten sonra alt kategoriler bir daha düzenlenmiyor. ??
 

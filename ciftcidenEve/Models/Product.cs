@@ -16,8 +16,6 @@ namespace ciftcidenEve.Models
         public float Price { get; set; }
         public string Tag { get; set; }  //ürün kategorisi (meyve sebze vs)
         public string SubTag { get; set; }  //ürün alt kategorisi (domates elma vs)
-        
-        public int Stock { get; set; } //ürün stok miktarı. satıldıkça azalması gerekiyor
         public string City { get; set; }
 
         public List<string> Categories = new List<string>();

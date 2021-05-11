@@ -97,12 +97,19 @@
                             LineBreakMode="NoWrap" 
                             Style="{DynamicResource ListItemTextStyle}" 
                             FontSize="20" />
-                                    <Label Text="{Binding Tag}"
-                             TextColor="Orange"
-                            LineBreakMode="NoWrap"
-                            Style="{DynamicResource ListItemDetailTextStyle}"
-                            FontSize="13" />
-
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding Tag}"
+                                             TextColor="Gray"
+                                              FontSize="13"
+                                               />
+                                        <Label Text="{Binding SubTag, StringFormat='>> {0}'}"
+                                              TextColor="Gray"
+                                            FontAttributes="Italic"
+                                              FontSize="13" />
+                                        <Label Text="{Binding Satici, StringFormat='| {0}'}"
+                                              TextColor="Gray"                                       
+                                              FontSize="13" />
+                                    </StackLayout>
                                 </StackLayout>
                                 <Frame
                                     CornerRadius="10"  

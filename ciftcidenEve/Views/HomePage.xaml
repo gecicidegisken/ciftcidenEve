@@ -85,8 +85,8 @@
                    
                     <DataTemplate>
                         <StackLayout Padding="10" x:DataType="model:Product">
-
-                            <!--<Image BackgroundColor="Transparent" Source="{Binding Image.Source}" ></Image>-->
+                            <!--  IMAGE BURADA SET EDILIYOR  -->
+                            <Image x:Name="imageView" Source="{Binding path}" BackgroundColor="Transparent"></Image>
 
                             <StackLayout Spacing="50" Orientation="Horizontal">
                                 <StackLayout Orientation="Vertical">

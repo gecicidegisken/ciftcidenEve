@@ -21,6 +21,7 @@ namespace ciftcidenEve.ViewModels
 
         public ProductDetailViewModel details;
         public Command<Product> ItemTapped { get; }
+        public Command ImageRetrieve{ get; set; }
         public string Tag { get; }
       
 
@@ -33,6 +34,12 @@ namespace ciftcidenEve.ViewModels
             Products = new List<Product>();
             ItemTapped = new Command<Product>(ShowItemDetails);
             CategoryCommand = new Command<string>(ShowCategory);
+            ImageRetrieve = new Command(imageRetrieve);
+        }
+        public void imageRetrieve()
+        {
+            Image image = new Image();
+            image.Source = ImageSource.FromUri(new Uri(""));
         }
 
         async Task ExecuteLoadItemsCommand()
@@ -103,4 +110,5 @@ namespace ciftcidenEve.ViewModels
         
 
     }
+
 }

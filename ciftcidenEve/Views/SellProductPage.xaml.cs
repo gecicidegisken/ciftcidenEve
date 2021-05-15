@@ -7,7 +7,11 @@ using System;
 using Plugin.Toast;
 using System.IO;
 using System.Diagnostics;
-
+using Firebase.Storage;
+using Plugin.Media.Abstractions;
+using Plugin.Media;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace ciftcidenEve.Views
 {
@@ -18,10 +22,15 @@ namespace ciftcidenEve.Views
         public CategoryService categoryService = new CategoryService();
         public string cat = "";
         public Boolean isThereMainCategory = false;
+        SellProductViewModel sellProductViewModel;
+
+        // sonradan eklediklerim
+        MediaFile file;
         public SellProductPage()
         {
             InitializeComponent();
-            BindingContext = new SellProductViewModel();
+            sellProductViewModel = new SellProductViewModel();
+            BindingContext = sellProductViewModel;
             TagPicker.ItemsSource = categoryService.Categories;
            
         }
@@ -72,7 +81,7 @@ namespace ciftcidenEve.Views
                 OnPropertyChanged("SubTagPicker");
                 OnPropertyChanged("SubTag");
             }
-                
+
         }
         
         private void SubTagPicker_Focused(object sender, FocusEventArgs e)
@@ -88,19 +97,78 @@ namespace ciftcidenEve.Views
             Shell.Current.GoToAsync($"//{nameof(HomePage)}");
             return true;
         }
-
+ 
         async void OnPickPhotoButtonClicked(object sender, EventArgs e)
+        {
+
+            (sender as Button).IsEnabled = true;
+
+            await CrossMedia.Current.Initialize();
+            
+            try
+            {
+                file = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+                {
+                    PhotoSize = Plugin.Media.Abstractions.PhotoSize.Small
+                });
+                if (file == null)
+                    return;
+                image.Source = ImageSource.FromStream(() =>
+                {
+                    var imageStram = file.GetStream();
+                    return imageStram;
+                });
+                
+                await StoreImages(file.GetStream());
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+        
+        }
+
+        // Store image photo
+        public async Task<string> StoreImages(Stream imageStream)
+        {
+            List<Product> list = App.mDatabase.GetProducts();
+            int number = list.Count + 1;
+            var stroageImage = await new FirebaseStorage("ciftcideneve-6894d.appspot.com")
+                .Child("Images")
+                .Child(number+".jpg")
+                .PutAsync(imageStream);
+            string imgurl = stroageImage;
+            Uri imageUri = new Uri(imgurl);
+            Product.path = imageUri;
+            sellProductViewModel.imageUri = imageUri;
+            sellProductViewModel.Path = imageUri;
+            CrossToastPopUp.Current.ShowCustomToast("Fotoğraf erisim tokeni :"+imgurl, 
+                "#f5712f", "white", Plugin.Toast.Abstractions.ToastLength.Short);
+
+            return imgurl;
+        }
+
+
+        // Old photo picker method
+        /*
+         * async void OnPickPhotoButtonClicked(object sender, EventArgs e)
         {
             (sender as Button).IsEnabled = false;
 
             Stream stream = await DependencyService.Get<IPhotoPickerService>().GetImageStreamAsync();
             if (stream != null)
             {
+                Image imageForStorage = new Image();
+                imageForStorage.Source = ImageSource.FromStream(() => stream);
                 image.Source = ImageSource.FromStream(() => stream);
-               
+
+                //------------------------------
             }
 
-                 (sender as Button).IsEnabled = true;
+            (sender as Button).IsEnabled = true;
         }
+
+        */
+
     }
 }

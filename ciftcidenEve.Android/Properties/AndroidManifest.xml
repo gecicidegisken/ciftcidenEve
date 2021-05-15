@@ -3,4 +3,5 @@
 	<uses-sdk android:minSdkVersion="25" android:targetSdkVersion="29" />
 	<application android:label="ciftcidenEve.Android" android:theme="@style/MainTheme"></application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 </manifest>

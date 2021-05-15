@@ -15,7 +15,7 @@ namespace ciftcidenEve.ViewModels
         public string SubTag { get; set; }
 
         public float Price { get; set; }
-        public Image Image{get; set;}
+        public Image Image {get; set;}
 
 
         public SellProductViewModel()
@@ -28,10 +28,7 @@ namespace ciftcidenEve.ViewModels
 
            
         }
-        private void darari()
-        {
-            
-        }
+     
 
         //private bool ValidateSave()
         //{ //isim ve açıklama boş bırakılamaz
@@ -55,9 +52,9 @@ namespace ciftcidenEve.ViewModels
                 Price = this.Price,
                 Tag = this.Tag,
                 SubTag = this.SubTag,
-                 Satici = App.currentUser.Name,
+                Satici = App.currentUser.Name,
                 City = App.currentUser.City,
-              //  Image = this.Image
+                Image = this.Image
             };
 
             //Add item to our local SQLite database.

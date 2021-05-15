@@ -33,8 +33,6 @@
 
                 <Image Margin="0,0,0,30" Aspect="AspectFit"  x:Name="image" Source="{Binding Image.Source, Mode=TwoWay}"></Image>
                
-                <!--<Image Margin="0,0,0,30" Aspect="AspectFit"  x:Name="image" Source="{Binding Source=card_icon.png, Mode=TwoWay}"></Image>-->
-
                
                
                 <StackLayout Padding="0,10,0,0" Orientation="Horizontal">

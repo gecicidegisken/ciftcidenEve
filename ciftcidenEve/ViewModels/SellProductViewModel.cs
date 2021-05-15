@@ -1,7 +1,7 @@
 ﻿using ciftcidenEve.Models;
 using Xamarin.Forms;
 using Plugin.Toast;
-
+using System;
 
 namespace ciftcidenEve.ViewModels
 {
@@ -13,9 +13,11 @@ namespace ciftcidenEve.ViewModels
         public string Description { get; set; }
         public string Tag { get; set; }
         public string SubTag { get; set; }
+        public Uri Path { get; set; }
 
         public float Price { get; set; }
         public Image Image{get; set;}
+        public Uri imageUri{get; set;}
 
 
         public SellProductViewModel()
@@ -27,10 +29,6 @@ namespace ciftcidenEve.ViewModels
                (_, __) => SaveCommand.ChangeCanExecute();
 
            
-        }
-        private void darari()
-        {
-            
         }
 
         //private bool ValidateSave()
@@ -55,9 +53,9 @@ namespace ciftcidenEve.ViewModels
                 Price = this.Price,
                 Tag = this.Tag,
                 SubTag = this.SubTag,
-                 Satici = App.currentUser.Name,
+                Satici = App.currentUser.Name,
                 City = App.currentUser.City,
-              //  Image = this.Image
+                path = this.Path
             };
 
             //Add item to our local SQLite database.
@@ -66,5 +64,6 @@ namespace ciftcidenEve.ViewModels
             await Shell.Current.GoToAsync("//HomePage");
           
         }
+      
     }
 }

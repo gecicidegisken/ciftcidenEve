@@ -4,6 +4,7 @@ using SQLite;
 using System.IO;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Xamarin.Forms;
 
 namespace ciftcidenEve
 {
@@ -11,7 +12,6 @@ namespace ciftcidenEve
     {
         //ASYNC olarak bir SQLite bağlantısı tanımlıyoruz, henüz boş.
         public SQLiteAsyncConnection db;
-       
         public ProductService()
         {
             db = new SQLiteAsyncConnection(Path.Combine(Xamarin.Essentials.FileSystem.
@@ -39,7 +39,7 @@ namespace ciftcidenEve
             List<Product> returnsfor = db.Table<Product>().ToListAsync().Result;
             return returnsfor;
         }
-
+ 
 
 
         //get products by main categories

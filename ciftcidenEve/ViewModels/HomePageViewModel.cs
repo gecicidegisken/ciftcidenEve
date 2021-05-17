@@ -31,7 +31,7 @@ namespace ciftcidenEve.ViewModels
         {
             Title = "Ana Sayfa";
             ItemDetailCommand = new Command<Product>(ShowItemDetails);
-            LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
+            LoadItemsCommand = new Command( ExecuteLoadItemsCommand);
             AccountCommand = new Command(OnAccountClicked);
             Products = new ObservableCollection<Product>();
             ItemTapped = new Command<Product>(ShowItemDetails);
@@ -40,7 +40,7 @@ namespace ciftcidenEve.ViewModels
         }
 
        
-        async public Task ExecuteLoadItemsCommand()
+         public void  ExecuteLoadItemsCommand()
         {
             IsBusy = true;
            
@@ -54,13 +54,20 @@ namespace ciftcidenEve.ViewModels
                 {
                     Products.Add(item);
                 } 
-                Debug.WriteLine(" şehir içinde alt filtre: " +SubFilter);
+             
             }
             else if (Filter == "Fiyat")
-            {
-                
-                Debug.WriteLine("Fiyata göre sıralama");
-            }
+            {          
+                    var x = float.Parse(SubFilter);
+                   
+                    Products.Clear();
+                    List<Product> itemsdb = App.mDatabase.GetProductsByPrice(x);
+                    foreach (var item in itemsdb)
+                    {
+                        Products.Add(item);
+                    }
+                    
+                }
             else if (Filter == "Satıcı")
             {
               
@@ -85,62 +92,6 @@ namespace ciftcidenEve.ViewModels
             }
             finally { 
             IsBusy = false;
-            }
-        }
-
-
-        public void onAppearing()
-        {
-            IsBusy = true;
-
-            try
-            {
-                if (Filter == "Şehir")
-                {
-
-                    Products.Clear();
-                    List<Product> itemsdb = App.mDatabase.GetProductsByCity(SubFilter);
-                    foreach (var item in itemsdb)
-                    {
-                        Products.Add(item);
-                        OnPropertyChanged();
-                    }
-                   
-                    Debug.WriteLine(" şehir içinde alt filtre: " + SubFilter);
-                }
-                else if (Filter == "Fiyat")
-                {
-
-                    Debug.WriteLine("Fiyata göre sıralama");
-                    OnPropertyChanged();
-                }
-                else if (Filter == "Satıcı")
-                {
-
-                    Products.Clear();
-                    List<Product> itemsdb = App.mDatabase.GetProductsBySeller(SubFilter);
-                    foreach (var item in itemsdb)
-                    {
-                        Products.Add(item);
-                        OnPropertyChanged();
-                    }
-                }
-
-                else
-                {
-
-                    Products.Clear();
-                    List<Product> itemsdb = App.mDatabase.GetProducts();
-                    foreach (var item in itemsdb)
-                    {
-                        Products.Add(item);
-                        OnPropertyChanged();
-                    }
-                }
-            }
-            finally
-            {
-                IsBusy = false;
             }
         }
 

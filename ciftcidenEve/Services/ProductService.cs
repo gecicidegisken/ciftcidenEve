@@ -62,6 +62,14 @@ namespace ciftcidenEve
             return filterProducts;
         }
 
+        //Get products by Price
+        public List<Product> GetProductsByPrice(float price)
+        {
+            var x = price + 10.0;
+            List<Product> filterProducts = db.Table<Product>().Where(i => i.Price >= price && i.Price <= x).ToListAsync().Result;
+
+            return filterProducts;
+        }
 
 
 

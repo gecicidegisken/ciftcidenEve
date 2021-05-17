@@ -13,12 +13,14 @@ namespace ciftcidenEve.Services
     {
         
         public SQLiteAsyncConnection memberDB;
+      
 
         public PersonService()
         {
             memberDB = new SQLiteAsyncConnection(Path.Combine(Xamarin.Essentials.FileSystem.
             AppDataDirectory, "members.db3"));
             memberDB.CreateTableAsync<Person>().Wait();
+         
 
         }
 
@@ -26,6 +28,7 @@ namespace ciftcidenEve.Services
         public void Add(Person member)
         {
             memberDB.InsertAsync(member);
+            
         }
 
         public List<Person> GetMembers()
@@ -33,6 +36,7 @@ namespace ciftcidenEve.Services
             List<Person> returnsfor = memberDB.Table<Person>().ToListAsync().Result;
             return returnsfor;
         }
+       
 
         //kayıt olurken aynı adresle başka üye olup olmadığının kontrolü
         public bool IsEmailUsed(string email)

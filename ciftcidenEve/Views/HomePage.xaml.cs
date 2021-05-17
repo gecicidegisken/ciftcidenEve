@@ -33,6 +33,7 @@ namespace ciftcidenEve.Views
         {
             await Task.Delay(3000);
             mRefreshViewHomePage.IsRefreshing = false;
+            mRefreshViewHomePage.Command = _viewModel.LoadItemsCommand;
            
         }
         protected override bool OnBackButtonPressed()
@@ -42,14 +43,15 @@ namespace ciftcidenEve.Views
         }
         protected async override void OnAppearing()
         {
-             
+ 
             base.OnAppearing();
-          
+            _viewModel.onAppearing();
             mRefreshViewHomePage.IsRefreshing = true;
+            collectionView.ItemsSource = _viewModel.Products;
+            OnPropertyChanged("mRefreshViewHomePage");
+            OnPropertyChanged("collectionView");
 
         }
-
-      
 
         protected void ShowFilters()
         {
@@ -59,7 +61,7 @@ namespace ciftcidenEve.Views
             FilterPicker.ItemsSource = filters;
         }
 
-        private void FilterPicker_SelectedIndexChanged(object sender, EventArgs e)
+        public void FilterPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
             _viewModel.Filter = FilterPicker.SelectedItem.ToString();
             Debug.WriteLine(_viewModel.Filter.ToString());
@@ -83,14 +85,17 @@ namespace ciftcidenEve.Views
             SubFilterPicker.Focus();
         }
 
-        private void SubFilterPicker_SelectedIndexChanged(object sender, EventArgs e)
+        public void SubFilterPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
           
-           _viewModel.SubFilter = SubFilterPicker.SelectedItem.ToString();
+            _viewModel.SubFilter = SubFilterPicker.SelectedItem.ToString();
 
-         
             Debug.WriteLine(_viewModel.SubFilter.ToString());
-            
+
+            _viewModel.onAppearing();
+            base.OnAppearing();
+            OnAppearing();
+
         }
     }
 }

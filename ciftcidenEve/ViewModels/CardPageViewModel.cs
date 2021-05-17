@@ -11,7 +11,7 @@ namespace ciftcidenEve.ViewModels
 {
     public class CardPageViewModel : BaseViewModel
     {
-        public ObservableCollection<Product> BagProducts { get; }
+        public ObservableCollection<Product> BagProducts { get; set; }
         public Command LoadItemsCommand { get; }
 
         public bool hasItems { get; set; }

@@ -19,11 +19,11 @@ namespace ciftcidenEve.Models
         public string City { get; set; }
         public List<string> Categories = new List<string>();
         public Command DeleteCommand { get; }
-        public Uri path { get; set; }
+        public Uri Path { get; set; }
        public Product()
         {
             DeleteCommand = new Command(deleteThis);
-            path = new Uri("https://firebasestorage.googleapis.com/v0/b/ciftcideneve-6894d.appspot.com/o/590x300.jpg?alt=media&token=aaca9b5e-039e-43cc-9677-6b6424cec65a");
+            Path = new Uri("https://firebasestorage.googleapis.com/v0/b/ciftcideneve-6894d.appspot.com/o/590x300.jpg?alt=media&token=aaca9b5e-039e-43cc-9677-6b6424cec65a");
         }
         private async void deleteThis(object obj)
         {

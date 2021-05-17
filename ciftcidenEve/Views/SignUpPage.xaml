@@ -24,7 +24,7 @@
         <Entry Placeholder="Email"  Text="{Binding Email, Mode=TwoWay}"></Entry>
         <Entry Placeholder="Parola" IsPassword="True"  Text="{Binding Password, Mode=TwoWay}"></Entry>
         <Entry Placeholder="Parola Tekrar" IsPassword="True"  Text="{Binding PasswordCheck, Mode=TwoWay}"></Entry>
-        <Entry Placeholder="Şehriniz"  Text="{Binding City, Mode=TwoWay}"></Entry>
+        <Picker x:Name="CityPicker" Title="Şehriniz"  SelectedItem="{Binding City, Mode=OneWayToSource}"></Picker>
  <!--İLETİSİM BİLGİLERİ FORMU -->
         
         <!--CAPTCHA HERE-->

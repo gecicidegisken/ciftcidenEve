@@ -1,4 +1,5 @@
 ﻿using ciftcidenEve.Models;
+using ciftcidenEve.Services;
 using Xamarin.Forms;
 using System.Windows.Input;
 using Plugin.Toast;
@@ -63,6 +64,7 @@ namespace ciftcidenEve.ViewModels
             {
                 //Add new member to our local SQLite database.
                 App.memberDatabase.Add(newMember);
+                FilterService.Sellers.Add(newMember.Name);
                 CrossToastPopUp.Current.ShowCustomToast("Üyelik işlemi tamamlandı.\nGiriş yapabilirsiniz.", "#f5712f", "white", Plugin.Toast.Abstractions.ToastLength.Short);
                 await Shell.Current.GoToAsync("//LoginPage");
             }

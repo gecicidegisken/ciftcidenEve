@@ -14,9 +14,7 @@ namespace ciftcidenEve.ViewModels
         public string Tag { get; set; }
         public string SubTag { get; set; }
         public Uri Path { get; set; }
-
         public float Price { get; set; }
-        public Image Image{get; set;}
         public Uri imageUri{get; set;}
 
 
@@ -55,7 +53,7 @@ namespace ciftcidenEve.ViewModels
                 SubTag = this.SubTag,
                 Satici = App.currentUser.Name,
                 City = App.currentUser.City,
-                path = this.Path
+                Path = this.Path
             };
 
             //Add item to our local SQLite database.

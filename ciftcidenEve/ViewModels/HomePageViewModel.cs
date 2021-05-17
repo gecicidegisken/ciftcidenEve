@@ -22,7 +22,8 @@ namespace ciftcidenEve.ViewModels
         public ProductDetailViewModel details;
         public Command<Product> ItemTapped { get; }
         public Command ImageRetrieve{ get; set; }
-        public string Tag { get; }
+        public  string Filter = "";
+        public  string SubFilter = "";
       
 
         public HomePageViewModel()
@@ -36,42 +37,73 @@ namespace ciftcidenEve.ViewModels
             CategoryCommand = new Command<string>(ShowCategory);
             ImageRetrieve = new Command(imageRetrieve);
         }
-        public void imageRetrieve()
-        {
-            Image image = new Image();
-            image.Source = ImageSource.FromUri(new Uri(""));
-        }
 
-        async Task ExecuteLoadItemsCommand()
+
+        async public Task ExecuteLoadItemsCommand()
         {
+           
             IsBusy = true;
-            
-            try
+           
+            try { 
+            if (Filter == "Şehir")
             {
+               
+                Products.Clear();
+                List<Product> itemsdb = App.mDatabase.GetProductsByCity(SubFilter);
+                foreach (var item in itemsdb)
+                {
+                    Products.Add(item);
+                } 
+                Debug.WriteLine(" şehir içinde alt filtre: " +SubFilter);
+            }
+            else if (Filter == "Fiyat")
+            {
+                
+                Debug.WriteLine("Fiyata göre sıralama");
+            }
+            else if (Filter == "Satıcı")
+            {
+              
+                Products.Clear();
+                List<Product> itemsdb = App.mDatabase.GetProductsBySeller(SubFilter);
+                foreach (var item in itemsdb)
+                {
+                    Products.Add(item);
+                }
+            }
+
+            else
+            {
+               
                 Products.Clear();
                 List<Product> itemsdb = App.mDatabase.GetProducts();
                 foreach (var item in itemsdb)
                 {
                     Products.Add(item);
                 }
-              
             }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-
             }
-            finally
-            {
-                IsBusy = false;
+            finally { 
+            IsBusy = false;
             }
-           
         }
+
+
+
+
+
+        public void imageRetrieve()
+        {
+            Image image = new Image();
+            image.Source = ImageSource.FromUri(new Uri(""));
+        }
+
+        
 
         private async void OnAccountClicked(object obj)
         {
             if (App.authorization)
-            {
+            {Debug.WriteLine(Filter);
                 Debug.WriteLine("giriş yapılmış");
                 //burda hesabım sayfasına yönlendirelecek
             }
@@ -112,3 +144,4 @@ namespace ciftcidenEve.ViewModels
     }
 
 }
+

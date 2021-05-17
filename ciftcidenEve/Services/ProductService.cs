@@ -19,20 +19,8 @@ namespace ciftcidenEve
             db.CreateTableAsync<Product>().Wait();
             CategoryService categoryService = new CategoryService();
 
-            ////İlk ürünü otomatik eklesin diye bir örnek- bu yorum satırı sonradan
-            ////kaldırılacağı için Türkçe yazıldı.
-            //Product darari = new Product
-            //{
-            //    Id = 21,
-            //    Text = "Yerli Domates Fidesiiii",
-            //    Description = "10 adet",
-            //    Price = 10,
-            //    Tag ="Sebze",
-            //    Satici = "Hilal Elif Mutlu"
-            //    // Image
-            //};
-            //db.InsertAsync(darari);
         }
+
         //Get all porudcts
         public List<Product> GetProducts()
         {
@@ -41,8 +29,7 @@ namespace ciftcidenEve
         }
  
 
-
-        //get products by main categories
+        //Get products by main categories
         public List<Product> GetProductsByTag(string tag)
         {
             List<Product> categoryProducts = db.Table<Product>().Where(i => i.Tag == tag).ToListAsync().Result;
@@ -52,13 +39,33 @@ namespace ciftcidenEve
 
 
 
-        //get products by sub-categories
+        //Get products by sub-categories
         public List<Product> GetProductsBySubTag(string stag)
         {
             List<Product> categoryProducts = db.Table<Product>().Where(i => i.SubTag == stag).ToListAsync().Result;
 
             return categoryProducts;
         }
+
+        //Get products by City
+        public List<Product> GetProductsByCity(string city)
+        {
+            List<Product> filterProducts = db.Table<Product>().Where(i => i.City == city).ToListAsync().Result;
+
+            return filterProducts;
+        }
+        //Get products by Seller
+        public List<Product> GetProductsBySeller(string seller)
+        {
+            List<Product> filterProducts = db.Table<Product>().Where(i => i.Satici == seller).ToListAsync().Result;
+
+            return filterProducts;
+        }
+
+
+
+
+
         //Get a spesific product
         public Task<Product> GetProduct(int id)
         {

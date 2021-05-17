@@ -70,23 +70,27 @@
             <ImageButton Grid.Column=" 4" Source="urun_tohumCicek_icon.png" CommandParameter="Çiçek, Fidan, Tohum" />
 
         </Grid> <!-- kategori iconları grid -->
-       
-            
-    
-       
-        <SearchBar HorizontalOptions="CenterAndExpand" Grid.Row="1" Placeholder="Ürün Ara" Margin="0,0,0,10" HeightRequest="50" />
-        
+
+
+
+        <StackLayout  Grid.Row="1" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+            <SearchBar  Placeholder="Ürün Ara"   WidthRequest="200" Margin="0,0,0,10"/>
+
+            <Picker Grid.Row="0" Title="Filtrele" x:Name="FilterPicker" SelectedIndexChanged="FilterPicker_SelectedIndexChanged" ></Picker>
+            <Picker IsVisible="False" WidthRequest="100" Grid.Row="1" x:Name="SubFilterPicker" SelectedIndexChanged="SubFilterPicker_SelectedIndexChanged"></Picker>
+           
+        </StackLayout>
         <!--ürünlerin listesi-->
         <RefreshView   x:DataType="local:HomePageViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Grid.Row="2" x:Name="mRefreshViewHomePage" Refreshing="RefreshView_Refreshing" RefreshColor="Green">
 
-            <CollectionView x:Name="collectionView" ItemsSource="{Binding Products}" >
+            <CollectionView x:Name="collectionView" ItemsSource="{Binding Products}">
                 
                 <CollectionView.ItemTemplate>
                    
                     <DataTemplate>
                         <StackLayout Padding="10" x:DataType="model:Product">
                             <!--  IMAGE BURADA SET EDILIYOR  -->
-                            <Image x:Name="imageView" Source="{Binding path}" BackgroundColor="Transparent"></Image>
+                            <Image x:Name="imageView" Source="{Binding Path}" BackgroundColor="Transparent"></Image>
 
                             <StackLayout Spacing="50" Orientation="Horizontal">
                                 <StackLayout Orientation="Vertical">

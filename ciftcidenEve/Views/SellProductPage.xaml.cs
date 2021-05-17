@@ -139,7 +139,7 @@ namespace ciftcidenEve.Views
                 .PutAsync(imageStream);
             string imgurl = stroageImage;
             Uri imageUri = new Uri(imgurl);
-            Product.path = imageUri;
+            Product.Path = imageUri;
             sellProductViewModel.imageUri = imageUri;
             sellProductViewModel.Path = imageUri;
             CrossToastPopUp.Current.ShowCustomToast("Fotoğraf erisim tokeni :"+imgurl, 

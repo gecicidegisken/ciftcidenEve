@@ -5,15 +5,18 @@ using System.Text;
 using Plugin.Toast;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ciftcidenEve.Services;
 
 namespace ciftcidenEve.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SignUpPage : ContentPage
     {
+        FilterService city = new FilterService();
         public SignUpPage()
         {
             InitializeComponent();
+            CityPicker.ItemsSource = city.Cities;
         }
         protected override bool OnBackButtonPressed()
         {

@@ -21,7 +21,7 @@ namespace ciftcidenEve.ViewModels
         string satici;
         string city;
         int itemId;
-        Image image;
+        Uri path;
       
 
         public ProductDetailViewModel()
@@ -40,6 +40,7 @@ namespace ciftcidenEve.ViewModels
             bagProduct.Satici = product.Satici;
             bagProduct.City = product.City;
             bagProduct.Tag = product.Tag;
+            bagProduct.Path = product.Path;
 
 
             App.products.Add(bagProduct);
@@ -63,16 +64,12 @@ namespace ciftcidenEve.ViewModels
             get => city;
             set => SetProperty(ref city, value);
         }
-        public Image Image
+        public Uri Path
         {
 
-            get => image;
-            set
-            {
-                SetProperty(ref image, value);
-                OnPropertyChanged(nameof(Image));
-              
-            }
+            get => path; 
+            set => SetProperty(ref path, value);
+            
            
         }
         public string Tag
@@ -122,8 +119,7 @@ namespace ciftcidenEve.ViewModels
                 SubTag = item.SubTag;
                 Description = item.Description;
                 Price = item.Price;
-               // Image = item.Image; 
-               // Image.Source = item.Image.Source;
+                Path = item.Path;
                 Satici = item.Satici;
                 City = item.City;
               

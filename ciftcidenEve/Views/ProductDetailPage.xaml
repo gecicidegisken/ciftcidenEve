@@ -15,7 +15,7 @@
     <ScrollView>
     <StackLayout  Spacing="3" Padding="5,20,15,5">
 
-        <Image Margin="0,0,0,20" Aspect="AspectFit" WidthRequest="100" HeightRequest="300" Source="{Binding Image.Source}">
+        <Image Margin="0,0,0,20" Aspect="AspectFit" WidthRequest="100" HeightRequest="300" Source="{Binding Path}">
         </Image>
         
         <StackLayout  Padding="15,15,15,15">

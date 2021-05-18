@@ -43,7 +43,7 @@ namespace ciftcidenEve.ViewModels
             bagProduct.Path = product.Path;
 
 
-            App.products.Add(bagProduct);
+            App.shoppingCard.AddToCard(bagProduct);
             CrossToastPopUp.Current.ShowCustomToast("Ürün Sepete Eklendi", "#f5712f", "white", Plugin.Toast.Abstractions.ToastLength.Short);
         }
         public int Id { get; set; }

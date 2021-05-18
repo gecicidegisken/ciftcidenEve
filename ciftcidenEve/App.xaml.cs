@@ -14,6 +14,7 @@ namespace ciftcidenEve
         public static List<Product> products = new List<Product>();
         public static ProductService mDatabase = new ProductService();
         public static PersonService memberDatabase = new PersonService();
+        public static CardService shoppingCard = new CardService();
         public App()
         {
             InitializeComponent();

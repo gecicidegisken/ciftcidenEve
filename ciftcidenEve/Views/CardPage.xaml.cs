@@ -37,18 +37,21 @@ namespace ciftcidenEve.Views
         }
 
 
-        private void SwipeItem_Clicked(object sender, EventArgs e)
+        private async void SwipeItem_Clicked(object sender, EventArgs e)
         {
             Task.Delay(3000);
             mRefreshViewCardPage.IsRefreshing = true;
-            _viewModel.onAppearing();
+            _viewModel.onAppearing(); 
+           await _viewModel.ExecuteLoadItemsCommand();
         }
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            _viewModel.onAppearing();
+            _viewModel.ExecuteLoadItemsCommand();
+            _viewModel.onAppearing(); 
+        
             mRefreshViewCardPage.IsRefreshing = true;
-
+            collectionView.ItemsSource = _viewModel.BagProducts;
         }
 
     }

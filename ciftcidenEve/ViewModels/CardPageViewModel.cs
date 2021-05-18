@@ -5,32 +5,34 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using System.Collections.Generic;
 using Plugin.Toast;
 
 namespace ciftcidenEve.ViewModels
 {
     public class CardPageViewModel : BaseViewModel
     {
-        public ObservableCollection<Product> BagProducts { get; set; }
+        public List<Product> BagProducts { get; }
         public Command LoadItemsCommand { get; }
-
+        public Command DeleteCommand { get; }
         public bool hasItems { get; set; }
         public Command<Product> ItemTapped { get; }
         public CardPageViewModel()
         {
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
-            BagProducts = new ObservableCollection<Product>();
+            BagProducts = new List<Product>();
             ItemTapped = new Command<Product>(ShowItemDetails);
+            DeleteCommand = new Command<Product>(RemoveFromCard);
         }
-        async Task ExecuteLoadItemsCommand()
+       public async Task ExecuteLoadItemsCommand()
         {
             IsBusy = true;
 
             try
             {
                 BagProducts.Clear();
-                
-                var bagItems = App.products;
+
+                var bagItems = App.shoppingCard.ListProducts();
 
                 foreach (var item in bagItems)
                 {
@@ -70,5 +72,15 @@ namespace ciftcidenEve.ViewModels
             }
             IsBusy = true;
         }
+
+
+        private async void RemoveFromCard(Product product)
+        {
+            App.shoppingCard.RemoveFromCard(product);
+            onAppearing();
+            await ExecuteLoadItemsCommand();
+            Debug.WriteLine("silindi. ");
+        }
+        
     }
 }

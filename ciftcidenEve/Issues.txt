@@ -16,10 +16,7 @@
       >> SQLite - listeleme                               
       >> SQLite - veritabanı güncelleme  
     
-      >> Ürün Stok sistemi
-      >> ürünlere şehir bilgisi eklenecek
-      >> ürüblere sub category eklencek
-      -- ürünün içindeki deleyte command taşınacak
+      -- ürünün içindeki delete command taşınacak
       -- ana sayfadan ürün silme
 
       >> Graphql - veritabanından veri cekme 
@@ -51,3 +48,5 @@
 ++ Filtreleme butonu
 ++ Alt kategori ara yüzleri
 ++ alt kategoriye gelince sadece ekranda dönen bir yenileme simgesi var, alt kategorinin ürünleri yüklenmiyor
+++ ürünlere şehir bilgisi eklenecek
+++ ürünlere sub category eklencek

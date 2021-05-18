@@ -12,7 +12,7 @@ namespace ciftcidenEve.ViewModels
 {
     public class CardPageViewModel : BaseViewModel
     {
-        public List<Product> BagProducts { get; }
+        public ObservableCollection<Product> BagProducts { get; }
         public Command LoadItemsCommand { get; }
         public Command DeleteCommand { get; }
         public bool hasItems { get; set; }
@@ -20,7 +20,7 @@ namespace ciftcidenEve.ViewModels
         public CardPageViewModel()
         {
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
-            BagProducts = new List<Product>();
+            BagProducts = new ObservableCollection<Product>();
             ItemTapped = new Command<Product>(ShowItemDetails);
             DeleteCommand = new Command<Product>(RemoveFromCard);
         }

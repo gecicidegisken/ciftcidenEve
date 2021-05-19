@@ -45,7 +45,9 @@
                                                 <SwipeItem Text="Kaldır" BackgroundColor="Red"
                                                          Command="{Binding Source={RelativeSource AncestorType={x:Type local:CardPageViewModel}}, Path=DeleteCommand}"		
                                                          CommandParameter="{Binding .}" 
-                                                           Clicked="SwipeItem_Clicked"></SwipeItem>
+                                                           Clicked="SwipeItem_Clicked">
+                                                    
+                                                </SwipeItem>
                                             </SwipeItems>
                                         </SwipeView.RightItems>
 

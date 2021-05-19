@@ -4,26 +4,32 @@
 ?? bug, hata
  
  ----------------------------------------------------     -------------------------      ---------------------------------------------
+ BUGLAR
 
  ?? Görsel ekleyince kaydet butonu görünmez oluyor (bazen oluyor bazen olmuyor çok saçma???)
+ ?? sepette ürün yok yazısı düzeltilecek
 
 
-  -- sepette ürün yok yazısını tekrar aç
-  >> sepetle ilgili hiçbir ley yapmadık henüz
-
-
-      >> SQLite - ürün cıkarma
-      >> SQLite - listeleme                               
-      >> SQLite - veritabanı güncelleme  
+ YAPILMASI GEREKENLER
+    Sepet
+        >> Sepete aynı ürün 2. kez eklendiğinde yeni ürün gibi gelmeyecek, sayısı (yazılı olarak) artacak
+        >> Sepetten ürün detayına gitme
+        >> Sepette toplam ücretin görünmesi
+        >> Ödeme sayfasında sepetteki ürün sayısı ve toplam ücretin görünmesi
     
-      -- ürünün içindeki delete command taşınacak
-      -- ana sayfadan ürün silme
+    Anasayfa
+        >> Ürünleri satıştan çıkarma  (SQLite - ürün cıkarma)
+        >> Ürün arama ( arama çubuğundan )
+     
+     Ödeme sayfası
+      ++ Satın alma arayüzü (ödeme sayfası)
+   
 
-      >> Graphql - veritabanından veri cekme 
 
-      -- Ürün arama ve listeleme
+
       
- -- Satın alma arayüzü( ödeme sayfası)
+      
+
 
 
 
@@ -50,3 +56,7 @@
 ++ alt kategoriye gelince sadece ekranda dönen bir yenileme simgesi var, alt kategorinin ürünleri yüklenmiyor
 ++ ürünlere şehir bilgisi eklenecek
 ++ ürünlere sub category eklencek
+++ ürünün içindeki delete command taşınacak
+++ SQLite - listeleme                               
+++ SQLite - veritabanı güncelleme  
+    

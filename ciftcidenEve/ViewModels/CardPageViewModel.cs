@@ -17,12 +17,14 @@ namespace ciftcidenEve.ViewModels
         public Command DeleteCommand { get; }
         public bool hasItems { get; set; }
         public Command<Product> ItemTapped { get; }
+        public Command PaymentCommand { get; }
         public CardPageViewModel()
         {
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
             BagProducts = new ObservableCollection<Product>();
             ItemTapped = new Command<Product>(ShowItemDetails);
             DeleteCommand = new Command<Product>(RemoveFromCard);
+            PaymentCommand = new Command(OnPaymentClicked);
         }
        public async Task ExecuteLoadItemsCommand()
         {
@@ -80,6 +82,12 @@ namespace ciftcidenEve.ViewModels
             onAppearing();
             await ExecuteLoadItemsCommand();
             Debug.WriteLine("silindi. ");
+        }
+
+
+        private async void OnPaymentClicked()
+        {
+            await Shell.Current.GoToAsync($"//{nameof(PaymentPage)}");
         }
         
     }

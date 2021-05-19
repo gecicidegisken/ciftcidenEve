@@ -35,24 +35,21 @@
 
                             <StackLayout Padding="10" x:DataType="model:Product">
                                 <Frame HasShadow="True">
-                                    <SwipeView  >
-
-
-
-                                        <SwipeView.RightItems  >
-
+                                    <SwipeView>
+                                        <SwipeView.RightItems >
                                             <SwipeItems>
+                                                <SwipeItem></SwipeItem>
                                                 <SwipeItem Text="Kaldır" BackgroundColor="Red"
                                                          Command="{Binding Source={RelativeSource AncestorType={x:Type local:CardPageViewModel}}, Path=DeleteCommand}"		
                                                          CommandParameter="{Binding .}" 
-                                                           Clicked="SwipeItem_Clicked">
+                                                          Clicked="SwipeItem_Clicked">
                                                     
                                                 </SwipeItem>
                                             </SwipeItems>
                                         </SwipeView.RightItems>
 
                                         <StackLayout Orientation="Horizontal">
-                                            <Image Source="{Binding Image.Source}" HorizontalOptions="Start" HeightRequest="100"></Image>
+                                            <Image Source="{Binding Path}" HorizontalOptions="Start" HeightRequest="100"></Image>
                                             <StackLayout>
                                                 <Label Text="{Binding Text}" 
                                               LineBreakMode="NoWrap" 
@@ -70,6 +67,8 @@
                                               LineBreakMode="NoWrap"
                                               Style="{DynamicResource ListItemDetailTextStyle}"
                                               FontSize="13" />
+
+                                               
                                             </StackLayout>
 
                                         </StackLayout>
@@ -85,7 +84,7 @@
                                     </TapGestureRecognizer>
                                 </StackLayout.GestureRecognizers>
 
-                            </StackLayout>
+                            </StackLayout> <!--ürün çerçevesi-->
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
@@ -94,7 +93,11 @@
 
             </RefreshView>
             <!--ürünlerin listesi-->
-
+            <Button Text="Siparişi tamamla" Margin="0,0,0,10" HorizontalOptions="Center" 
+                    HeightRequest="70"
+                    BackgroundColor="Orange"
+                    FontAttributes="Bold"
+                    Command="{Binding PaymentCommand}"></Button>
         </StackLayout>
       
     </ContentPage.Content>

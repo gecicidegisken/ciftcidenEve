@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ciftcidenEve.Views.PaymentPage"
+             Title="Siparişi Tamamla">
+    <ContentPage.Content>
+        <StackLayout >
+            <Label Text="Sipariş Özetiniz"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center"
+                   FontAttributes="Bold"
+                   FontSize="Title"
+                   Margin="0,30,0,0"
+                   TextColor="Orange">
+            </Label>
+            
+            <Label Text="Toplam Ürün Adedi: 10 " 
+                   FontSize="Body"
+                   FontAttributes="Bold"
+                   Margin="0,10,0,0"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"></Label>
+            
+            <Label Text="Toplam Tutar: 200 TL"
+                   FontSize="Body"
+                   FontAttributes="Bold"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"></Label>
+
+            <Rectangle Margin="0,10,0,10" HorizontalOptions="FillAndExpand" HeightRequest="1" WidthRequest="100" BackgroundColor="Green" />
+            
+            <StackLayout>
+                <StackLayout Orientation="Vertical">
+                    
+                    <Entry Placeholder="Kart Numarası" ></Entry>
+
+                    <Entry Placeholder="Kart Sahibi"></Entry>
+
+                </StackLayout>
+          
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="50">
+                    <Entry Placeholder="CVV"
+                           WidthRequest="100" Keyboard="Numeric"> </Entry>
+
+                    <DatePicker Format="MM/yy"
+                                WidthRequest="80"
+                                ></DatePicker>
+                </StackLayout>
+                    
+            </StackLayout>
+            <Label Text="Onayla butonuna bastığınızda toplam tutar hesabınızdan tahsil edilecek ve işlem tamamlanacaktır. " 
+                   FontSize="Default"   
+                   LineBreakMode="WordWrap"
+                   Margin="10,10,10,10"
+                   FontAttributes="Italic"
+                   
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"></Label>
+            <Button Text="Onayla ve Bitir"
+                   HorizontalOptions="Center"
+                    Margin="0,20,0,0"></Button>
+        </StackLayout>
+       
+    </ContentPage.Content>
+</ContentPage>

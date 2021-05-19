@@ -12,7 +12,7 @@ namespace ciftcidenEve.ViewModels
 {
     public class CardPageViewModel : BaseViewModel
     {
-        public ObservableCollection<Product> BagProducts { get; }
+        public ObservableCollection<Product> BagProducts { get; set; }
         public Command LoadItemsCommand { get; }
         public Command DeleteCommand { get; }
         public bool hasItems { get; set; }
@@ -57,8 +57,7 @@ namespace ciftcidenEve.ViewModels
                 return;
 
             // This will push the ItemDetailPage onto the navigation stack
-            await Shell.Current.GoToAsync($"{nameof(ProductDetailPage)}?{nameof(ProductDetailViewModel.ItemId)}={product.Id}");
-
+            await Shell.Current.GoToAsync($"{nameof(ProductDetailPage)}?{nameof(ProductDetailViewModel.ItemIdFromCard)}={product.Id}");
         }
         public void onAppearing()
         {

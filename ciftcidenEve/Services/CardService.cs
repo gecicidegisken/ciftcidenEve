@@ -29,6 +29,7 @@ namespace ciftcidenEve
         public Product GetProduct(int id)
         {
             return db.Table<Product>().Where(i => i.Id == id).FirstOrDefaultAsync().Result;
+            
         }
 
         //Add new product to the card

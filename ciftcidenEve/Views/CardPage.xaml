@@ -52,7 +52,7 @@
                                         </SwipeView.RightItems>
 
                                         <StackLayout Orientation="Horizontal">
-                                            <!--<Image Source="{Binding Image.Source}" HorizontalOptions="Start" HeightRequest="100"></Image>-->
+                                            <Image Source="{Binding Image.Source}" HorizontalOptions="Start" HeightRequest="100"></Image>
                                             <StackLayout>
                                                 <Label Text="{Binding Text}" 
                                               LineBreakMode="NoWrap" 

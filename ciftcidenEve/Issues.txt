@@ -6,8 +6,7 @@
  ----------------------------------------------------     -------------------------      ---------------------------------------------
  BUGLAR
 
- ?? Görsel ekleyince kaydet butonu görünmez oluyor (bazen oluyor bazen olmuyor çok saçma??? - harika yorum satırı senle calısmak cok iyi)
- ?? sepette ürün yok yazısı düzeltilecek
+ bazen oluyor bazen olmuyor çok saçma??? - harika yorum satırı senle calısmak cok iyi -teşekkür ederim biraz tatlı olduğum söylenir halk arasında)
 
 
  YAPILMASI GEREKENLER
@@ -53,4 +52,7 @@
 ++ SQLite - veritabanı güncelleme  
 ++ Sepetten ürün detayına gitme
 ++ Ürün arama ( arama çubuğundan )
+++ Görsel ekleyince kaydet butonu görünmez oluyor 
+++ sepette ürün yok yazısı düzeltilecek
+
     

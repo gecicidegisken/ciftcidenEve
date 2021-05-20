@@ -96,7 +96,7 @@
             </RefreshView>
             <!--ürünlerin listesi-->
             <Button x:Name="btnPayment"
-                    Text="{Binding Total, Mode=TwoWay}" Margin="0,0,0,10" HorizontalOptions="Center" 
+                    Text="{Binding Total, Mode=TwoWay, StringFormat='Siparişi Tamamla ({0} TL)'}" Margin="0,0,0,10" HorizontalOptions="Center" 
                     HeightRequest="70"
                     BackgroundColor="Orange"
                     FontAttributes="Bold"

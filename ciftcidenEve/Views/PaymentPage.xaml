@@ -2,7 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ciftcidenEve.Views.PaymentPage"
+             xmlns:vm="clr-namespace:ciftcidenEve.ViewModels"
+             xmlns:local="clr-namespace:ciftcidenEve.ViewModels"
+             xmlns:model="clr-namespace:ciftcidenEve.Models" 
              Title="Siparişi Tamamla">
+
+    <ContentPage.BindingContext>
+        <vm:CardPageViewModel />
+    </ContentPage.BindingContext>
+
     <ContentPage.Content>
         <StackLayout >
             <Label Text="Sipariş Özetiniz"

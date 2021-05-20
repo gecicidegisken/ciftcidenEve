@@ -42,6 +42,7 @@ namespace ciftcidenEve.Views
             mRefreshViewCardPage.IsRefreshing = true;
             _viewModel.onAppearing(); 
            await _viewModel.ExecuteLoadItemsCommand();
+            _viewModel.CardTotal();
         }
         protected override void OnAppearing()
         {
@@ -51,6 +52,7 @@ namespace ciftcidenEve.Views
         
             mRefreshViewCardPage.IsRefreshing = true;
             collectionView.ItemsSource = _viewModel.BagProducts;
+            _viewModel.CardTotal();
         }
 
     }

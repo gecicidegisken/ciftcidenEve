@@ -32,8 +32,16 @@ namespace ciftcidenEve.Views
             sellProductViewModel = new SellProductViewModel();
             BindingContext = sellProductViewModel;
             TagPicker.ItemsSource = categoryService.Categories;
-           
+            
         }
+
+        protected void CleanForm()
+        {
+            image.Source = null;
+            descrText.Text = string.Empty;
+            isimText.Text = string.Empty;
+        }
+
         protected override void OnAppearing()
         {
           
@@ -74,7 +82,7 @@ namespace ciftcidenEve.Views
                 {
                     SubTagPicker.Items.Add(i);
                 }
-                Debug.WriteLine("darari");
+               
                 cat = TagPicker.SelectedItem.ToString();
                 categoryService.ShowSubCategory(cat);
                // SubTagPicker.ItemsSource = categoryService.SubCategories;
@@ -95,6 +103,7 @@ namespace ciftcidenEve.Views
         protected override bool OnBackButtonPressed()
         {
             Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+            CleanForm();
             return true;
         }
  
@@ -142,33 +151,14 @@ namespace ciftcidenEve.Views
             Product.Path = imageUri;
             sellProductViewModel.imageUri = imageUri;
             sellProductViewModel.Path = imageUri;
-            CrossToastPopUp.Current.ShowCustomToast("Fotoğraf erisim tokeni :"+imgurl, 
+            CrossToastPopUp.Current.ShowCustomToast("Fotoğraf yüklendi", 
                 "#f5712f", "white", Plugin.Toast.Abstractions.ToastLength.Short);
 
             return imgurl;
         }
 
 
-        // Old photo picker method
-        /*
-         * async void OnPickPhotoButtonClicked(object sender, EventArgs e)
-        {
-            (sender as Button).IsEnabled = false;
-
-            Stream stream = await DependencyService.Get<IPhotoPickerService>().GetImageStreamAsync();
-            if (stream != null)
-            {
-                Image imageForStorage = new Image();
-                imageForStorage.Source = ImageSource.FromStream(() => stream);
-                image.Source = ImageSource.FromStream(() => stream);
-
-                //------------------------------
-            }
-
-            (sender as Button).IsEnabled = true;
-        }
-
-        */
+        
 
     }
 }

@@ -71,6 +71,11 @@ namespace ciftcidenEve
             return filterProducts;
         }
 
+        public List<Product> GetProductsBySearch(string keyw)
+        {
+            List<Product> getProducts = db.Table<Product>().Where(i => i.Text.Contains(keyw) || keyw.Contains(i.Text)).ToListAsync().Result;
+            return getProducts;
+        }
 
 
 

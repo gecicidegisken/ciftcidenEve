@@ -13,7 +13,7 @@
  YAPILMASI GEREKENLER
     Sepet
         >> Sepete aynı ürün 2. kez eklendiğinde yeni ürün gibi gelmeyecek, sayısı (yazılı olarak) artacak
-        >> Sepetten ürün detayına gitme
+      
         >> Sepette toplam ücretin görünmesi
         >> Ödeme sayfasında sepetteki ürün sayısı ve toplam ücretin görünmesi
     
@@ -59,4 +59,5 @@
 ++ ürünün içindeki delete command taşınacak
 ++ SQLite - listeleme                               
 ++ SQLite - veritabanı güncelleme  
+++ Sepetten ürün detayına gitme
     

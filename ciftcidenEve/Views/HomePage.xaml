@@ -74,7 +74,7 @@
 
 
         <StackLayout  Grid.Row="1" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
-            <SearchBar  Placeholder="Ürün Ara"   WidthRequest="200" Margin="0,0,0,10"/>
+            <SearchBar  Placeholder="Ürün Ara"   WidthRequest="200" Margin="0,0,0,10" SearchCommand="{Binding SearchCommand}" Text="{Binding Search}" SearchCommandParameter="{Binding Search}"/>
 
             <Picker Grid.Row="0" Title="Filtrele" x:Name="FilterPicker" SelectedIndexChanged="FilterPicker_SelectedIndexChanged" ></Picker>
             <Picker IsVisible="False" WidthRequest="100" Grid.Row="1" x:Name="SubFilterPicker" SelectedIndexChanged="SubFilterPicker_SelectedIndexChanged"></Picker>

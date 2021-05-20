@@ -19,12 +19,14 @@ namespace ciftcidenEve.ViewModels
         public ICommand ItemDetailCommand { get; }
         public Command LoadItemsCommand { get; }     
         public ICommand CategoryCommand { get; }
+        public Command SearchCommand { get; }
 
         public ProductDetailViewModel details;
         public Command<Product> ItemTapped { get; }
         public Command ImageRetrieve{ get; set; }
         public  string Filter = "";
         public  string SubFilter = "";
+        public string Search { get; set; }
       
 
         public HomePageViewModel()
@@ -37,6 +39,7 @@ namespace ciftcidenEve.ViewModels
             ItemTapped = new Command<Product>(ShowItemDetails);
             CategoryCommand = new Command<string>(ShowCategory);
             ImageRetrieve = new Command(imageRetrieve);
+            SearchCommand = new Command(ExecuteSearchCommand);
         }
 
        
@@ -95,7 +98,17 @@ namespace ciftcidenEve.ViewModels
             }
         }
 
-
+        public void ExecuteSearchCommand()
+        {
+            Debug.WriteLine(Search);
+            Products.Clear();
+            List<Product> results = App.mDatabase.GetProductsBySearch(Search);
+            foreach (var item in results)
+            { 
+               Products.Add(item);
+               
+            }
+        }
         public void imageRetrieve()
         {
             Image image = new Image();

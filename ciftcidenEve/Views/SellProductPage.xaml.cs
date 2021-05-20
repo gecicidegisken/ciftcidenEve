@@ -37,9 +37,9 @@ namespace ciftcidenEve.Views
 
         protected void CleanForm()
         {
-            image.Source = null;
-            descrText.Text = string.Empty;
-            isimText.Text = string.Empty;
+            //image.Source = null;
+            //descrText.Text = string.Empty;
+            //isimText.Text = string.Empty;
         }
 
         protected override void OnAppearing()

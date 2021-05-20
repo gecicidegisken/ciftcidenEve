@@ -10,19 +10,19 @@
 
 
  YAPILMASI GEREKENLER
-    Sepet
+
+   -> Sepet
         >> Sepete aynı ürün 2. kez eklendiğinde yeni ürün gibi gelmeyecek, sayısı (yazılı olarak) artacak
-      
-        >> Sepette toplam ücretin görünmesi
-        >> Ödeme sayfasında sepetteki ürün sayısı ve toplam ücretin görünmesi
+        >> Ödeme sayfasında sepetteki ürün sayısını göster
     
-    Anasayfa
-        >> Ürünleri satıştan çıkarma  (SQLite - ürün cıkarma)
+
+   -> Ürün satışı
+        >> ürün satma sayfasında fotoğraf ekleme butonu yukarı taşınacak ve toast metni değiştirilecek
+      >> çıkıp girince form temizlensin
+
+    ->  TEST KODLARI?? YAZILACAK
+
       
-     
-     Ödeme sayfası
-      ++ Satın alma arayüzü (ödeme sayfası)
-  
 
 
 
@@ -54,5 +54,6 @@
 ++ Ürün arama ( arama çubuğundan )
 ++ Görsel ekleyince kaydet butonu görünmez oluyor 
 ++ sepette ürün yok yazısı düzeltilecek
-
-    
+++ Sepette toplam ücretin görünmesi
+++ Satın alma arayüzü (ödeme sayfası)
+++ ödeme sayfası geri tuşuna basınca sepete dönsün

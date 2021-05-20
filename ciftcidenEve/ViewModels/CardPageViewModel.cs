@@ -18,9 +18,7 @@ namespace ciftcidenEve.ViewModels
         public bool hasItems { get; set; }
         public Command<Product> ItemTapped { get; }
         public Command PaymentCommand { get; }
-        public string Total { get; set; }
-        public IObservable<String> Totalll { get; set; }
-        public float ttl = 0;
+    
 
         public CardPageViewModel()
         {
@@ -31,6 +29,9 @@ namespace ciftcidenEve.ViewModels
             PaymentCommand = new Command(OnPaymentClicked);
 
         }
+
+
+
        public async Task ExecuteLoadItemsCommand()
         {
             IsBusy = true;

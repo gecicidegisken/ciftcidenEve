@@ -29,7 +29,8 @@
                    VerticalOptions="Center"
                    HorizontalOptions="Center"></Label>
             
-            <Label Text="Toplam Tutar: 200 TL"
+            <Label x:Name="toplamTutar"
+             
                    FontSize="Body"
                    FontAttributes="Bold"
                    VerticalOptions="Center"

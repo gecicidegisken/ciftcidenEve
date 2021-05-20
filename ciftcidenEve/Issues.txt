@@ -19,19 +19,11 @@
     
     Anasayfa
         >> Ürünleri satıştan çıkarma  (SQLite - ürün cıkarma)
-        >> Ürün arama ( arama çubuğundan )
+      
      
      Ödeme sayfası
       ++ Satın alma arayüzü (ödeme sayfası)
-   
-
-
-
-      
-      
-
-
-
+  
 
 
 
@@ -60,4 +52,5 @@
 ++ SQLite - listeleme                               
 ++ SQLite - veritabanı güncelleme  
 ++ Sepetten ürün detayına gitme
+++ Ürün arama ( arama çubuğundan )
     

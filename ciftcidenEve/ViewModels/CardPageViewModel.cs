@@ -18,6 +18,9 @@ namespace ciftcidenEve.ViewModels
         public bool hasItems { get; set; }
         public Command<Product> ItemTapped { get; }
         public Command PaymentCommand { get; }
+        public string Total { get; set; }
+        public float ttl = 0;
+
         public CardPageViewModel()
         {
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
@@ -25,7 +28,21 @@ namespace ciftcidenEve.ViewModels
             ItemTapped = new Command<Product>(ShowItemDetails);
             DeleteCommand = new Command<Product>(RemoveFromCard);
             PaymentCommand = new Command(OnPaymentClicked);
+
+            var bagIt = App.shoppingCard.ListProducts();
+
+            foreach (var item in bagIt)
+            {
+   
+                ttl += item.Price;
+                OnPropertyChanged();
+            }
+            Total ="Siparişi Tamamla" + " ( " +
+                ""+ ttl.ToString()+" TL )";
+            this.OnPropertyChanged("btnPayment");
         }
+
+
        public async Task ExecuteLoadItemsCommand()
         {
             IsBusy = true;
@@ -50,6 +67,7 @@ namespace ciftcidenEve.ViewModels
             {
                 IsBusy = false;
             }
+
         }
         private async void ShowItemDetails(Product product)
         {
@@ -61,7 +79,7 @@ namespace ciftcidenEve.ViewModels
         }
         public void onAppearing()
         {
-            if(App.products.Count > 0)
+            if(BagProducts.Count > 0)
             {
                 hasItems = false;
                 this.OnPropertyChanged("hasItems");

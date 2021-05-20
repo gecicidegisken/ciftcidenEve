@@ -6,7 +6,7 @@
  ----------------------------------------------------     -------------------------      ---------------------------------------------
  BUGLAR
 
- ?? Görsel ekleyince kaydet butonu görünmez oluyor (bazen oluyor bazen olmuyor çok saçma???)
+ ?? Görsel ekleyince kaydet butonu görünmez oluyor (bazen oluyor bazen olmuyor çok saçma??? - harika yorum satırı senle calısmak cok iyi)
  ?? sepette ürün yok yazısı düzeltilecek
 
 

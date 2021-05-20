@@ -16,7 +16,9 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout>
-                <Label Text="Sepetinizde Hiç Ürün Yok :("
+                <Label
+                    x:Name="hasItems"
+                    Text="Sepetinizde Hiç Ürün Yok :("
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="Center"
                    FontAttributes="Bold"
@@ -93,7 +95,8 @@
 
             </RefreshView>
             <!--ürünlerin listesi-->
-            <Button Text="Siparişi tamamla" Margin="0,0,0,10" HorizontalOptions="Center" 
+            <Button x:Name="btnPayment"
+                    Text="{Binding Total, Mode=TwoWay}" Margin="0,0,0,10" HorizontalOptions="Center" 
                     HeightRequest="70"
                     BackgroundColor="Orange"
                     FontAttributes="Bold"

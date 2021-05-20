@@ -19,6 +19,7 @@ namespace ciftcidenEve.ViewModels
         public Command<Product> ItemTapped { get; }
         public Command PaymentCommand { get; }
         public string Total { get; set; }
+        public IObservable<String> Totalll { get; set; }
         public float ttl = 0;
 
         public CardPageViewModel()
@@ -29,20 +30,7 @@ namespace ciftcidenEve.ViewModels
             DeleteCommand = new Command<Product>(RemoveFromCard);
             PaymentCommand = new Command(OnPaymentClicked);
 
-            var bagIt = App.shoppingCard.ListProducts();
-
-            foreach (var item in bagIt)
-            {
-   
-                ttl += item.Price;
-                OnPropertyChanged();
-            }
-            Total ="Siparişi Tamamla" + " ( " +
-                ""+ ttl.ToString()+" TL )";
-            this.OnPropertyChanged("btnPayment");
         }
-
-
        public async Task ExecuteLoadItemsCommand()
         {
             IsBusy = true;

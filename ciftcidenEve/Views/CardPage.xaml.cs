@@ -33,6 +33,7 @@ namespace ciftcidenEve.Views
         {
             await Task.Delay(3000);
             mRefreshViewCardPage.IsRefreshing = false;
+            changeTotal();
             
         }
 
@@ -48,12 +49,29 @@ namespace ciftcidenEve.Views
         {
             base.OnAppearing();
             _viewModel.ExecuteLoadItemsCommand();
-            _viewModel.onAppearing(); 
-        
+            _viewModel.onAppearing();
+            changeTotal();
+           
+
             mRefreshViewCardPage.IsRefreshing = true;
             collectionView.ItemsSource = _viewModel.BagProducts;
             _viewModel.CardTotal();
         }
+        public void changeTotal()
+        {
+            var bagIt = App.shoppingCard.ListProducts();
+            float ttl = 0;
+            foreach (var item in bagIt)
+            {
+
+                ttl += item.Price;
+                OnPropertyChanged();
+            }
+            btnPayment.Text = "Siparişi Tamamla"+" ( "+ttl+" )";
+            this.OnPropertyChanged("btnPayment");
+            OnPropertyChanged("btnPaymnet");
+        }
+        
 
     }
 }

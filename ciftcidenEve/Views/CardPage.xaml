@@ -29,7 +29,7 @@
 
             <RefreshView   x:DataType="local:CardPageViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Grid.Row="2" x:Name="mRefreshViewCardPage" Refreshing="mRefreshViewCardPage_Refreshing" RefreshColor="Green">
 
-                <CollectionView x:Name="collectionView" ItemsSource="{Binding BagProducts}">
+                <CollectionView x:Name="collectionView" ItemsSource="{Binding BagProducts, Mode=TwoWay}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
 
@@ -68,9 +68,9 @@
                                               Style="{DynamicResource ListItemDetailTextStyle}"
                                               FontSize="13" />
 
-                                               
-                                            </StackLayout>
 
+                                            </StackLayout>
+                                            
                                         </StackLayout>
 
                                     </SwipeView>

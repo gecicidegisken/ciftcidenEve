@@ -5,10 +5,12 @@ using System.Diagnostics;
 using Plugin.Toast;
 using Xamarin.Forms;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace ciftcidenEve.ViewModels
 {
     [QueryProperty(nameof(ItemId), nameof(ItemId))]
+    [QueryProperty(nameof(ItemIdFromCard), nameof(ItemIdFromCard))]
     public class ProductDetailViewModel : BaseViewModel
     {
         public Command AddBagCommand { get; }
@@ -27,6 +29,7 @@ namespace ciftcidenEve.ViewModels
         public ProductDetailViewModel()
         {
             LoadItemId(ItemId);
+            LoadItemIdCard(ItemId);
             AddBagCommand = new Command(OnAddClicked);
             
         }
@@ -34,7 +37,6 @@ namespace ciftcidenEve.ViewModels
         
             Product product = App.mDatabase.GetProduct(itemId).Result;
             Product bagProduct = new Product();
-            bagProduct.Id = App.products.Count + 1;
             bagProduct.Text = product.Text;
             bagProduct.Price = product.Price;
             bagProduct.Satici = product.Satici;
@@ -106,6 +108,42 @@ namespace ciftcidenEve.ViewModels
                 itemId = value;
                 LoadItemId(value);
             }
+        }
+
+        public int ItemIdFromCard
+        {
+            get
+            {
+                return itemId;
+            }
+            set
+            {
+                itemId = value;
+                LoadItemIdCard(value);
+            }
+        }
+
+        public async void LoadItemIdCard(int itemId)
+        {
+            try
+            {
+                Product item = App.shoppingCard.GetProduct(itemId);
+                Id = item.Id;
+                Text = item.Text;
+                Tag = item.Tag;
+                SubTag = item.SubTag;
+                Description = item.Description;
+                Price = item.Price;
+                Path = item.Path;
+                Satici = item.Satici;
+                City = item.City;
+
+            }
+            catch (Exception)
+            {
+                Debug.WriteLine("Failed to Load Item");
+            }
+            this.OnPropertyChanged();
         }
 
         public async void LoadItemId(int itemId)

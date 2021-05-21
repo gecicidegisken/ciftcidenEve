@@ -6,23 +6,23 @@
              xmlns:local="clr-namespace:ciftcidenEve.ViewModels"
              xmlns:model="clr-namespace:ciftcidenEve.Models" x:DataType="vm:HomePageViewModel"
              x:Name="BrowseItemsPage">
-   
-    
+
+
     <ContentPage.BindingContext>
         <vm:HomePageViewModel />
     </ContentPage.BindingContext>
 
-   
-    
+
+
     <ContentPage.Resources>
         <ResourceDictionary>
             <Color x:Key="Accent">#96d1ff</Color>
             <Style TargetType="ImageButton">
                 <Setter Property="BackgroundColor" Value="Transparent"></Setter>
-                <Setter Property="Margin" Value="0,0,0,10"> </Setter>
-                <Setter Property="HeightRequest" Value="70"> </Setter>
-                <Setter Property="VerticalOptions" Value="Center"> </Setter>
-                <Setter Property="Command" Value="{Binding CategoryCommand}"></Setter> 
+                <Setter Property="Margin" Value="0,0,0,10"></Setter>
+                <Setter Property="HeightRequest" Value="70"></Setter>
+                <Setter Property="VerticalOptions" Value="Center"></Setter>
+                <Setter Property="Command" Value="{Binding CategoryCommand}"></Setter>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -39,17 +39,22 @@
 
     </ContentPage.ToolbarItems>
 
-    <Grid><!-- main grid -->
+    <Grid>
+        <!-- main grid -->
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" /> <!-- 0 ürün kategorileri -->
-            <RowDefinition Height="40" /> <!-- 1 search bar -->
-            <RowDefinition Height="Auto" /> <!-- 2  ürünler listesi -->
-       
+            <RowDefinition Height="Auto" />
+            <!-- 0 ürün kategorileri -->
+            <RowDefinition Height="40" />
+            <!-- 1 search bar -->
+            <RowDefinition Height="Auto" />
+            <!-- 2  ürünler listesi -->
+
         </Grid.RowDefinitions>
 
-       
-    
-        <Grid Grid.Row="0" Margin="0,10,0,0">  <!-- kategori iconları grid -->
+
+
+        <Grid Grid.Row="0" Margin="0,10,0,0">
+            <!-- kategori iconları grid -->
             <Grid.RowDefinitions >
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
@@ -59,8 +64,8 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
-                
-          
+
+
 
             </Grid.ColumnDefinitions>
             <ImageButton Grid.Column=" 0" Source="urun_kahvaltilik_icon.png" CommandParameter="Kahvaltılık" />
@@ -69,7 +74,8 @@
             <ImageButton Grid.Column=" 3" Source="urun_meyve_icon.png" CommandParameter="Meyve" />
             <ImageButton Grid.Column=" 4" Source="urun_tohumCicek_icon.png" CommandParameter="Çiçek, Fidan, Tohum" />
 
-        </Grid> <!-- kategori iconları grid -->
+        </Grid>
+        <!-- kategori iconları grid -->
 
 
 
@@ -78,19 +84,19 @@
 
             <Picker Grid.Row="0" Title="Filtrele" x:Name="FilterPicker" SelectedIndexChanged="FilterPicker_SelectedIndexChanged" ></Picker>
             <Picker IsVisible="False" WidthRequest="100" Grid.Row="1" x:Name="SubFilterPicker" SelectedIndexChanged="SubFilterPicker_SelectedIndexChanged"></Picker>
-           
+
         </StackLayout>
         <!--ürünlerin listesi-->
         <RefreshView   x:DataType="local:HomePageViewModel" Command="{Binding LoadItemsCommand , Mode=TwoWay}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Grid.Row="2" x:Name="mRefreshViewHomePage" Refreshing="RefreshView_Refreshing" RefreshColor="Green">
 
             <CollectionView x:Name="collectionView" ItemsSource="{Binding Products , Mode=TwoWay}">
-                
+
                 <CollectionView.ItemTemplate>
-                   
+
                     <DataTemplate>
                         <StackLayout Padding="10" x:DataType="model:Product">
                             <!--  IMAGE BURADA SET EDILIYOR  -->
-                            <Image x:Name="imageView" Source="{Binding Path}" BackgroundColor="Transparent"></Image>
+                            <Image x:Name="imageView" Aspect="AspectFit" WidthRequest="300" Source="{Binding Path}" BackgroundColor="Transparent"></Image>
 
                             <StackLayout Spacing="50" Orientation="Horizontal">
                                 <StackLayout Orientation="Vertical">
@@ -101,20 +107,21 @@
                                        LineBreakMode="NoWrap" 
                                        Style="{DynamicResource ListItemTextStyle}" 
                                        FontSize="20" />
+
                                     <StackLayout Orientation="Horizontal">
-                                        <Label Text="{Binding Tag}"
+                                        <Label  Text="{Binding Tag}"
                                              TextColor="Gray"
                                               FontSize="13"
-                                               />
-                                        <Label Text="{Binding SubTag, StringFormat='> {0}'}"
+                                               LineBreakMode="WordWrap" />
+                                        <Label Text="{Binding SubTag, StringFormat='| {0}'}"
                                               TextColor="Gray"
-                                            FontAttributes="Italic"
-                                              FontSize="13" />
-                                        <Label Text="{Binding Satici, StringFormat='| {0}'}"
-                                              TextColor="Gray"                                       
-                                              FontSize="13" />
-                                    
+                                          
+                                              FontSize="13" 
+                                               LineBreakMode="WordWrap"
+                                               />
                                     </StackLayout>
+
+
                                 </StackLayout>
                                 <Frame
                                     CornerRadius="10"  
@@ -150,9 +157,10 @@
 
         </RefreshView>
         <!--ürünlerin listesi-->
-        
-       
-    </Grid> <!-- main grid -->
-    
+
+
+    </Grid>
+    <!-- main grid -->
+
 
 </ContentPage>

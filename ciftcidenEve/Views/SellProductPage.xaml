@@ -12,7 +12,15 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Spacing="3" Padding="15">
-               
+                <Grid  HorizontalOptions="CenterAndExpand" Margin="0,10,0,20" >
+
+                    <Button Grid.Column="0"  HeightRequest="100" WidthRequest="150"  Text="Ürün Fotoğrafı Yükleyin"
+                  Clicked="OnPickPhotoButtonClicked" />
+
+                    <Image Grid.Column="1"  Aspect="AspectFit"  x:Name="image" Source="{Binding Path, Mode=TwoWay}"></Image>
+                </Grid>
+
+
                 <Label Text="Ürün Adı" FontSize="Medium" />
                 <Entry Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" />
 
@@ -28,15 +36,12 @@
                 <Picker x:Name="SubTagPicker" Title="Alt kategori seçin" Margin="0,10,0,10" Focused="SubTagPicker_Focused" SelectedItem="{Binding SubTag}"></Picker>
 
 
-                <Button Margin="0,10,0,20" HorizontalOptions="CenterAndExpand" HeightRequest="50" WidthRequest="1000"  Text="Ürün Fotoğrafı Yükleyin"
-                  Clicked="OnPickPhotoButtonClicked" />
 
-                <Image Margin="0,0,0,30" Aspect="AspectFit"  x:Name="image" Source="{Binding Image.Source, Mode=TwoWay}"></Image>
-               
+
                 <!--<Image Margin="0,0,0,30" Aspect="AspectFit"  x:Name="image" Source="{Binding Source=card_icon.png, Mode=TwoWay}"></Image>-->
 
-               
-               
+
+
                 <StackLayout Padding="0,10,0,0" Orientation="Horizontal">
                     <Button Text="İptal" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
                     <Button FontAttributes="Bold" Text="Ürünü Satışa Çıkar" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>

@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using ciftcidenEve.ViewModels;
@@ -10,19 +10,19 @@ using System.Diagnostics;
 namespace ciftcidenEve.Views
 {
     public partial class HomePage : ContentPage
-    { 
+    {
         FilterService filtersList = new FilterService();
         CategoryService categories = new CategoryService();
 
         HomePageViewModel _viewModel;
         List<string> filters = new List<string>();
-       
-        
+
+
         public HomePage()
         {
-            
+
             InitializeComponent();
-            
+
             _viewModel = new HomePageViewModel();
             BindingContext = _viewModel;
             ShowFilters();
@@ -34,7 +34,7 @@ namespace ciftcidenEve.Views
             await Task.Delay(3000);
             mRefreshViewHomePage.IsRefreshing = false;
             mRefreshViewHomePage.Command = _viewModel.LoadItemsCommand;
-           
+
         }
         protected override bool OnBackButtonPressed()
         {
@@ -43,7 +43,7 @@ namespace ciftcidenEve.Views
         }
         protected async override void OnAppearing()
         {
- 
+
             base.OnAppearing();
             _viewModel.ExecuteLoadItemsCommand();
             mRefreshViewHomePage.IsRefreshing = true;
@@ -55,36 +55,48 @@ namespace ciftcidenEve.Views
 
         protected void ShowFilters()
         {
+
             filters.Add("Şehir");
             filters.Add("Fiyat");
             filters.Add("Satıcı");
+            filters.Add("Hepsi");
             FilterPicker.ItemsSource = filters;
         }
 
-        public  void FilterPicker_SelectedIndexChanged(object sender, EventArgs e)
+        public void FilterPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            SubFilterPicker.SelectedItem= null;
-
-            if (FilterPicker.SelectedIndex == 0) { 
-                
-                SubFilterPicker.ItemsSource = filtersList.Cities;
-          
-            }
-            else if (FilterPicker.SelectedIndex == 1)
+            if (FilterPicker.SelectedIndex == 3)
             {
-               
-                SubFilterPicker.ItemsSource = filtersList.GetPrices();
-
+                _viewModel.Filter = FilterPicker.SelectedItem.ToString();
+                SubFilterPicker.SelectedItem = null;
             }
-            else if (FilterPicker.SelectedIndex == 2)
+
+            else
             {
+                SubFilterPicker.SelectedItem = null;
 
-                SubFilterPicker.ItemsSource = filtersList.GetSellers();
+                if (FilterPicker.SelectedIndex == 0)
+                {
+
+                    SubFilterPicker.ItemsSource = filtersList.Cities;
+
+                }
+                else if (FilterPicker.SelectedIndex == 1)
+                {
+
+                    SubFilterPicker.ItemsSource = filtersList.GetPrices();
+
+                }
+                else if (FilterPicker.SelectedIndex == 2)
+                {
+
+                    SubFilterPicker.ItemsSource = filtersList.GetSellers();
+                }
+
+                _viewModel.Filter = FilterPicker.SelectedItem.ToString();
+                SubFilterPicker.IsVisible = true;
+                SubFilterPicker.Focus();
             }
-            _viewModel.Filter = FilterPicker.SelectedItem.ToString();
-            SubFilterPicker.IsVisible = true;
-            SubFilterPicker.Focus();
         }
 
         public void SubFilterPicker_SelectedIndexChanged(object sender, EventArgs e)
@@ -98,26 +110,26 @@ namespace ciftcidenEve.Views
                     string x = SubFilterPicker.SelectedItem.ToString();
                     _viewModel.SubFilter = filtersList.pricesdic[x];
                 }
-               
+
             }
 
 
-        else  if (SubFilterPicker.SelectedItem != null && FilterPicker.SelectedIndex != 1)
+            else if (SubFilterPicker.SelectedItem != null && FilterPicker.SelectedIndex != 1)
             {
 
-                 _viewModel.SubFilter = SubFilterPicker.SelectedItem.ToString();
-              
-                
-            }
-        
-         
+                _viewModel.SubFilter = SubFilterPicker.SelectedItem.ToString();
 
-          
+
+            }
+
+
+
+
 
             _viewModel.ExecuteLoadItemsCommand();
             base.OnAppearing();
             OnAppearing();
-            
+
         }
     }
 }

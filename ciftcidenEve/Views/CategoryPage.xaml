@@ -6,7 +6,7 @@
               xmlns:local="clr-namespace:ciftcidenEve.ViewModels"
               xmlns:model="clr-namespace:ciftcidenEve.Models"
              Title="{Binding PageTitle}">
-    
+
     <ContentPage.BindingContext>
         <vm:CategoryViewModel />
     </ContentPage.BindingContext>
@@ -37,20 +37,20 @@
 
 
             <Grid Grid.Row="0">
-            <!-- kategori iconları grid -->
-            <Grid.RowDefinitions >
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
+                <!-- kategori iconları grid -->
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
 
 
 
-            </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions>
                 <ImageButton Grid.Column="0" x:Name="ImageButton1"  />
                 <ImageButton Grid.Column="1" x:Name="ImageButton2"  />
                 <ImageButton Grid.Column="2" x:Name="ImageButton3"  />
@@ -58,42 +58,50 @@
                 <ImageButton Grid.Column="4" x:Name="ImageButton5"  />
 
             </Grid>
-        <!-- kategori iconları grid -->
-        <!--ürünlerin listesi-->
-        <RefreshView Grid.Row="1"   x:DataType="local:CategoryViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}" x:Name="mRefreshViewCategoryPage" RefreshColor="Green">
+            <!-- kategori iconları grid -->
+            <!--ürünlerin listesi-->
+            <RefreshView Grid.Row="1"   x:DataType="local:CategoryViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}" x:Name="mRefreshViewCategoryPage" RefreshColor="Green">
 
-            <CollectionView x:Name="collectionView" ItemsSource="{Binding Products}" >
+                <CollectionView x:Name="collectionView" ItemsSource="{Binding Products}" >
 
-                <CollectionView.ItemTemplate>
+                    <CollectionView.ItemTemplate>
 
-                    <DataTemplate>
-                        <StackLayout Padding="10" x:DataType="model:Product">
+                        <DataTemplate>
+                            <StackLayout Padding="10" x:DataType="model:Product">
 
-                            <!--<Image BackgroundColor="Transparent" Source="{Binding Image.Source}" ></Image>-->
+                                <Image x:Name="imageView" Aspect="AspectFit" WidthRequest="300" Source="{Binding Path}" BackgroundColor="Transparent"></Image>
 
-                            <StackLayout Spacing="70" Orientation="Horizontal">
-                                <StackLayout Orientation="Vertical">
 
-                                    <Label Text="{Binding Text}" 
+                                <StackLayout Spacing="70" Orientation="Horizontal">
+                                    <StackLayout Orientation="Vertical">
+
+                                        <Label Text="{Binding Text}" 
                             FontAttributes="Bold"
                             TextColor="Green"
                             LineBreakMode="NoWrap" 
                             Style="{DynamicResource ListItemTextStyle}" 
                             FontSize="20" />
-                                    <Label Text="{Binding Tag}"
-                             TextColor="Orange"
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding Satici}"
+                             TextColor="Gray"
                             LineBreakMode="NoWrap"
                             Style="{DynamicResource ListItemDetailTextStyle}"
                             FontSize="13" />
+                                            <Label Text="{Binding City, StringFormat=' | {0}'}"
+                             TextColor="Gray"
+                            LineBreakMode="NoWrap"
+                            Style="{DynamicResource ListItemDetailTextStyle}"
+                            FontSize="13" />
+                                        </StackLayout>
 
-                                </StackLayout>
-                                <Frame
+                                    </StackLayout>
+                                    <Frame
                                     CornerRadius="10"  
                                     HorizontalOptions="EndAndExpand" 
                                   HasShadow="False"
                                     Padding="8"
                                    BackgroundColor="White">
-                                    <Label Text="{Binding Price, StringFormat='{0} TL'}"
+                                        <Label Text="{Binding Price, StringFormat='{0} TL'}"
                              HorizontalOptions="EndAndExpand"
                             FontAttributes="Bold"
                             LineBreakMode="NoWrap"
@@ -101,27 +109,27 @@
                             Style="{DynamicResource ListItemDetailTextStyle}"
                             FontSize="25" 
                                   />
-                                </Frame>
+                                    </Frame>
 
-                            </StackLayout>
-                            <Rectangle HorizontalOptions="FillAndExpand" HeightRequest="1" WidthRequest="100" BackgroundColor="Orange" />
-                            
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer 
+                                </StackLayout>
+                                <Rectangle HorizontalOptions="FillAndExpand" HeightRequest="1" WidthRequest="100" BackgroundColor="Orange" />
+
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer 
                                 NumberOfTapsRequired="1"
                                 Command="{Binding Source={RelativeSource AncestorType={x:Type local:CategoryViewModel}}, Path=ItemTapped}"		
                                 CommandParameter="{Binding .}">
-                                </TapGestureRecognizer>
-                            </StackLayout.GestureRecognizers>
+                                    </TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
 
 
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
 
-        </RefreshView>
-        <!--ürünlerin listesi-->
+            </RefreshView>
+            <!--ürünlerin listesi-->
         </Grid>
         <!-- main grid -->
     </ContentPage.Content>

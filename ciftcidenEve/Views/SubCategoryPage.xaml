@@ -24,7 +24,7 @@
             </Grid.RowDefinitions>
 
 
-             
+
             <!--ürünlerin listesi-->
             <RefreshView Grid.Row="1"   x:DataType="local:SubCategoryViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}" x:Name="mRefreshViewSubCategoryPage" RefreshColor="Green">
 
@@ -35,7 +35,8 @@
                         <DataTemplate>
                             <StackLayout Padding="10" x:DataType="model:Product">
 
-                                <!--<Image BackgroundColor="Transparent" Source="{Binding Image.Source}" ></Image>-->
+                                <Image x:Name="imageView" Aspect="AspectFit" WidthRequest="300" Source="{Binding Path}" BackgroundColor="Transparent"></Image>
+
 
                                 <StackLayout Spacing="70" Orientation="Horizontal">
                                     <StackLayout Orientation="Vertical">
@@ -46,11 +47,18 @@
                             LineBreakMode="NoWrap" 
                             Style="{DynamicResource ListItemTextStyle}" 
                             FontSize="20" />
-                                        <Label Text="{Binding Tag}"
-                             TextColor="Orange"
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding Satici}"
+                             TextColor="Gray"
                             LineBreakMode="NoWrap"
                             Style="{DynamicResource ListItemDetailTextStyle}"
                             FontSize="13" />
+                                            <Label Text="{Binding City, StringFormat=' | {0}'}"
+                             TextColor="Gray"
+                            LineBreakMode="NoWrap"
+                            Style="{DynamicResource ListItemDetailTextStyle}"
+                            FontSize="13" />
+                                        </StackLayout>
 
                                     </StackLayout>
                                     <Frame

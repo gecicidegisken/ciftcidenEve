@@ -12,7 +12,7 @@ namespace ciftcidenEve.Services
 
         public CategoryService()
         {
-      
+
             Categories.Add("Sebze");
             Categories.Add("Meyve");
             Categories.Add("Kahvaltılık");
@@ -60,7 +60,7 @@ namespace ciftcidenEve.Services
                 SubCategories.Add("Şalgam Suyu");
                 SubCategories.Add("Süt");
             }
-            else if (mainCat == "Tohum, Fidan, Çiçek")
+            else if (mainCat == "Çiçek, Fidan, Tohum")
             {
                 SubCategories.Add("Gübre");
                 SubCategories.Add("Meyve Fidanı");

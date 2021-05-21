@@ -21,6 +21,7 @@ namespace ciftcidenEve
 
             //DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
+            mDatabase.AddDefaultProducts();
         }
 
         protected override void OnStart()

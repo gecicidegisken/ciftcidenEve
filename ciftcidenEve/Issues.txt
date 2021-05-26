@@ -6,18 +6,14 @@
  ----------------------------------------------------     -------------------------      ---------------------------------------------
  BUGLAR
 
- bazen oluyor bazen olmuyor çok saçma??? - harika yorum satırı senle calısmak cok iyi -teşekkür ederim biraz tatlı olduğum söylenir halk arasında)
-
 
  YAPILMASI GEREKENLER
 
    -> Sepet
         >> Sepete aynı ürün 2. kez eklendiğinde yeni ürün gibi gelmeyecek, sayısı (yazılı olarak) artacak
-        >> Ödeme sayfasında sepetteki ürün sayısını göster
-    
+      
 
-   -> Ürün satışı
-        >> ürün satma sayfasında fotoğraf ekleme butonu yukarı taşınacak ve toast metni değiştirilecek
+   -> Ürün satışı  
       >> çıkıp girince form temizlensin
 
     ->  TEST KODLARI?? YAZILACAK
@@ -57,3 +53,5 @@
 ++ Sepette toplam ücretin görünmesi
 ++ Satın alma arayüzü (ödeme sayfası)
 ++ ödeme sayfası geri tuşuna basınca sepete dönsün
+ artık olmuyor??? - harika yorum satırı senle calısmak cok iyi -teşekkür ederim biraz tatlı olduğum söylenir halk arasında)
+++ ürün satma sayfasında fotoğraf ekleme butonu yukarı taşınacak ve toast metni değiştirilecek

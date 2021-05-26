@@ -22,7 +22,7 @@
                    TextColor="Orange">
             </Label>
             
-            <Label Text="Toplam Ürün Adedi: 10 " 
+            <Label 
                    FontSize="Body"
                    FontAttributes="Bold"
                    Margin="0,10,0,0"

@@ -2,5 +2,5 @@
 ciftcidenEve is an Android e-commerce app, built with Xamarin. 
 Some technologies used in the app:  
 -- SQLite  
--- Firebase
+-- Firebase  
 -- Xamarin and Xaml, obviously
